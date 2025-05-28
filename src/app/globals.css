@@ -45,3 +45,7 @@ header {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+
+.nav-links a.inactive:hover {
+    transform: translateY(10px);
+}
