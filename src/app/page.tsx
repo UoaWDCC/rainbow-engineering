@@ -1,5 +1,6 @@
 // import Image from "next/image";
 import Link from "next/link";
+import { Icon } from '@iconify/react';
 
 export default function Home() {
   return (
@@ -16,35 +17,42 @@ export default function Home() {
 
       {/* Socials Bar */}
       <div className="mt-6 w-full bg-purple-100 py-10 px-6 flex justify-center items-center max-w-full space-x-12">
-        {/* Social links */}
+
+        {/* Links */}
         <div className="flex space-x-4">
+          {/* Instagram */}
           <a
             href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
+            aria-label="Instagram"
+            className="text-4xl"
           >
-            Instagram
+            <Icon icon="skill-icons:instagram" width="32" height="32" />
           </a>
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-            Email
-          </a>
+          {/* Facebook */}
           <a
             href="https://www.facebook.com/rainbowengineering.uoa"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
+            aria-label="Facebook"
+            className="text-4xl"
           >
-            Facebook
+            <Icon icon="logos:facebook" width="32" height="32" />
+          </a>
+          {/* Email */}
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email"
+            className="text-4xl"
+          >
+            <Icon icon="logos:google-gmail" width="32" height="32" />
           </a>
         </div>
-        {/* Social Text */}
-        <div className="text-purple-700 font-medium text-sm">
+        {/* Text */}
+        <div className="text-purple-700 font-medium text-md">
           Follow Our Socials
         </div>
       </div>
