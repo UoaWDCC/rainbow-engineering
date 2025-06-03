@@ -24,12 +24,74 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen overflow-hidden">
         <main className="flex-grow">
           {children}
         </main>
+<div className="relative z-30 mt-[300px] flex">
+  <img
+    src="/rainbow_head.png"
+    alt="Rainbow Footer Banner"
+    className="relative mt-[300px] w-35 object-contain block shrink-0"
+    style={{ bottom: '-49px' }}
+  />  
+  <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-240px' }}
+  />
+    <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-240px' }}
+  />
+    <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-240px' }}
+  />
+    <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-240px' }}
+  />
+    <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-240px' }}
+  />
+    <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-240px' }}
+  />
+    <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-240px' }}
+  />
+    <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-251px' }}
+  />
+    <img
+    src="/rainbow_body.png"
+    alt="Rainbow Footer Banner"
+    className="relative w-71 object-contain block shrink-0"
+    style={{ bottom: '-251px' }}
+  />
+</div>
 
-<footer className="bg-purple-100 text-purple-700 text-center p-8 relative z-0">
+<footer className="bg-purple-200 text-purple-800 text-center p-8 pt-15 relative z-0">
   <div className="w-full max-w-3xl mx-auto text-left mb-2">
     <h4 className="font-bold">CONTACT US</h4>
   </div>
