@@ -24,10 +24,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="flex flex-col min-h-screen">
+        <main className="flex-grow">
+          {children}
+        </main>
+
+<footer className="bg-purple-100 text-purple-700 text-center p-8 relative z-0">
+  <div className="w-full max-w-3xl mx-auto text-left mb-2">
+    <h4 className="font-bold">CONTACT US</h4>
+  </div>
+
+  <div className="grid font-bold grid-cols-3 justify-items-center gap-y-1 w-full max-w-3xl mx-auto">
+    <div>Phone</div>
+    <div>Email</div>
+    <div>Socials</div>
+    <div>8493248</div>
+    <div>jfewofmn@gmail.com</div>
+    <div>@rainbow</div>
+  </div>
+</footer>
+
       </body>
     </html>
   );
