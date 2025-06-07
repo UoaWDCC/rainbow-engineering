@@ -24,7 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen overflow-hidden">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+      </head>
+<body className="flex flex-col min-h-screen overflow-hidden">
         <main className="flex-grow">
           {children}
         </main>
@@ -32,76 +37,30 @@ export default function RootLayout({
   <img
     src="/rainbow_head.png"
     alt="Rainbow Footer Banner"
-    className="relative mt-[300px] w-35 object-contain block shrink-0"
-    style={{ bottom: '-49px' }}
+    className="relative mt-[300px] w-33 object-contain block shrink-0"
+    style={{ bottom: '-45px' }}
   />  
-  <img
+    {[...Array(7)].map((_, i) => (
+      <img
     src="/rainbow_body.png"
     alt="Rainbow Footer Banner"
     className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-240px' }}
+    style={{ bottom: '-236px' }}
   />
-    <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-240px' }}
-  />
-    <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-240px' }}
-  />
-    <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-240px' }}
-  />
-    <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-240px' }}
-  />
-    <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-240px' }}
-  />
-    <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-240px' }}
-  />
-    <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-251px' }}
-  />
-    <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-251px' }}
-  />
+  ))}
 </div>
 
 <footer className="bg-purple-200 text-purple-800 text-center p-8 pt-15 relative z-0">
-  <div className="w-full max-w-3xl mx-auto text-left mb-2">
-    <h4 className="font-bold">CONTACT US</h4>
+  <div className="w-full max-w-3xl mx-auto text-left mb-3 my-2">
+    <h6 className="font-['Montserrat'] font-bold">CONTACT US</h6>
   </div>
 
-  <div className="grid font-bold grid-cols-3 justify-items-center gap-y-1 w-full max-w-3xl mx-auto">
+  <div className="grid font-['Montserrat'] font-bold grid-cols-3 justify-items-center gap-y-1 gap-x-10 w-full max-w-3xl mx-auto">
     <div>Phone</div>
     <div>Email</div>
     <div>Socials</div>
     <div>8493248</div>
-    <div>jfewofmn@gmail.com</div>
+    <div>rainbow@gmail.com</div>
     <div>@rainbow</div>
   </div>
 </footer>
