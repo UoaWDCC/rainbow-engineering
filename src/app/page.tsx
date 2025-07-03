@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Banner from "./Banner";
+import { images } from "./data"; // Importing the images data
 export default function Home() {
   return (
     <div>
@@ -99,6 +101,7 @@ export default function Home() {
 
         {/*================================SCROLLING GALLERY================================*/}
         <h2 className="text-5xl font-bold mb-3 text-center p-6">Scrolling Gallery (Not Scrolling Yet)</h2>
+        <Banner images={images} />
         {/* placeholder images till we figure out how to do this */}
         <div className="grid grid-cols-4 gap-4 mb-8">
           {/* Gallery Image 1 */}
