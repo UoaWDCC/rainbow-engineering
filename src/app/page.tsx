@@ -100,47 +100,15 @@ export default function Home() {
         
 
         {/*================================SCROLLING GALLERY================================*/}
-        <h2 className="text-5xl font-bold mb-3 text-center p-6">Scrolling Gallery (Not Scrolling Yet)</h2>
-        <Banner images={images} />
-        {/* placeholder images till we figure out how to do this */}
-        <div className="grid grid-cols-4 gap-4 mb-8">
-          {/* Gallery Image 1 */}
-          <div className="bg-violet-200 p-4 rounded">
-            <img
-              src="/about_us_temp.png"
-              alt="Gallery Image 1"
-              className="w-full h-auto rounded"
-            />
-          </div>
-          {/* Gallery Image 2 */}
-          <div className="bg-violet-200 p-4 rounded">
-            <img
-              src="/about_us_temp.png"
-              alt="Gallery Image 2"
-              className="w-full h-auto rounded"
-            />
-          </div>
-          {/* Gallery Image 3 */}
-          <div className="bg-violet-200 p-4 rounded">
-            <img
-              src="/about_us_temp.png"
-              alt="Gallery Image 3"
-              className="w-full h-auto rounded"
-            />
-          </div>
-          {/* Gallery Image 4 */}
-          <div className="bg-violet-200 p-4 rounded">
-            <img
-              src="/about_us_temp.png"
-              alt="Gallery Image 4"
-              className="w-full h-auto rounded"
-            />
-
-          </div>
-
-        
-        
+        <h2 className="text-5xl font-bold mb-3 text-center p-20">Scrolling Gallery (Not Scrolling Yet)</h2>
+        <div className="max-w-[150px] max-h-[150px] !important">
+          <Banner images={images} />
         </div>
+        {/* placeholder images till we figure out how to do this */}
+        
+
+        
+        
 
 
       </div>

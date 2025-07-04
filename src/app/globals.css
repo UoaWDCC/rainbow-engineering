@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+.banner-wrapper .wrapper .images {
+
+    display: flex;
+    background-color: tdff;
+    
+}
+
+.scroll-pictures {
+    max-width: 150px;
+    height: 10rem;
+}

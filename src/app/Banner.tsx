@@ -13,8 +13,8 @@ export default function Banner( { images }: BannerProps) {
         <div className="wrapper">
             <div className="images">
                 {images.map(({src, name}) => (
-                    <div className="image">
-                        <img src={src} alt={name} />
+                    <div className="pictures">
+                        <img className="scroll-pictures" src={src} alt={name} />
                     </div>
                 ))}
             </div>
