@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,46 +26,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+          />
       </head>
-<body className="flex flex-col min-h-screen overflow-hidden">
-        <main className="flex-grow">
-          {children}
-        </main>
-<div className="relative z-30 mt-[300px] flex">
-  <img
-    src="/rainbow_head.png"
-    alt="Rainbow Footer Banner"
-    className="relative mt-[300px] w-33 object-contain block shrink-0"
-    style={{ bottom: '-45px' }}
-  />  
-    {[...Array(7)].map((_, i) => (
-      <img
-    src="/rainbow_body.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-71 object-contain block shrink-0"
-    style={{ bottom: '-236px' }}
-  />
-  ))}
-</div>
-
-<footer className="bg-purple-200 text-purple-800 text-center p-8 pt-15 relative z-0">
-  <div className="w-full max-w-3xl mx-auto text-left mb-3 my-2">
-    <h6 className="font-['Montserrat'] font-bold">CONTACT US</h6>
-  </div>
-
-  <div className="grid font-['Montserrat'] font-bold grid-cols-3 justify-items-center gap-y-1 gap-x-10 w-full max-w-3xl mx-auto">
-    <div>Phone</div>
-    <div>Email</div>
-    <div>Socials</div>
-    <div>8493248</div>
-    <div>rainbow@gmail.com</div>
-    <div>@rainbow</div>
-  </div>
-</footer>
-
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f1eafb]`}
+      >
+        {children}
+        <div className="min-h-screen flex flex-col">
+          <main className="flex-grow">
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
