@@ -3,11 +3,21 @@
 .banner-wrapper .wrapper .images {
 
     display: flex;
-    background-color: tdff;
+    background-color: red;
+    animation: swipe 10000ms linear infinite;
     
 }
 
 .scroll-pictures {
     max-width: 150px;
     height: 10rem;
+}
+
+@keyframes swipe {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
