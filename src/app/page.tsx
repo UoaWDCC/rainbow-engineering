@@ -101,7 +101,7 @@ export default function Home() {
 
         {/*================================SCROLLING GALLERY================================*/}
         <h2 className="text-5xl font-bold mb-3 text-center p-20">Scrolling Gallery (Not Scrolling Yet)</h2>
-        <div className="max-w-[150px] max-h-[150px] !important">
+        <div className=" max-h-[150px] !important mb-20 w-700">
           <Banner images={images} />
         </div>
         {/* placeholder images till we figure out how to do this */}

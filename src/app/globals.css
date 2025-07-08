@@ -1,16 +1,30 @@
 @import "tailwindcss";
 
-.banner-wrapper .wrapper .images {
+.banner-wrapper{
+    width: 50%;
+    height: 10rem;
+    overflow: hidden;
+}
 
+.banner-wrapper .wrapper {
     display: flex;
-    background-color: red;
-    animation: swipe 10000ms linear infinite;
+}
+
+.banner-wrapper .wrapper .images {
+    display: flex;
+    animation: swipe 5000ms linear infinite;
     
+}
+
+.banner-wrapper:hover .wrapper .images {
+    animation-play-state: paused;
 }
 
 .scroll-pictures {
     max-width: 150px;
     height: 10rem;
+    padding: 0 10px;
+    object-fit: cover;
 }
 
 @keyframes swipe {
