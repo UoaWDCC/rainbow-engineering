@@ -10,10 +10,10 @@ export default function Footer() {
      <div className="absolute top-[46%] w-38 h-100 bg-[#d0b7f4] z-0"></div>
      <div className="absolute top-[53%] w-40 h-100 bg-[#d0b7f4] z-0"></div>
     <div className="absolute top-[56%] w-41 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[58%] w-43 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[63%] w-47 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[66%] w-54 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[67%] w-500 h-100 bg-[#d0b7f4] z-0"></div>
+    <div className="absolute top-[60%] w-43 h-100 bg-[#d0b7f4] z-0"></div>
+    <div className="absolute top-[65%] w-47 h-100 bg-[#d0b7f4] z-0"></div>
+    <div className="absolute top-[68%] w-54 h-100 bg-[#d0b7f4] z-0"></div>
+    <div className="absolute top-[69%] w-500 h-100 bg-[#d0b7f4] z-0"></div>
 
 
      <div className="relative z-30 flex">
@@ -44,13 +44,35 @@ export default function Footer() {
 </div>
 
 
-<div className="bg-[#d0b7f4] text-[#8955d2] text-center p-6 pt-3 relative z-0">
-  <div className="mb-4">
+<div className="bg-[#d0b7f4] text-[#8955d2] text-center relative z-0">
+  <div>
   </div>
-  <div className="grid font-['Montserrat'] font-bold text-[10px] grid-cols-2 justify-items-center gap-y-1 lg:gap-x-200 max-w-3xl mx-auto">
+  <div className="grid font-['Montserrat'] font-bold text-[9px] grid-cols-2 justify-items-center gap-y-1 lg:gap-x-120 max-w-3xl mx-auto">
 
-    <div className="pr-20">logos</div>
-    <div>rainbowengineering.uoa@gmail.com</div>
+    <div className="flex pr-20 -space-x-3">
+        <img
+    src="/instagram.png"
+    alt="Instagram Logo"
+    className="w-12 object-contain"
+  />
+          <img
+    src="/mail.png"
+    alt="Mail Logo"
+    className="w-16.5 object-contain"
+  />
+          <img
+    src="/LinkedIn.png"
+    alt="LinkedIn Logo"
+    className="w-15.5 object-contain -ml-2"
+  />
+          <img
+    src="/facebook.png"
+    alt="Facebook Logo"
+    className="w-11.5 object-contain"
+  />
+
+    </div>
+    <div className="mt-7">rainbowengineering.uoa@gmail.com</div>
   </div>
 </div>
 
