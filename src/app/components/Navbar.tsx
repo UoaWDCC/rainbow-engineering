@@ -8,9 +8,10 @@ export default function Navbar() {
 
     const links = [
         { href: "/", label: "Home" },
-        { href: "/meet-the-team", label: "Meet The Team" },
-        { href: "/whats-on", label: "What's On" },
-        { href: "/sign-up", label: "Sign Up" },
+        { href: "/events", label: "Events" },
+        { href: "/initiatives", label: "Community & Initiatives" },
+        { href: "/sponsors", label: "Sponsorships" },
+        { href: "/signup", label: "Sign Up" },
     ];
 
     return (

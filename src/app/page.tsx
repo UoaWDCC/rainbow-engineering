@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Banner from "./components/Banner";
+import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
 import { Icon } from '@iconify/react';
 import { images } from "./data";
@@ -153,6 +154,9 @@ export default function Home() {
 
         {/*================================SCROLLING GALLERY================================*/}
         <h2 className="text-5xl font-bold mb-3 text-center p-20">Scrolling Gallery (Not Scrolling Yet)</h2>
+        <div className=" max-h-[150px] !important mb-20 w-700">
+          <ScrollingGallery images={images} />
+        </div>
         {/* placeholder images till we figure out how to do this */}
 
       </div>

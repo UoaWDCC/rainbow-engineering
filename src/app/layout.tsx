@@ -1,6 +1,6 @@
 import "./globals.css";
-import NavBar from '../components/Navbar';
-import Footer from "@/components/Footer";
+import NavBar from './components/Navbar';
+import Footer from './components/Footer';
 // import Geist fonts via CDN in <head> instead of using 'geist/font'
 const geistSans = { variable: "font-sans" };
 const geistMono = { variable: "font-mono" };

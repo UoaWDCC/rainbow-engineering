@@ -77,23 +77,23 @@ header {
 @tailwind utilities;
 
 
-.banner-wrapper{
+.scrolling-gallery-wrapper{
     width: 50%;
     height: 10rem;
     overflow: hidden;
 }
 
-.banner-wrapper .wrapper {
+.scrolling-gallery-wrapper .wrapper {
     display: flex;
 }
 
-.banner-wrapper .wrapper .images {
+.scrolling-gallery-wrapper .wrapper .images {
     display: flex;
     animation: swipe 5000ms linear infinite;
     
 }
 
-.banner-wrapper:hover .wrapper .images {
+.scrolling-gallery-wrapper:hover .wrapper .images {
     animation-play-state: paused;
 }
 

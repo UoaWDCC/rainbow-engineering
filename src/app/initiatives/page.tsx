@@ -1,6 +1,6 @@
 "use client";
 
-export default function MeetTheTeamPage() {
+export default function Initiatives() {
     return (
         <h1>Rainbow Engineering!</h1>
     );
