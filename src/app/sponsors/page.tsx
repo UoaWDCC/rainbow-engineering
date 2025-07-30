@@ -18,6 +18,14 @@ export default function Sponsors() {
                     </Link>
                 </div>
 
+                {/* ===== information about sponsors ===== */}
+                <div className="mt-6 mb-12 bg-purple-200 text-purple-800 p-6 rounded-xl max-w-full mx-auto text-center">
+                    <p className="text-base md:text-lg font-medium">
+                        Information about sponsors: <br />
+                        The mutually beneficial relationship, how sponsors and team work together, etc.
+                    </p>
+                </div>
+
                 {/* ===== main section ===== */}
                 <h2 className="text-5xl font-bold mb-3 text-center p-6">OUR SPONSORS</h2>
                 <h2 className="text-5xl font-bold text-[#c2ac63]">GOLD</h2>
