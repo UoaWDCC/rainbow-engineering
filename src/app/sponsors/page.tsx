@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Banner from "../components/Banner";
 import SponsorInfoPanel from "../components/SponsorInfoPanel";
 
@@ -11,12 +10,15 @@ export default function Sponsors() {
             <div className="max-w-7xl mx-auto px-4 text-purple-700">
                 {/* ===== get in touch button ===== */}
                 <div className="max-w-full mx-auto text-center">
-                    <Link
-                        href="" /* where does this button link to? */
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Email"
                         className="block py-3 text-lg bg-purple-200 text-purple-700 hover:bg-purple-300 font-semibold rounded-xl shadow-lg transition duration-300 ease-in-out"
                     >
                         GET IN TOUCH
-                    </Link>
+                    </a>
                 </div>
 
                 {/* ===== information about sponsors ===== */}
