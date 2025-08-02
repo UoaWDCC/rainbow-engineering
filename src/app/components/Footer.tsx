@@ -72,7 +72,7 @@ export default function Footer() {
   const leftTail = (screenWidth - 68) * leftTailRatio;
 
   return (
-    <footer className="w-full overflow-hidden">
+    <footer className="w-full overflow-hidden fixed bottom-0 w-full z-50 ">
 
      <div className="flex mb-8">
         <svg
@@ -110,29 +110,65 @@ export default function Footer() {
 
 <div className="bg-[#d0b7f4] text-[#8955d2] text-center relative z-0">
 
-  <div className="grid font-['Montserrat'] font-bold text-[10px] lg:text-[12px] grid-cols-2 justify-items-center gap-y-1 lg:gap-x-120 max-w-3xl mx-auto">
+  <div className="grid font-['Montserrat'] font-bold text-[10px] lg:text-[12px] grid-cols-2 justify-items-center gap-y-1 lg:gap-x-120 mx-auto">
 
     <div className="flex mt-3 gap-x-1.5">
-        <img
-    src="/instagram.png"
-    alt="Instagram Logo"
-    className="w-10 object-contain"
-  />
+          <a
+            href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:text-purple-800 underline"
+          >
+              <img
+                src="/instagram.png"
+                alt="Instagram Logo"
+                className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+              />
+          </a>
+
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:text-purple-800 underline"
+          >
           <img
-    src="/mail.png"
-    alt="Mail Logo"
-    className="w-10 object-contain"
-  />
+            src="/mail.png"
+            alt="Mail Logo"
+            className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+          />
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/company/rainbowengineeringuoa/?originalSubdomain=nz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:text-purple-800 underline"
+          >
+            <img
+              src="/LinkedIn.png"
+              alt="LinkedIn Logo"
+              className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+            />
+          </a>
+
+
+
+          <a
+            href="https://www.facebook.com/rainbowengineering.uoa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:text-purple-800 underline"
+          >
           <img
-    src="/LinkedIn.png"
-    alt="LinkedIn Logo"
-    className="w-10 object-contain"
-  />
-          <img
-    src="/facebook.png"
-    alt="Facebook Logo"
-    className="w-10 object-contain"
-  />
+            src="/facebook.png"
+            alt="Facebook Logo"
+            className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+          />          
+          </a>  
+
 
     </div>
     <div className="mt-7">rainbowengineering.uoa@gmail.com</div>
