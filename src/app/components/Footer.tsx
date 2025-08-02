@@ -67,15 +67,18 @@ export default function Footer() {
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
+
+  const leftTailRatio = 0.14;
+  const leftTail = (screenWidth - 68) * leftTailRatio;
+
   return (
-    <footer className="relative w-full overflow-hidden">
+    <footer className="w-full overflow-hidden">
 
-    <div className="absolute top-[30%] w-1000 h-100 bg-[#d0b7f4] z-0"></div>
-
-     <div className="relative z-30 flex">
+     <div className="flex mb-8">
         <svg
           viewBox={`0 0 ${screenWidth} 120`}
           xmlns="http://www.w3.org/2000/svg"
+          className="absolute z-30"
           preserveAspectRatio="none"
           fill="none"
         >
@@ -84,10 +87,29 @@ export default function Footer() {
 
 </div>
 
+  <div className="relative w-full">
+    <svg
+      viewBox={`0 0 ${screenWidth} 120`}
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-full h-[80px]"
+      preserveAspectRatio="none"
+    >
+          <rect y="35" width={leftTail + 9} height="15" fill="#d0b7f4" />
+          <rect y="49" width={leftTail + 13} height="12" fill="#d0b7f4" />
+          <rect y="60" width={leftTail + 16} height="20" fill="#d0b7f4" />
+          <rect y="75" width={leftTail + 20} height="11" fill="#d0b7f4" />
+          <rect y="85" width={leftTail + 25} height="8" fill="#d0b7f4" />
+          <rect y="90" width={leftTail + 35} height="15" fill="#d0b7f4" />
+          <rect y="101" width={screenWidth} height="20" fill="#d0b7f4" />
+      
+    </svg>
+  </div>
+
+
+
 
 <div className="bg-[#d0b7f4] text-[#8955d2] text-center relative z-0">
-  <div>
-  </div>
+
   <div className="grid font-['Montserrat'] font-bold text-[10px] lg:text-[12px] grid-cols-2 justify-items-center gap-y-1 lg:gap-x-120 max-w-3xl mx-auto">
 
     <div className="flex mt-3 gap-x-1.5">
