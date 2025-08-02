@@ -48,7 +48,7 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
       {/* BODY: Description and logo */}
       {showDescription && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <div className={`flex-1 text-base md:text-lg pl-10 ${isGold? 'pr-8' : 'pr-10'}`}>{description}</div>
+          <div className="flex-1 text-base md:text-lg pl-10  pr-8">{description}</div>
           <span>
             <img
             src={sponsorLogo}
