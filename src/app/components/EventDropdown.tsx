@@ -7,32 +7,51 @@ interface EventDropdownProps {
   date: string
   description: string
   imageUrl: string
+  signupUrl: string
 }
 
-const EventDropdown: React.FC<EventDropdownProps> = ({ title, date, description, imageUrl }) => {
+const EventDropdown: React.FC<EventDropdownProps> = ({
+  title,
+  date,
+  description,
+  imageUrl,
+  signupUrl
+}) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-purple-200 border border-purple-300 rounded-xl p-4 my-2 text-purple-800">
+    <div className="bg-purple-200 rounded-xl p-4 my-2 text-purple-800">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center text-left"
+        className="w-full flex items-center justify-between text-left"
       >
-        <div>
+        <div className="flex items-center gap-2">
+          <span className={`text-xl transition-colors ${open ? 'text-purple-500' : ''}`}>
+            {open ? '▲' : '▼'}
+          </span>
           <h3 className="text-lg font-semibold">{title}</h3>
-          <p className="text-sm text-purple-700">{date}</p>
         </div>
-        <span className="text-xl">{open ? '▲' : '▼'}</span>
+        <p className="text-lg font-semibold">{date}</p>
       </button>
 
       {open && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <div className="flex-1 text-sm">{description}</div>
-          <img
-            src={imageUrl}
-            alt={title}
-            className="w-full md:w-40 h-auto rounded-lg object-cover"
-          />
+          <div className="md:basis-3/5 text-sm">{description}</div>
+          <div className="md:basis-2/5 flex flex-col gap-2">
+            <img
+              src={imageUrl}
+              alt={title}
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <a
+              href={signupUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-purple-100 hover:bg-purple-300 text-purple-800 font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+            >
+              Sign Up
+            </a>
+          </div>
         </div>
       )}
     </div>
