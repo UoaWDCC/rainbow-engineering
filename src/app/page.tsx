@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Banner from "./components/Banner";
 import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
