@@ -1,18 +1,18 @@
 "use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-    const pathname = usePathname();
+  const pathname = usePathname();
 
-    const links = [
-        { href: "/", label: "Home" },
-        { href: "/events", label: "Events" },
-        { href: "/initiatives", label: "Community & Initiatives" },
-        { href: "/sponsors", label: "Sponsorships" },
-        { href: "/signup", label: "Sign Up" },
-    ];
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/events", label: "Events" },
+    { href: "/initiatives", label: "Community & Initiatives" },
+    { href: "/sponsors", label: "Sponsorships" },
+    { href: "/signup", label: "Sign Up" },
+  ];
 
     return (
         <div>
@@ -25,5 +25,7 @@ export default function Navbar() {
                 </div>
             </nav>
         </div>
-    );
+      </nav>
+    </div>
+  );
 }
