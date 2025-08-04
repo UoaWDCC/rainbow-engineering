@@ -36,7 +36,7 @@ export default function Home() {
 
 
           {/* Links */}
-          <div className="flex space-x-0">
+          <div className="flex space-x-5">
             {/* Instagram */}
             <a
               href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -48,7 +48,7 @@ export default function Home() {
               <img
                 src="/instagram.png"
                 alt="Instagram Logo"
-                className="w-20 object-contain -mr-1"
+                className="w-20 object-contain"
               />
 
             </a>
@@ -63,7 +63,7 @@ export default function Home() {
               <img
                 src="/facebook.png"
                 alt="Facebook Logo"
-                className="w-20 object-contain -mr-1 translate-x-2"
+                className="w-20 object-contain"
               />
             </a>
 
@@ -78,7 +78,7 @@ export default function Home() {
               <img
                 src="/mail.png"
                 alt="Mail Logo"
-                className="w-28 object-contain -mt-4 -mr-1 -translate-x-0"
+                className="w-20 object-contain"
               />
 
             </a>
@@ -94,7 +94,7 @@ export default function Home() {
               <img
                 src="/LinkedIn.png"
                 alt="LinkedIn Logo"
-                className="w-26 object-contain -mt-3 -mr-1 -translate-x-5"
+                className="w-20 object-contain"
               />
 
             </a>
