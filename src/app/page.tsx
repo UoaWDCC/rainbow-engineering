@@ -19,7 +19,7 @@ export default function Home() {
 
           <Link
             href="/signup"
-            className="px-32 py-12 text-3xl bg-[#D0B7F4] text-[#8955D2] hover:bg-[#CAA9F8] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+            className="px-20 py-10 text-3xl bg-[#D0B7F4] text-[#8955D2] hover:bg-[#CAA9F8] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
           >
 
             SIGN UP

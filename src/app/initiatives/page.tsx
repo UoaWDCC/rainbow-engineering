@@ -1,9 +1,11 @@
 "use client";
 import ImageCard from "../components/ImageCard";
+import Banner from "../components/Banner";
 
 export default function Initiatives() {
   return (
     <>
+      <Banner />
       <div id="content" className="bg-F1EAFB">
         {/*================================HEADER================================*/}
         <div id="banner" className="p-12 relative">
