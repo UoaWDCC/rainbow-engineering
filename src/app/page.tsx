@@ -101,7 +101,7 @@ export default function Home() {
 
           </div>
           {/* Text */}
-          <div className="text-[#8955D2] text-3xl font-bold font-[Montserrat] text-md ">
+          <div className="hidden md:block text-[#8955D2] text-3xl font-bold font-[Montserrat]">
             Follow Our Socials
           </div>
         </div>
