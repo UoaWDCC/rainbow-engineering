@@ -8,10 +8,12 @@ body {
     margin: 0;
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    
 }
 
 header {
-    margin-bottom: 85px;
+    margin-bottom: 55px;
 }
 
 @theme inline {
@@ -35,7 +37,8 @@ header {
     height: 50px;
     width: 100%;
     align-items: center;
-    background-color: #d1b2da;
+    background-color: #ccb8f0;
+    z-index: 20; /*added so social media logos are behind navbar during scroll*/
 }
 
 .nav-links {
@@ -53,18 +56,19 @@ header {
     font-weight: bold;
     margin-top: 35px;
     height: 60px;
-    background-color: #d1b2da;
+    background-color: #ccb8f0;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 0rem 0.5rem;
 }
 
 .nav-links a.active {
-    background: white;
+    background: #F1EAFB;
     border-top-left-radius: 25px;
+
     border-top-right-radius: 25px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .nav-links a.inactive:hover {
@@ -78,18 +82,23 @@ header {
 
 
 .scrolling-gallery-wrapper{
-    width: 50%;
-    height: 10rem;
+    width: 100%;
+    margin: 0 auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .scrolling-gallery-wrapper .wrapper {
     display: flex;
+    width: max-content;
+    justify-content: center;
 }
 
 .scrolling-gallery-wrapper .wrapper .images {
     display: flex;
-    animation: swipe 5000ms linear infinite;
+    animation: swipe 10s steps(5) infinite; /*updated to hold on each image*/
+    margin-left: 0px;
     
 }
 
@@ -98,10 +107,12 @@ header {
 }
 
 .scroll-pictures {
-    max-width: 150px;
-    height: 10rem;
-    padding: 0 10px;
+    width: 280px; /*viewpoint width*/
+    max-width: 280px;
+    height: 18rem;
+    margin: 0 15px;
     object-fit: cover;
+    border-radius: 12px;
 }
 
 @keyframes swipe {
@@ -109,6 +120,6 @@ header {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-1550px);
     }
 }

@@ -19,7 +19,8 @@ export default function Navbar() {
             <nav className='navbar'>
                 <div className='nav-links'>
                     {links.map(({ href, label }) => (
-                            <Link key={href} href={href} className={`nav-links ${pathname === href ? 'active' : 'inactive'}`}>{label}</Link>
+                            <Link key={href} href={href} className={`nav-links font-[Montserrat] ${pathname === href ? 'active' : 'inactive'}`}>{label}</Link>
+
                     ))}
                 </div>
             </nav>
