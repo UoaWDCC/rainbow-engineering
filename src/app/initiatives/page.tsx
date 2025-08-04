@@ -4,27 +4,31 @@ import ImageCard from "../components/ImageCard";
 export default function Initiatives() {
   return (
     <>
-      {/*================================HEADER================================*/}
-      <div id="banner" className="bg-purple-200 p-12 relative -z-10">
-        <h1 className="text-4xl text-purple-900 font-bold font-[Montserrat] z-10">
-          Community & Initiatives
-        </h1>
-      </div>
-      <ImageCard
-        title="Rainbow Room"
-        content="A safe space to relax and study for queer students at UoA. It is located ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus lectus sit amet mi condimentum venenatis. Aliquam sed eros nec nibh euismod vestibulum. Maecenas eros purus, pellentesque a congue nec, aliquet in nibh. Nullam erat est, viverra sit amet lobortis sit amet, molestie elementum dolor. Nam scelerisque accumsan risus fringilla iaculis. Quisque vehicula facilisis ligula, non placerat purus ultricies ac. Morbi tempus metus vel ullamcorper tempor. Etiam vitae tincidunt sem. Etiam id odio sit amet nunc lacinia efficitur sit amet id leo. Curabitur condimentum lacus sed ipsum mollis dignissim. Cras vel malesuada elit. Nullam ut pulvinar elit. Quisque at rhoncus erat. Proin placerat imperdiet dictum. "
-        imageSrc="/about_us_temp.png"
-      />
-      <ImageCard
-        title="Sweat With Pride"
-        content="Body text for sweat with pride...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus lectus sit amet mi condimentum venenatis. Aliquam sed eros nec nibh euismod vestibulum. Maecenas eros purus, pellentesque a congue nec, aliquet in nibh. Nullam erat est, viverra sit amet lobortis sit amet, molestie elementum dolor. Nam scelerisque accumsan risus fringilla iaculis. Quisque vehicula facilisis ligula, non placerat purus ultricies ac. Morbi tempus metus vel ullamcorper tempor. Etiam vitae tincidunt sem. Etiam id odio sit amet nunc lacinia efficitur sit amet id leo. Curabitur condimentum lacus sed ipsum mollis dignissim. Cras vel malesuada elit. Nullam ut pulvinar elit. Quisque at rhoncus erat. Proin placerat imperdiet dictum. "
-        imageSrc="/sweatwithprideplaceholder.jpg"
-      />
-      <ImageCard
-        title="Sausage Sizzle"
-        content="The sausages? Sizzling. The money? Going to a good cause. Come to location on ...
+      <div id="content" className="bg-F1EAFB">
+        {/*================================HEADER================================*/}
+        <div id="banner" className="p-12 relative">
+          <h1 className="text-4xl text-purple-900 font-bold font-[Montserrat] z-10">
+            Community & Initiatives
+          </h1>
+        </div>
+        <ImageCard
+          title="Rainbow Room"
+          content="A safe space to relax and study for queer students at UoA. It is located ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus lectus sit amet mi condimentum venenatis. Aliquam sed eros nec nibh euismod vestibulum. Maecenas eros purus, pellentesque a congue nec, aliquet in nibh. Nullam erat est, viverra sit amet lobortis sit amet, molestie elementum dolor. Nam scelerisque accumsan risus fringilla iaculis. Quisque vehicula facilisis ligula, non placerat purus ultricies ac. Morbi tempus metus vel ullamcorper tempor. Etiam vitae tincidunt sem. Etiam id odio sit amet nunc lacinia efficitur sit amet id leo. Curabitur condimentum lacus sed ipsum mollis dignissim. Cras vel malesuada elit. Nullam ut pulvinar elit. Quisque at rhoncus erat. Proin placerat imperdiet dictum. "
+          imageSrc="/about_us_temp.png"
+        />
+        <ImageCard
+          title="Sweat With Pride"
+          content="Body text for sweat with pride...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus lectus sit amet mi condimentum venenatis. Aliquam sed eros nec nibh euismod vestibulum. Maecenas eros purus, pellentesque a congue nec, aliquet in nibh. Nullam erat est, viverra sit amet lobortis sit amet, molestie elementum dolor. Nam scelerisque accumsan risus fringilla iaculis. Quisque vehicula facilisis ligula, non placerat purus ultricies ac. Morbi tempus metus vel ullamcorper tempor. Etiam vitae tincidunt sem. Etiam id odio sit amet nunc lacinia efficitur sit amet id leo. Curabitur condimentum lacus sed ipsum mollis dignissim. Cras vel malesuada elit. Nullam ut pulvinar elit. Quisque at rhoncus erat. Proin placerat imperdiet dictum. "
+          imageSrc="/sweatwithprideplaceholder.jpg"
+          buttonText="Sign Up!"
+          buttonHref="https://www.sweatwithpride.com/register/swp/start"
+        />
+        <ImageCard
+          title="Sausage Sizzle"
+          content="The sausages? Sizzling. The money? Going to a good cause. Come to location on ...
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus lectus sit amet mi condimentum venenatis. Aliquam sed eros nec nibh euismod vestibulum. Maecenas eros purus, pellentesque a congue nec, aliquet in nibh. Nullam erat est, viverra sit amet lobortis sit amet, molestie elementum dolor. Nam scelerisque accumsan risus fringilla iaculis. Quisque vehicula facilisis ligula, non placerat purus ultricies ac. Morbi tempus metus vel ullamcorper tempor. Etiam vitae tincidunt sem. Etiam id odio sit amet nunc lacinia efficitur sit amet id leo. Curabitur condimentum lacus sed ipsum mollis dignissim. Cras vel malesuada elit. Nullam ut pulvinar elit. Quisque at rhoncus erat. Proin placerat imperdiet dictum. "
-      />
+        />
+      </div>
       {
         // {/*================================RAINBOW ROOM================================*/}
         // <div>
