@@ -4,14 +4,14 @@
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    margin-bottom: 85px;
+  margin-bottom: 85px;
 }
 
 @theme inline {
@@ -28,47 +28,50 @@ header {
   }
 }
 
+/* FIXME! move this to tailwind */
+/* maybe after we redo the navbar though... */
 .navbar {
-    display: flex;
-    position: fixed;
-    top: 0;
-    height: 50px;
-    width: 100%;
-    align-items: center;
-    background-color: #d1b2da;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  background-color: #d1b2da;
 }
 
 .nav-links {
-    display: flex;
-    width: 100%;
-    text-align: center;
+  display: flex;
+  width: 100%;
+  text-align: center;
 }
 
 .nav-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #7915d7;
-    font-weight: bold;
-    margin-top: 35px;
-    height: 60px;
-    background-color: #d1b2da;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 0rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #7915d7;
+  font-weight: bold;
+  margin-top: 35px;
+  height: 60px;
+  background-color: #d1b2da;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 0rem 0.5rem;
 }
 
 .nav-links a.active {
-    background: white;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+  background: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .nav-links a.inactive:hover {
-    transform: translateY(10px);
+  transform: translateY(10px);
 }
 @import "tailwindcss";
 
@@ -76,39 +79,37 @@ header {
 @tailwind components;
 @tailwind utilities;
 
-
-.scrolling-gallery-wrapper{
-    width: 50%;
-    height: 10rem;
-    overflow: hidden;
+.scrolling-gallery-wrapper {
+  width: 50%;
+  height: 10rem;
+  overflow: hidden;
 }
 
 .scrolling-gallery-wrapper .wrapper {
-    display: flex;
+  display: flex;
 }
 
 .scrolling-gallery-wrapper .wrapper .images {
-    display: flex;
-    animation: swipe 5000ms linear infinite;
-    
+  display: flex;
+  animation: swipe 5000ms linear infinite;
 }
 
 .scrolling-gallery-wrapper:hover .wrapper .images {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .scroll-pictures {
-    max-width: 150px;
-    height: 10rem;
-    padding: 0 10px;
-    object-fit: cover;
+  max-width: 150px;
+  height: 10rem;
+  padding: 0 10px;
+  object-fit: cover;
 }
 
 @keyframes swipe {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
