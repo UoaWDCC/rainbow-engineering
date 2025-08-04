@@ -97,8 +97,7 @@ header {
 
 .scrolling-gallery-wrapper .wrapper .images {
     display: flex;
-    animation: swipe 10s steps(5) infinite; /*updated to hold on each image*/
-    margin-left: 0px;
+    animation: swipe 8s linear infinite;
     
 }
 
@@ -120,6 +119,6 @@ header {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-1550px);
+        transform: translateX(-25%);
     }
 }
