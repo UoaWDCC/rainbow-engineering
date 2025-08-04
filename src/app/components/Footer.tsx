@@ -72,7 +72,7 @@ export default function Footer() {
   const leftTail = (screenWidth - 68) * leftTailRatio;
 
   return (
-    <footer className="w-full overflow-hidden fixed bottom-0 w-full z-50 ">
+    <footer className="w-full ">
 
      <div className="flex mb-8">
         <svg
