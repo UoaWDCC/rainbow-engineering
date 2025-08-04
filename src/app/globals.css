@@ -63,11 +63,11 @@ header {
 }
 
 .nav-links a.active {
-  background: white;
+  background: #f1eafb;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .nav-links a.inactive:hover {
