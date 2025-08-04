@@ -1,82 +1,181 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+function createFooterSVG(
+  screenWidth: number,
+  svgId: string,
+  hasAnimated: boolean,
+  leftTailRatio?: number,
+) {
+  if (!leftTailRatio) {
+    leftTailRatio = 0.14;
+  }
+  const rightTailRatio = 1 - leftTailRatio;
+
+  const leftTail = (screenWidth - 68) * leftTailRatio;
+  const rightTail = (screenWidth - 68) * rightTailRatio;
+
+  return (
+    <>
+      <path
+        id="path1-2"
+        d={`m 0,23.78 h${leftTail}a 35,35 0 0 1 33.81,25.94 35,35 0 0 0 33.81,25.94 h${rightTail}`}
+        stroke="#FFF677"
+        strokeWidth="9"
+      />
+      <path
+        id="path2"
+        d={`m 0,13.78 h${leftTail}a 45,45 0 0 1 43.47,33.35 25,25 0 0 0 24.15,18.53 h${rightTail}`}
+        strokeWidth="9"
+        stroke="#FFB050"
+      />
+      <path
+        id="path4"
+        d={`m 0,3.78 h${leftTail}a 55,55 0 0 1 53.13,40.76 15,15 0 0 0 14.49,11.12 h${rightTail}`}
+        stroke="#F45757"
+        strokeWidth="9"
+      />
+      <path
+        id="path2-7"
+        d={`m 0,33.78 h${leftTail}a 25,25 0 0 1 24.15,18.53 45,45 0 0 0 43.47,33.35 h${rightTail}`}
+        stroke="#68BC8E"
+        strokeWidth="9"
+      />
+      <path
+        id="path4-0"
+        d={`m 0,43.78 h${leftTail}a 15,15 0 0 1 14.49,11.12 55,55 0 0 0 53.13,40.76 h${rightTail}`}
+        stroke="#628BEC"
+        strokeWidth="9"
+      />
+      <path
+        id="path6"
+        d={`m 0,53.78 h${leftTail}a 5,5 0 0 1 4.83,3.71 65,65 0 0 0 62.79,48.18 h${rightTail}`}
+        stroke="#AF4FC0"
+        strokeWidth="9"
+      />
+    </>
+  );
+}
 
 export default function Footer() {
+    const [screenWidth, setScreenWidth] = useState(500);
+
+  useEffect(() => {
+    const updateWidth = () => setScreenWidth(window.innerWidth);
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  const leftTailRatio = 0.14;
+  const leftTail = (screenWidth - 68) * leftTailRatio;
+
   return (
-    <footer className="relative w-full overflow-hidden">
+    <footer className="w-full ">
 
-<div className="absolute top-[30%] w-35 h-100 bg-[#d0b7f4] z-0"></div>
-     <div className="absolute top-[35%] w-36 h-100 bg-[#d0b7f4] z-0"></div>
-     <div className="absolute top-[39%] w-37 h-100 bg-[#d0b7f4] z-0"></div>
-     <div className="absolute top-[46%] w-38 h-100 bg-[#d0b7f4] z-0"></div>
-     <div className="absolute top-[53%] w-40 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[56%] w-41 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[60%] w-43 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[65%] w-47 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[68%] w-54 h-100 bg-[#d0b7f4] z-0"></div>
-    <div className="absolute top-[69%] w-500 h-100 bg-[#d0b7f4] z-0"></div>
+     <div className="flex mb-8">
+        <svg
+          viewBox={`0 0 ${screenWidth} 120`}
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute z-30"
+          preserveAspectRatio="none"
+          fill="none"
+        >
+          {createFooterSVG(screenWidth, "footer-path", false)}
+        </svg>
 
+</div>
 
-     <div className="relative z-30 flex">
-  <img
-    src="/rainbow_head.png"
-    alt="Rainbow Footer Banner"
-    className="relative w-56 object-contain -mb-[6px]"
-  />
-
-
-
-  <div className="mt-19.5 -ml-[1px] w-full">
+  <div className="relative w-full">
     <svg
-      viewBox="0 0 500 80"
+      viewBox={`0 0 ${screenWidth} 120`}
       xmlns="http://www.w3.org/2000/svg"
       className="w-full h-[80px]"
       preserveAspectRatio="none"
     >
-      <rect y="9.7" width="500" height="10.4" fill="#f35354" />
-      <rect y="22.2" width="500" height="10.1" fill="#fcb353" />
-      <rect y="34.1" width="500" height="10" fill="#fcf474" />
-      <rect y="45.7" width="500" height="9.8" fill="#6bbc8c" />
-      <rect y="57.5" width="500" height="9.9" fill="#638cec" />
-      <rect y="69.4" width="500" height="9.8" fill="#ac4cc4" />
+          <rect y="35" width={leftTail + 9} height="15" fill="#d0b7f4" />
+          <rect y="49" width={leftTail + 13} height="12" fill="#d0b7f4" />
+          <rect y="60" width={leftTail + 16} height="20" fill="#d0b7f4" />
+          <rect y="75" width={leftTail + 20} height="11" fill="#d0b7f4" />
+          <rect y="85" width={leftTail + 25} height="8" fill="#d0b7f4" />
+          <rect y="90" width={leftTail + 35} height="15" fill="#d0b7f4" />
+          <rect y="101" width={screenWidth} height="20" fill="#d0b7f4" />
+      
     </svg>
   </div>
 
-</div>
+
 
 
 <div className="bg-[#d0b7f4] text-[#8955d2] text-center relative z-0">
-  <div>
-  </div>
-  <div className="grid font-['Montserrat'] font-bold text-[9px] lg:text-[12px] grid-cols-2 justify-items-center gap-y-1 lg:gap-x-120 max-w-3xl mx-auto">
 
-    <div className="flex pr-20 -space-x-3">
-        <img
-    src="/instagram.png"
-    alt="Instagram Logo"
-    className="w-12 object-contain"
-  />
+  <div className="grid font-['Montserrat'] font-bold text-[10px] lg:text-[12px] grid-cols-2 justify-items-center gap-y-1 lg:gap-x-120 mx-auto">
+
+    <div className="flex mt-3 gap-x-1.5">
+          <a
+            href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:text-purple-800 underline"
+          >
+              <img
+                src="/instagram.png"
+                alt="Instagram Logo"
+                className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+              />
+          </a>
+
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:text-purple-800 underline"
+          >
           <img
-    src="/mail.png"
-    alt="Mail Logo"
-    className="w-16.5 object-contain"
-  />
+            src="/mail.png"
+            alt="Mail Logo"
+            className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+          />
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/company/rainbowengineeringuoa/?originalSubdomain=nz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:text-purple-800 underline"
+          >
+            <img
+              src="/LinkedIn.png"
+              alt="LinkedIn Logo"
+              className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+            />
+          </a>
+
+
+
+          <a
+            href="https://www.facebook.com/rainbowengineering.uoa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:text-purple-800 underline"
+          >
           <img
-    src="/LinkedIn.png"
-    alt="LinkedIn Logo"
-    className="w-15.5 object-contain -ml-2"
-  />
-          <img
-    src="/facebook.png"
-    alt="Facebook Logo"
-    className="w-11.5 object-contain"
-  />
+            src="/facebook.png"
+            alt="Facebook Logo"
+            className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+          />          
+          </a>  
+
 
     </div>
     <div className="mt-7">rainbowengineering.uoa@gmail.com</div>
+    <div className="mt-5"></div>
   </div>
 </div>
 
     </footer>
   );
 }
-
