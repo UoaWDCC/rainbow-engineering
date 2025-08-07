@@ -1,0 +1,46 @@
+name: Check Next.js Build
+
+on:
+  # run on push to every branch
+  push:
+    branches:
+      - "*"
+
+  # run on pull request events
+  pull_request:
+    types: [opened, reopened]
+  # allow manual triggers
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # set-up node
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      # cache dependencies
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # install dependencies using npm
+      - name: Install dependencies
+        run: npm ci
+
+      # build the application
+      - name: Build Next.js project
+        run: npm run build
