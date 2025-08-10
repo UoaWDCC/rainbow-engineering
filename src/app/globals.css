@@ -41,13 +41,13 @@ header {
     z-index: 20; /*added so social media logos are behind navbar during scroll*/
 }
 
-.nav-links {
+.nav-links-desktop {
     display: flex;
     width: 100%;
     text-align: center;
 }
 
-.nav-links a {
+.nav-links-desktop a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,13 +56,14 @@ header {
     font-weight: bold;
     margin-top: 35px;
     height: 60px;
+    width: 100%;
     background-color: #ccb8f0;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 0rem 0.5rem;
 }
 
-.nav-links a.active {
+.nav-links-desktop a.active {
     background: #F1EAFB;
     border-top-left-radius: 25px;
 
@@ -71,9 +72,86 @@ header {
     border-bottom-right-radius: 25px;
 }
 
-.nav-links a.inactive:hover {
+.nav-links-desktop a.inactive:hover {
     transform: translateY(10px);
 }
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 4px 0;
+    background: #7915d7;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger.is-open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.28s ease;
+    background: #ccb8f0;
+}
+
+.mobile-menu.open {
+    max-height: 400px;
+}
+
+@media (max-width: 640px) {
+    .nav-links-desktop { 
+        display: none; 
+    }
+    .hamburger {
+        display: inline-flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+    }
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50px;
+        z-index: 20;
+    }
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .mobile-menu li {
+        border-bottom: 1px solid #7915d7;
+    }
+    .mobile-menu a {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        text-decoration: none;
+        color: #7915d7;
+    }
+}
+
 @import "tailwindcss";
 
 @tailwind base;
