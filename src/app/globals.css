@@ -39,6 +39,12 @@ header {
     align-items: center;
     background-color: #ccb8f0;
     z-index: 20; /*added so social media logos are behind navbar during scroll*/
+    transition: transform 0.3s ease;
+}
+
+.navbar.hidden {
+    transform: translateY(-150%);
+
 }
 
 .nav-links-desktop {
