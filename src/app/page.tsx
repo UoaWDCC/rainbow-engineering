@@ -4,6 +4,7 @@ import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
 import { Icon } from '@iconify/react';
 import { images } from "./data";
+import ExecCard from "./components/ExecCard"
 
 export default function Home() {
   return (
@@ -147,94 +148,50 @@ export default function Home() {
 
         {/*================================MEET THE EXECS================================*/}
         <h2 className="mt-22 text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-6">Meet the Exec Team!</h2>
-        <div className="grid grid-cols-3 gap-10"> {/* div for meet the execs */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> {/* div for meet the execs */}
 
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
-
-
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
-
-
-
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
-
-
-
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
-
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
-
-
-
-          
         </div>
 
         {/*================================SCROLLING GALLERY================================*/}
