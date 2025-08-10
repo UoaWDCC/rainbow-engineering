@@ -110,9 +110,9 @@ export default function Footer() {
 
 <div className="bg-[#d0b7f4] text-[#8955d2] text-center relative z-0">
 
-  <div className="grid font-['Montserrat'] font-bold text-[10px] lg:text-[12px] grid-cols-2 justify-items-center gap-y-1 lg:gap-x-120 mx-auto">
+  <div className="grid font-['Montserrat'] font-bold text-[11px] sm:text-[12px] grid-cols-1 sm:grid-cols-2 sm:justify-items-center sm:gap-y-1 lg:gap-x-120 mx-auto">
 
-    <div className="flex mt-3 gap-x-1.5">
+    <div className="flex mt-3 ml-5 gap-x-2">
           <a
             href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
@@ -168,10 +168,12 @@ export default function Footer() {
             className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
           />          
           </a>  
+          
 
 
     </div>
-    <div className="mt-7">rainbowengineering.uoa@gmail.com</div>
+        <div className="mt-3 sm:mt-8 mr-5 text-right">rainbowengineering.uoa@gmail.com</div>
+
     <div className="mt-5"></div>
   </div>
 </div>
