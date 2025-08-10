@@ -147,8 +147,8 @@ export default function Home() {
 
 
         {/*================================MEET THE EXECS================================*/}
-        <h2 className="mt-22 text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-6">Meet the Exec Team!</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> {/* div for meet the execs */}
+        <h2 className="mt-22 text-3xl md:text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-6">Meet the Exec Team!</h2>
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-10"> {/* div for meet the execs */}
 
           <ExecCard
             name="Abhijot Malhi"
@@ -161,21 +161,21 @@ export default function Home() {
             name="Abhijot Malhi"
             role="Tech Lead"
             imageSrc="/exec_placeholder_image.png"
-            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+            description="Abhijot leads technical"
           />
 
           <ExecCard
             name="Abhijot Malhi"
             role="Tech Lead"
             imageSrc="/exec_placeholder_image.png"
-            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+            description="Abhijot leads technical projects with a passion "
           />
 
           <ExecCard
             name="Abhijot Malhi"
             role="Tech Lead"
             imageSrc="/exec_placeholder_image.png"
-            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+            description="Abhijot leads technical projects with a passion for scalable solutions"
           />
 
           <ExecCard
