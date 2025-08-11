@@ -62,7 +62,7 @@ export default function SignUp() {
     <div className="font-['Montserrat'] text-[30px] text-[#8955d2] font-bold flex justify-center lg:mr-120 mr-30">SIGN   UP  HERE:</div>
 
           <div className="bg-fixed md:px-20 px-5 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('aurora.jpg')" }}>
+          >
                <div className="w-full pb-10 px-5">
                <div className=" justify-center flex px-5 ">
                <iframe src="https://forms.gle/NtwS56BHigqcCr5cA" 
