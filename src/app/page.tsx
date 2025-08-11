@@ -2,8 +2,8 @@
 import Banner from "./components/Banner";
 import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
-import { Icon } from '@iconify/react';
 import { images } from "./data";
+import ExecCard from "./components/ExecCard"
 
 export default function Home() {
   return (
@@ -114,31 +114,30 @@ export default function Home() {
       
         
         {/*================================ABOUT US SECTION================================*/}
-        {/*need to edit, improving width of bg */}
-        <div className="mt-22 w-full bg-[#E2D6F6] py-2 px-16 rounded-2xl">
+        <div className="mt-22 w-full bg-[#E2D6F6] py-6 px-4 sm:px-16 rounded-2xl">
 
 
           {/* background coloured block */}
 
 
-          <h2 className="text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-6">About us!</h2>
-          <div className="flex items-center gap-8 mb-8">
+          <h2 className="text-3xl sm:text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-4 sm:p-6">About us!</h2>
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mb-8">
 
             {/* code for about us image */}
-            <div className="flex flex-col items-center text-center rounded">
+            <div className="flex flex-col items-center text-center rounded w-full sm:w-500">
               <img
               src="/about_us_temp.png"
               alt="About Us"
-              className="w-500 h-120 rounded-t"
-            />
+              className="w-full max-w-md h-auto rounded-t"
+             />
             </div>
+
             {/* code for about us text */}
-            <div className="flex flex-col justify-center items-center text-center w-500 h-120 p-4 rounded">
-            <h2 className="text-4xl text-[#8955D2] font-bold font-[Montserrat] mb-4">About Us</h2>
-            <p className="text-lg font-[Montserrat] text-slate-700 p=7">
-              Rainbow Engineering is a vibrant community of tech enthusiasts dedicated to fostering innovation and collaboration. Our mission is to create an inclusive environment where everyone can learn, grow, and contribute to exciting projects.
-            </p>
+            <div className="flex flex-col justify-center items-center text-center w-full sm:w-500 p-4 rounded">
+              <p className="text-base sm:text-lg font-[Montserrat] text-slate-700 px-2 sm:px-7">Rainbow Engineering is a vibrant community of tech enthusiasts dedicated to fostering innovation and collaboration. Our mission is to create an inclusive environment where everyone can learn, grow, and contribute to exciting projects.
+              </p>
             </div>
+
           </div>
         </div>
         
@@ -146,95 +145,51 @@ export default function Home() {
 
 
         {/*================================MEET THE EXECS================================*/}
-        <h2 className="mt-22 text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-6">Meet the Exec Team!</h2>
-        <div className="grid grid-cols-3 gap-10"> {/* div for meet the execs */}
+        <h2 className="mt-22 text-3xl md:text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-6">Meet the Exec Team!</h2>
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-10"> {/* div for meet the execs */}
 
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical"
+          />
 
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion "
+          />
 
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions"
+          />
 
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
+          <ExecCard
+            name="Abhijot Malhi"
+            role="Tech Lead"
+            imageSrc="/exec_placeholder_image.png"
+            description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+          />
 
-
-
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
-
-
-
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
-
-
-
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
-
-          <div className="flex flex-col items-center text-center bg-[#E2D6F6] p-16 rounded-2xl">
-
-            <img
-              src="/exec_placeholder_image.png"
-              alt="Exec Name"
-              className="w-40 h-40 mb-2"
-            />
-            <h3 className="font-semibold font-[Montserrat]">Abhijot Malhi</h3>
-            <p className="text-sm text-black-600 font-semibold font-[Montserrat] mb-1">Tech Lead</p>
-            <br></br>
-            <p className="text-sm text-slate-700 font-[Montserrat]">Abhijot leads technical projects with a passion for scalable solutions and mentoring developers.</p>
-          </div>
-
-
-
-          
         </div>
 
         {/*================================SCROLLING GALLERY================================*/}
