@@ -53,14 +53,14 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
       {/* BODY: Description and logo */}
       {showDescription && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <div className="flex-1 text-base md:text-lg pl-10  pr-8">{description}</div>
+          <div className="flex-1 text-base md:text-lg">{description}</div>
           <span>
             <div className='relative h-40 w-40'>
               <Image
                 src={sponsorLogo}
                 alt={`${sponsorName} logo`}
                 fill
-                className="pr-8 pb-3"
+                className=""
               />
             </div>
             
