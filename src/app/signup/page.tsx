@@ -1,4 +1,5 @@
 import Banner from "../components/Banner"
+import Image from 'next/image'
 
 export default function SignUp() {
     return (
@@ -8,52 +9,74 @@ export default function SignUp() {
     
 <div className="grid grid-cols-2 gap-4 justify-items-center mx-auto max-w-50 lg:max-w-100  lg:mt-10 mb-20">
   <div className="flex flex-col items-center">
-
-          <a
-            href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-            <img src="/instagram.png" alt="Instagram Logo" className="w-[50px] object-contain transition-transform duration-200 ease-in-out hover:rotate-10" />
-          </a>
+    <a
+      href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-purple-600 hover:text-purple-800 underline"
+    >
+      <Image 
+        src="/instagram.png"
+        alt="Instagram Logo"
+        width={"50"}
+        height={"50"}
+        className="object-contain transition-transform duration-200 ease-in-out hover:rotate-10"
+      />
+    </a>
     <span className="font-['Montserrat'] text-[#8955d2] font-bold text-s">Instagram</span>
-
   </div>
 
   <div className="flex flex-col items-center">
-          <a
-            href="https://www.facebook.com/rainbowengineering.uoa"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-            <img src="/facebook.png" alt="Facebook Logo" className="w-[50px] object-contain transition-transform duration-200 ease-in-out hover:rotate-10" />
-          </a>
+    <a
+      href="https://www.facebook.com/rainbowengineering.uoa"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-purple-600 hover:text-purple-800 underline"
+    >
+      <Image
+        src="/facebook.png"
+        alt="Facebook Logo"
+        width={"50"}
+        height={"50"}
+        className="object-contain transition-transform duration-200 ease-in-out hover:rotate-10"
+      />
+    </a>
     <span className="font-['Montserrat'] text-[#8955d2] font-bold text-s">Facebook</span>
   </div>
 
   <div className="flex flex-col items-center">
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-              <img src="/mail.png" alt="Mail Logo" className="w-[50px] object-contain  transition-transform duration-200 ease-in-out hover:rotate-10" />
-          </a>
+    <a
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-purple-600 hover:text-purple-800 underline"
+    >
+      <Image
+        src="/mail.png"
+        alt="Mail Logo"
+        width={"50"}
+        height={"50"}
+        className="object-contain transition-transform duration-200 ease-in-out hover:rotate-10"
+      />
+    </a>
     <span className="font-['Montserrat'] text-[#8955d2] font-bold text-s">Email</span>
   </div>
 
   <div className="flex flex-col items-center">
-          <a
-            href="https://www.linkedin.com/company/rainbowengineeringuoa/?originalSubdomain=nz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-              <img src="/LinkedIn.png" alt="LinkedIn Logo" className="w-[50px] object-contain transition-transform duration-200 ease-in-out hover:rotate-10" />
-          </a>
+    <a
+      href="https://www.linkedin.com/company/rainbowengineeringuoa/?originalSubdomain=nz"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-purple-600 hover:text-purple-800 underline"
+    >
+      <Image
+        src="/LinkedIn.png"
+        alt="LinkedIn Logo"
+        width={"50"}
+        height={"50"}
+        className="object-contain transition-transform duration-200 ease-in-out hover:rotate-10"
+      />
+    </a>
     <span className="font-['Montserrat'] text-[#8955d2] font-bold text-s">LinkedIn</span>
   </div>
 

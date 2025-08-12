@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image'
 
 interface ScrollingGalleryProps {
   images: {
@@ -14,14 +15,26 @@ export default function ScrollingGallery( { images }: ScrollingGalleryProps) {
             <div className="images">
                 {images.map(({src, name}, idx) => (
                     <div className="pictures" key={src + '-' + idx}>
-                        <img className="scroll-pictures" src={src} alt={name} />
+                        <Image
+                          src={src}
+                          alt={name}
+                          width={280}
+                          height={288}
+                          className="scroll-pictures"
+                        />
                     </div>
                 ))}
             </div>
             <div className="images">
                 {images.map(({src, name}, idx) => (
                     <div className="pictures" key={src + '-dup-' + idx}>
-                        <img className="scroll-pictures" src={src} alt={name} />
+                        <Image
+                          src={src}
+                          alt={name}
+                          width={280}
+                          height={288}
+                          className="scroll-pictures"
+                        />
                     </div>
                 ))}
             </div>
