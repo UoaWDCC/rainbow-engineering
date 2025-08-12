@@ -15,17 +15,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BannerAnimation;
-var react_1 = require("react");
-var vivus_1 = require("vivus");
-var ScreenSize_1 = require("../hooks/ScreenSize");
+import { useRef, useEffect } from 'react';
+import Vivus from 'vivus';
+import { ScreenSize } from '../hooks/ScreenSize';
 function BannerAnimation() {
-    var vivusRef = (0, react_1.useRef)(null);
-    var svgContainerRef = (0, react_1.useRef)(null);
-    var hasAnimated = (0, react_1.useRef)(false);
+    var vivusRef = (0, useRef)(null);
+    var svgContainerRef = (0, useRef)(null);
+    var hasAnimated = (0, useRef)(false);
     var svgId = "my-svg";
-    var screenWidth = (0, ScreenSize_1.ScreenSize)();
+    var screenWidth = (0, ScreenSize)();
     // Initialize animation only once when component mounts and screen width is available
-    (0, react_1.useEffect)(function () {
+    (0, useEffect)(function () {
         if (screenWidth === 0 || hasAnimated.current)
             return;
         // Small delay to ensure DOM is ready, again this feels a little hacky but seems to work well
@@ -34,11 +34,11 @@ function BannerAnimation() {
         var timer = setTimeout(function () {
             var svgElement = document.getElementById(svgId);
             if (svgElement && !hasAnimated.current) {
-                vivusRef.current = new vivus_1.default(svgId, {
+                vivusRef.current = new Vivus(svgId, {
                     type: "delayed",
                     duration: 250, // supposed to be in frames (60fps) but I don't think it is...
-                    animTimingFunction: vivus_1.default.LINEAR,
-                    pathTimingFunction: vivus_1.default.EASE_OUT,
+                    animTimingFunction: Vivus.LINEAR,
+                    pathTimingFunction: Vivus.EASE_OUT,
                     start: "manual", // Don't start automatically
                 }, function () {
                     // Callback - force all paths to be fully visible mitigates resizing issues
@@ -66,7 +66,7 @@ function BannerAnimation() {
         };
     }, [screenWidth]);
     // Cleanup on unmount
-    (0, react_1.useEffect)(function () {
+    (0, useEffect)(function () {
         return function () {
             if (vivusRef.current) {
                 vivusRef.current.destroy();

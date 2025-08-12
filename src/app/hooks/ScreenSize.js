@@ -5,10 +5,11 @@
 // Blame robin for the bad naming here <3
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScreenSize = void 0;
-var react_1 = require("react");
+import { useState, useEffect } from 'react';
+
 var ScreenSize = function () {
-    var _a = (0, react_1.useState)(0), width = _a[0], setWidth = _a[1];
-    (0, react_1.useEffect)(function () {
+    var _a = (0, useState)(0), width = _a[0], setWidth = _a[1];
+    (0, useEffect)(function () {
         var updateWidth = function () { return setWidth(window.innerWidth); };
         updateWidth();
         window.addEventListener("resize", updateWidth);

@@ -4,6 +4,7 @@ import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
 import { images } from "./data";
 import ExecCard from "./components/ExecCard"
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
 
 
         {/* Socials Bar */}
-        <div className="relative z-10 mt-28 w-full bg-[#E2D6F6] py-16 px-12 flex justify-center items-center max-w-full space-x-12">
+        <div className="relative z-10 mt-28 w-full bg-[#E2D6F6] py-16 px-12 flex justify-center items-center max-w-full md:space-x-12">
 
 
 
@@ -45,11 +46,15 @@ export default function Home() {
               aria-label="Instagram"
               className="text-4xl"
             >
-              <img
-                src="/instagram.png"
-                alt="Instagram Logo"
-                className="w-20 object-contain"
-              />
+              <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                <Image
+                  src="/instagram.png"
+                  alt="Instagram Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              
 
             </a>
             {/* Facebook */}
@@ -60,11 +65,14 @@ export default function Home() {
               aria-label="Facebook"
               className="text-4xl"
             >
-              <img
-                src="/facebook.png"
-                alt="Facebook Logo"
-                className="w-20 object-contain"
-              />
+               <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                <Image
+                  src="/facebook.png"
+                  alt="Facebook Logo"
+                  fill
+                  className="object-contain"
+                 />
+                </div>
             </a>
 
             {/* Email */}
@@ -75,11 +83,14 @@ export default function Home() {
               aria-label="Email"
               className="text-4xl"
             >
-              <img
-                src="/mail.png"
-                alt="Mail Logo"
-                className="w-20 object-contain"
-              />
+              <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                <Image
+                  src="/mail.png"
+                  alt="Mail Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
             </a>
 
@@ -91,11 +102,14 @@ export default function Home() {
               aria-label="LinkedIn"
               className="text-4xl"
             >
-              <img
-                src="/LinkedIn.png"
-                alt="LinkedIn Logo"
-                className="w-20 object-contain"
-              />
+              <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                <Image
+                  src="/LinkedIn.png"
+                  alt="LinkedIn Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
             </a>
 
@@ -124,12 +138,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mb-8">
 
             {/* code for about us image */}
-            <div className="flex flex-col items-center text-center rounded w-full sm:w-500">
-              <img
-              src="/about_us_temp.png"
-              alt="About Us"
-              className="w-full max-w-md h-auto rounded-t"
-             />
+            <div className="relative flex flex-col items-center text-center rounded w-full sm:w-[1200px] h-[400px]">
+              <Image
+                src="/about_us_temp.png"
+                alt="About Us"
+                fill
+                className="rounded-t object-contain"
+              />
             </div>
 
             {/* code for about us text */}

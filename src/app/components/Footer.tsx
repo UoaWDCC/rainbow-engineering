@@ -109,70 +109,73 @@ export default function Footer() {
 
 
 <div className="bg-[#d0b7f4] text-[#8955d2] text-center relative z-0">
-
   <div className="grid font-['Montserrat'] font-bold text-[11px] sm:text-[12px] grid-cols-1 sm:grid-cols-2 sm:justify-items-center sm:gap-y-1 lg:gap-x-120 mx-auto">
-
+    
     <div className="flex mt-3 ml-5 gap-x-2">
-          <a
-            href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-              <img
-                src="/instagram.png"
-                alt="Instagram Logo"
-                className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
-              />
-          </a>
+      <a
+        href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-purple-600 hover:text-purple-800 underline"
+      >
+        <Image
+          src="/instagram.png"
+          alt="Instagram Logo"
+          width={40}
+          height={40}
+          className="object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+        />
+      </a>
 
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-purple-600 hover:text-purple-800 underline"
+      >
+        <Image
+          src="/mail.png"
+          alt="Mail Logo"
+          width={40}
+          height={40}
+          className="object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+        />
+      </a>
 
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-          <img
-            src="/mail.png"
-            alt="Mail Logo"
-            className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
-          />
-          </a>
+      <a
+        href="https://www.linkedin.com/company/rainbowengineeringuoa/?originalSubdomain=nz"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-purple-600 hover:text-purple-800 underline"
+      >
+        <Image
+          src="/LinkedIn.png"
+          alt="LinkedIn Logo"
+          width={40}
+          height={40}
+          className="object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+        />
+      </a>
 
-
-          <a
-            href="https://www.linkedin.com/company/rainbowengineeringuoa/?originalSubdomain=nz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-            <img
-              src="/LinkedIn.png"
-              alt="LinkedIn Logo"
-              className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
-            />
-          </a>
-
-
-
-          <a
-            href="https://www.facebook.com/rainbowengineering.uoa"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 underline"
-          >
-          <img
-            src="/facebook.png"
-            alt="Facebook Logo"
-            className="w-10 object-contain transition-transform duration-300 ease-in-out hover:scale-107"
-          />          
-          </a>  
-          
-
-
+      <a
+        href="https://www.facebook.com/rainbowengineering.uoa"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-purple-600 hover:text-purple-800 underline"
+      >
+        <Image
+          src="/facebook.png"
+          alt="Facebook Logo"
+          width={40}
+          height={40}
+          className="object-contain transition-transform duration-300 ease-in-out hover:scale-107"
+        />
+      </a>
     </div>
-        <div className="mt-3 sm:mt-8 mr-5 text-right">rainbowengineering.uoa@gmail.com</div>
+
+    <div className="mt-3 sm:mt-8 mr-5 text-right">
+      rainbowengineering.uoa@gmail.com
+    </div>
 
     <div className="mt-5"></div>
   </div>

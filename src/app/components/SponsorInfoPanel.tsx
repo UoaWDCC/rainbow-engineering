@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image'
 
 // Adjustable sponsor info section design by sponsor tier:
 // Gold tier = content fully visible with large logo on the right of the description
@@ -39,22 +40,30 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
           </span>
           <span className="text-purple-800">{sponsorName}</span>
         </div>
-        <img
-          src={sponsorLogo}
-          alt={`${sponsorName} logo`}
-          className={`h-10 w-auto ml-auto pl-3 ${isGold || open ? 'opacity-0': 'opacity-100'}`}
-        />
+        <div className="relative h-10 w-10 ml-auto pl-3">
+          <Image
+            src={sponsorLogo}
+            alt={`${sponsorName} logo`}
+            fill
+            className={`${isGold || open ? 'opacity-0': 'opacity-100'}`}
+          />
+        </div>
+        
       </button>
       {/* BODY: Description and logo */}
       {showDescription && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
           <div className="flex-1 text-base md:text-lg pl-10  pr-8">{description}</div>
           <span>
-            <img
-            src={sponsorLogo}
-            alt={`${sponsorName} logo`}
-            className="h-40 max-w-100 w-auto pr-8 pb-3"
-            />
+            <div className='relative h-40 w-40'>
+              <Image
+                src={sponsorLogo}
+                alt={`${sponsorName} logo`}
+                fill
+                className="pr-8 pb-3"
+              />
+            </div>
+            
           </span>
         </div>
       )}
