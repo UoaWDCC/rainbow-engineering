@@ -89,7 +89,7 @@ const ImageCarousel: React.FC<CarouselProps> = ({
   autoplay = true,
   delay = 1750,
 }) => {
-  let slides = createSlides(images);
+  const slides = createSlides(images);
   return (
     <div>
       <Swiper
