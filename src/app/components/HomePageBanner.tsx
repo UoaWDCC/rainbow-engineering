@@ -21,10 +21,10 @@ export default function HomePageBanner() {
 
             {/* Title centered below the rainbow */}
             <div className="-mt-20 md:-mt-35 flex flex-col items-center">
-                <h1 className="text-6xl text-[#8955d2] font-bold font-[Montserrat] text-center">
+                <h1 className="text-5xl sm:text-6xl text-[#8955d2] font-bold font-[Montserrat] text-center">
                     Rainbow Engineering
                 </h1>
-                <h2 className="text-3xl text-[#8955d2] font-bold font-[Montserrat] text-center">
+                <h2 className="text-2xl sm:text-3xl text-[#8955d2] font-bold font-[Montserrat] text-center">
                     University of Auckland
                 </h2>
             </div>
