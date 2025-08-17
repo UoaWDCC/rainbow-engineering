@@ -247,7 +247,7 @@ header {
 }
 
 .glow {
-  animation: glow 3s infinite linear;
+  animation: glow 1.4s infinite linear;
 }
 
 .glow:hover {
@@ -257,12 +257,12 @@ header {
 
 @keyframes zoom {
   0%, 100% { transform: scale(0.95); }
-  50%     { transform: scale(1.03); } 
+  50%     { transform: scale(1.02); } 
 }
 
 .zoom {
   display: inline-block;           
-  animation: zoom 1.2s linear infinite; 
+  animation: zoom 1.4s linear infinite; 
 }
 
 .zoom:hover {
