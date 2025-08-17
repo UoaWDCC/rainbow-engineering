@@ -10,17 +10,18 @@ export default function Home() {
   return (
     <div className="bg-light_purple min-h-screen">
     {/*light purple tailwind colour*/}
+    
 
 
     <>
       <Banner />
       <div className="flex flex-col items-center mt-10">
         {/* Call-to-action Sign Up Button */}
-        <div className="max-w-md px-4">
+        <div className="max-w-md px-4 bounce-high transition-transform duration-200 ease-in-out ">
 
           <Link
             href="/signup"
-            className="px-20 py-10 text-3xl bg-[#D0B7F4] text-[#8955D2] hover:bg-[#CAA9F8] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+            className="px-20 py-10 text-3xl hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#8955D2] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform glow"
           >
 
             SIGN UP
@@ -44,7 +45,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-4xl"
+              className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
             >
               <div className="relative w-10 h-10 sm:w-20 sm:h-20">
                 <Image
@@ -63,7 +64,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-4xl"
+              className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
             >
                <div className="relative w-10 h-10 sm:w-20 sm:h-20">
                 <Image
@@ -81,7 +82,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
-              className="text-4xl"
+              className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
             >
               <div className="relative w-10 h-10 sm:w-20 sm:h-20">
                 <Image
@@ -100,7 +101,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-4xl"
+              className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
             >
               <div className="relative w-10 h-10 sm:w-20 sm:h-20">
                 <Image
