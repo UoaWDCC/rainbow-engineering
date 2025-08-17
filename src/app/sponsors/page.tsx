@@ -34,9 +34,9 @@ export default function Sponsors() {
                 <h2 className="text-5xl font-bold text-[#c2ac63]">GOLD</h2>
                 <SponsorInfoPanel
                     sponsorTier= "gold"
-                    sponsorName = "Gold Sponsor #1" 
-                    sponsorLogo = "/exec_placeholder_image.png"
-                    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    sponsorName = "Tonkin + Taylor" 
+                    sponsorLogo = "/sponsor_logos/TT_stacked.png"
+                    description = "Tonkin + Taylor Group is comprised of leading employee-owned environmental and engineering consultancies and testing businesses with offices across New Zealand and Australia. The Group is made up of five companies, delivering solutions to clients across five continents – Tonkin + Taylor in New Zealand, Tonkin + Taylor in Australia, Geotechnics, Chadwick Geotechnics, and Bligh Tanner."
                 />
                 <SponsorInfoPanel
                     sponsorTier= "gold"
