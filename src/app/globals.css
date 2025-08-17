@@ -254,3 +254,18 @@ header {
   animation-play-state: paused;
   animation-fill-mode: forwards; 
 }
+
+@keyframes zoom {
+  0%, 100% { transform: scale(0.95); }
+  50%     { transform: scale(1.03); } 
+}
+
+.zoom {
+  display: inline-block;           
+  animation: zoom 1.2s linear infinite; 
+}
+
+.zoom:hover {
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}

@@ -17,7 +17,7 @@ export default function Home() {
       <Banner />
       <div className="flex flex-col items-center mt-10">
         {/* Call-to-action Sign Up Button */}
-        <div className="max-w-md px-4 bounce-high transition-transform duration-200 ease-in-out ">
+        <div className="max-w-md px-4 zoom transition-transform duration-200 ease-in-out ">
 
           <Link
             href="/signup"
