@@ -1,5 +1,4 @@
-// import Image from "next/image";
-import Banner from "./components/Banner";
+import HomePageBanner from "./components/HomePageBanner";
 import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
 import { images } from "./data";
@@ -13,7 +12,7 @@ export default function Home() {
 
 
     <>
-      <Banner />
+      <HomePageBanner />
       <div className="flex flex-col items-center mt-10">
         {/* Call-to-action Sign Up Button */}
         <div className="max-w-md px-4">
