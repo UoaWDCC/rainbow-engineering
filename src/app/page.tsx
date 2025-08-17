@@ -9,19 +9,20 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <div className="bg-light_purple min-h-screen">
-      {/*light purple tailwind colour*/}
+    {/*light purple tailwind colour*/}
+    
 
 
-      <>
-        <Banner />
-        <div className="flex flex-col items-center mt-10">
-          {/* Call-to-action Sign Up Button */}
-          <div className="max-w-md px-4">
+    <>
+      <Banner />
+      <div className="flex flex-col items-center mt-10">
+        {/* Call-to-action Sign Up Button */}
+        <div className="max-w-md px-4 zoom transition-transform duration-200 ease-in-out ">
 
-            <Link
-              href="/signup"
-              className="px-20 py-10 text-3xl bg-[#D0B7F4] text-[#8955D2] hover:bg-[#CAA9F8] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
-            >
+          <Link
+            href="/signup"
+            className="px-20 py-10 text-3xl hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#8955D2] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform glow"
+          >
 
               SIGN UP
             </Link>
@@ -36,80 +37,80 @@ export default function Home() {
 
 
 
-            {/* Links */}
-            <div className="flex space-x-5">
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-4xl"
-              >
-                <div className="relative w-10 h-10 sm:w-20 sm:h-20">
-                  <Image
-                    src="/instagram.png"
-                    alt="Instagram Logo"
-                    fill
-                    className="object-contain"
-                  />
+          {/* Links */}
+          <div className="flex space-x-5">
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
+            >
+              <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                <Image
+                  src="/instagram.png"
+                  alt="Instagram Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              
+
+            </a>
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/rainbowengineering.uoa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
+            >
+               <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                <Image
+                  src="/facebook.png"
+                  alt="Facebook Logo"
+                  fill
+                  className="object-contain"
+                 />
                 </div>
-
-
-              </a>
-              {/* Facebook */}
-              <a
-                href="https://www.facebook.com/rainbowengineering.uoa"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-4xl"
-              >
-                <div className="relative w-10 h-10 sm:w-20 sm:h-20">
-                  <Image
-                    src="/facebook.png"
-                    alt="Facebook Logo"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </a>
-
-              {/* Email */}
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Email"
-                className="text-4xl"
-              >
-                <div className="relative w-10 h-10 sm:w-20 sm:h-20">
-                  <Image
-                    src="/mail.png"
-                    alt="Mail Logo"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-
               </a>
 
-              {/* LinkedIn */}
-              <a
-                href="https://nz.linkedin.com/company/rainbowengineeringuoa"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-4xl"
-              >
-                <div className="relative w-10 h-10 sm:w-20 sm:h-20">
-                  <Image
-                    src="/LinkedIn.png"
-                    alt="LinkedIn Logo"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+            {/* Email */}
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+              className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
+            >
+              <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                <Image
+                  src="/mail.png"
+                  alt="Mail Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://nz.linkedin.com/company/rainbowengineeringuoa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
+            >
+              <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                <Image
+                  src="/LinkedIn.png"
+                  alt="LinkedIn Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
               </a>
 
