@@ -19,14 +19,37 @@ export default function HomePageBanner() {
 
             </div>
 
-            {/* Title centered below the rainbow */}
-            <div className="-mt-20 md:-mt-35 flex flex-col items-center">
+            {/* Banner text under the rainbow */}
+            <div className="-mt-20 md:-mt-35 flex flex-col items-center space-y-4 md:space-y-6">
+
+                {/* Title */}
                 <h1 className="text-5xl sm:text-6xl text-[#8955d2] font-bold font-[Montserrat] text-center">
                     Rainbow Engineering
                 </h1>
                 <h2 className="text-2xl sm:text-3xl text-[#8955d2] font-bold font-[Montserrat] text-center">
                     University of Auckland
                 </h2>
+                 {/* Divider line */}
+                <div className="w-32 h-[2px] bg-[#8955d2]" />
+
+                {/* Rainbow Engineering's Three Values */}
+                <div className="flex justify-between w-full max-w-md px-10">
+                    <h4 className="text-1xl text-[#8955d2] font-bold font-[Montserrat] text-center">
+                        Advocacy
+                    </h4>
+                    <h4 className="text-1xl text-[#8955d2] font-bold font-[Montserrat] text-center">
+                        •
+                    </h4>
+                    <h4 className="text-1xl text-[#8955d2] font-bold font-[Montserrat] text-center">
+                        Opportunity
+                    </h4>
+                    <h4 className="text-1xl text-[#8955d2] font-bold font-[Montserrat] text-center">
+                        •
+                    </h4>
+                    <h4 className="text-1xl text-[#8955d2] font-bold font-[Montserrat] text-center">
+                        Community
+                    </h4>
+                </div>
             </div>
         </div>
     );
