@@ -22,7 +22,7 @@ export default function Sponsors() {
                 </div>
 
                 {/* ===== information about sponsors ===== */}
-                <div className="mt-6 mb-20 bg-purple-200 text-purple-800 p-6 rounded-xl max-w-full mx-auto text-center">
+                <div className="mt-6 mb-20 bg-purple-200 text-slate-700 p-6 rounded-xl max-w-full mx-auto text-center">
                     <p className="text-base md:text-lg font-medium">
                         Information about sponsors: <br />
                         The mutually beneficial relationship, how sponsors and team work together, etc.

@@ -36,7 +36,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
 
       {open && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <div className="md:basis-3/5 text-sm">{description}</div>
+          <div className="md:basis-3/5 text-sm text-slate-700">{description}</div>
           <div className="md:basis-2/5 flex flex-col gap-2">
             <img
               src={imageUrl}

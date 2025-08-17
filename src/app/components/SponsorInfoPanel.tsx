@@ -25,7 +25,7 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
   const showDescription = isGold || open;
 
   return (
-    <div className="bg-purple-200 border border-purple-300 rounded-xl p-4 my-5 text-purple-800">
+    <div className="bg-purple-200 border border-purple-300 rounded-xl p-4 my-5 text-slate-700">
       {/* Dropdown activation */}
       <button
         onClick={() => !isGold && setOpen(!open)}
