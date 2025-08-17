@@ -9,7 +9,7 @@ export default function Initiatives() {
       <div id="content" className="bg-F1EAFB">
         {/*================================HEADER================================*/}
         <div id="banner" className="p-12 relative">
-          <h1 className="text-4xl text-purple-900 font-bold font-[Montserrat] z-10">
+          <h1 className="text-4xl text-purple-800 font-bold font-[Montserrat] z-10">
             Community & Initiatives
           </h1>
         </div>

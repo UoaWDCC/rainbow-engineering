@@ -29,14 +29,14 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
           <span className={`text-xl transition-colors ${open ? 'text-purple-500' : ''}`}>
             {open ? '▲' : '▼'}
           </span>
-          <h3 className="text-lg font-semibold">{title}</h3>
+          <h3 className="text-lg font-semibold font-[Montserrat]">{title}</h3>
         </div>
-        <p className="text-lg font-semibold">{date}</p>
+        <p className="text-lg font-semibold font-[Montserrat]">{date}</p>
       </button>
 
       {open && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <div className="md:basis-3/5 text-sm text-slate-700">{description}</div>
+          <div className="md:basis-3/5 text-sm text-slate-700 font-[Montserrat]">{description}</div>
           <div className="md:basis-2/5 flex flex-col gap-2">
             <img
               src={imageUrl}
