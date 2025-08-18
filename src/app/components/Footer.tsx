@@ -87,7 +87,7 @@ export default function Footer() {
 
 </div>
 
-  <div className="relative w-full">
+  <div className="relative w-full -mb-1">
     <svg
       viewBox={`0 0 ${screenWidth} 120`}
       xmlns="http://www.w3.org/2000/svg"
