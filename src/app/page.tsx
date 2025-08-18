@@ -138,19 +138,28 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mb-8">
 
                 {/* code for about us image */}
-                <div className="relative flex flex-col items-center text-center rounded w-full sm:w-[1200px] h-[400px]">
+                <div className="relative flex flex-col items-center text-center w-full sm:w-[1200px] h-[400px] overflow-hidden rounded-xl">
                   <Image
-                    src="/about_us_temp.png"
+                    src="/homepage/about_us_photo.jpg"
                     alt="About Us"
                     fill
-                    className="rounded-t object-contain"
+                    className="object-cover"
                   />
                 </div>
 
                 {/* code for about us text */}
                 <div className="flex flex-col justify-center items-center text-center w-full sm:w-500 p-4 rounded">
-                  <p className="text-base sm:text-lg font-[Montserrat] text-slate-700 px-2 sm:px-7">Rainbow Engineering is a vibrant community of tech enthusiasts dedicated to fostering innovation and collaboration. Our mission is to create an inclusive environment where everyone can learn, grow, and contribute to exciting projects.
+                  <p className="text-base sm:text-lg font-[Montserrat] text-slate-700 px-2 sm:px-7">
+                    Rainbow Engineering is the engineering faculty&#39;s LGBTQITakatāpui+ club (lesbian, gay, bisexual, transgender, queer, intersex, takatāpui, and more), set up by and for queer engineering students to provide support, advocacy, and opportunities to socialise and network within the faculty and industry.
+                    <br /><br />
+                    Within the engineering faculty, Rainbow Engineering provides:
                   </p>
+                  <ul className="list-disc text-base sm:text-lg font-[Montserrat] text-slate-700 px-8 text-left mt-4">
+                    <li>Opportunities to meet and connect with fellow LGBTQITakatāpui+ students and staff, along with their friends</li>
+                    <li>Information about services, news and events</li>
+                    <li>Pathways to connect and network with engineering professionals, as well as advocate for LGBTQITakatāpui+ representation in the engineering industry</li>
+                    <li>A voice for LGBTQITakatāpui+ students and staff in Engineering and Design</li>
+                  </ul>
                 </div>
 
               </div>
@@ -164,45 +173,24 @@ export default function Home() {
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-10"> {/* div for meet the execs */}
 
               <ExecCard
-                name="Abhijot Malhi"
-                role="Tech Lead"
-                imageSrc="/exec_placeholder_image.png"
-                description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+                name="Eros Knight"
+                role="President"
+                imageSrc="/homepage/execs/Eros.png"
+                description="Leads and oversees the club, driving long-term planning, organisation, and goals. Acts as the main liaison with other clubs, university staff, and faculty, while guiding meetings, delegating tasks, and supporting industry partnerships and funding efforts."
               />
 
               <ExecCard
-                name="Abhijot Malhi"
-                role="Tech Lead"
-                imageSrc="/exec_placeholder_image.png"
-                description="Abhijot leads technical"
+                name="Oscar Shaw"
+                role="Vice President"
+                imageSrc="/homepage/execs/Oscar.png"
+                description="Manages sponsorships and industry relations, serving as the primary contact for sponsors and securing funding. Represents the club at RSIG meetings and provides key support to the executive and admin teams."
               />
 
               <ExecCard
-                name="Abhijot Malhi"
-                role="Tech Lead"
-                imageSrc="/exec_placeholder_image.png"
-                description="Abhijot leads technical projects with a passion "
-              />
-
-              <ExecCard
-                name="Abhijot Malhi"
-                role="Tech Lead"
-                imageSrc="/exec_placeholder_image.png"
-                description="Abhijot leads technical projects with a passion for scalable solutions"
-              />
-
-              <ExecCard
-                name="Abhijot Malhi"
-                role="Tech Lead"
-                imageSrc="/exec_placeholder_image.png"
-                description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
-              />
-
-              <ExecCard
-                name="Abhijot Malhi"
-                role="Tech Lead"
-                imageSrc="/exec_placeholder_image.png"
-                description="Abhijot leads technical projects with a passion for scalable solutions and mentoring developers."
+                name="Rad Atienza"
+                role="Secretary-Treasurer"
+                imageSrc="/homepage/execs/Rad.png"
+                description="Oversees administration and finances, managing agendas, minutes, records, and correspondence while ensuring smooth operations. Handles budgeting, payments, invoices, and reimbursements, keeping accurate financial records. Requires prior executive experience within Rainbow Engineering."
               />
 
             </div>

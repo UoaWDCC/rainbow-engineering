@@ -40,11 +40,13 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
           </span>
           <span className="text-purple-800 font-[Montserrat]">{sponsorName}</span>
         </div>
-        <div className="relative h-10 w-10 ml-auto pl-3">
+        <div className="ml-auto pl-3 w-10 h-10 flex items-center justify-center">
           <Image
             src={sponsorLogo}
             alt={`${sponsorName} logo`}
-            fill
+            width={40}
+            height={40}
+            style={{ objectFit: 'contain', width: '100%', height: '100%' }}
             className={`${isGold || open ? 'opacity-0': 'opacity-100'}`}
           />
         </div>
@@ -55,15 +57,15 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
         <div className="mt-4 flex flex-col md:flex-row gap-4">
           <div className="flex-1 text-base md:text-lg pl-10 pr-8">{description}</div>
           <span>
-            <div className='relative h-40 w-40'>
+            <div className='w-40 h-40 flex items-center justify-center'>
               <Image
                 src={sponsorLogo}
                 alt={`${sponsorName} logo`}
-                fill
-                className=""
+                width={160}
+                height={160}
+                style={{ objectFit: 'contain', width: '100%', height: '100%' }}
               />
             </div>
-            
           </span>
         </div>
       )}
