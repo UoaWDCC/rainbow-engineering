@@ -117,6 +117,7 @@ interface CardProps {
   titleSize?: string;
   backgroundColor?: string;
   textColor?: string;
+  textFont?: string;
   contentColor?: string;
   margin?: string;
   padding?: string;
@@ -138,23 +139,24 @@ const Card: React.FC<CardProps> = ({
   imageWidth = 300,
   imageHeight = 200,
   height = "min-h-80", // Changed from h-80 to min-h-80
-  titleSize = "text-4xl",
-  backgroundColor = "bg-violet-200",
-  textColor = "text-purple-700",
+  titleSize = "text-3xl",
+  backgroundColor = "bg-purple-200",
+  textColor = "text-purple-800",
+  textFont = "font-[Montserrat]",
   contentColor = "text-slate-700",
   margin = "mx-8 my-2.5",
   padding = "p-4",
-  borderRadius = "rounded-4xl",
+  borderRadius = "rounded-xl",
   children,
   className = "",
   buttonText,
   buttonHref,
   onButtonClick,
-  buttonClassName = "bg-purple-500 text-white px-20 py-2 rounded-lg hover:bg-purple-800 transition-colors",
+  buttonClassName = "bg-purple-500 text-white font-[Montserrat] px-20 py-2 rounded-lg hover:bg-purple-800 transition-colors",
 }) => {
   return (
     <div
-      className={`flex flex-col ${textColor} ${margin} ${backgroundColor} ${height} ${padding} ${borderRadius} ${className}`}
+      className={`flex flex-col ${textColor} ${textFont} ${margin} ${backgroundColor} ${height} ${padding} ${borderRadius} ${className}`}
     >
       {/* Title Section */}
       {title && <h2 className={`${titleSize} font-semibold mb-4`}>{title}</h2>}
