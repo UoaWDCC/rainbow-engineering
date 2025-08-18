@@ -151,7 +151,7 @@ export default function Home() {
                 {/* code for about us text */}
                 <div className="flex flex-col justify-center items-center text-center w-full sm:w-500 p-4 rounded">
                   <p className="text-base sm:text-lg font-[Montserrat] text-slate-700 px-2 sm:px-7">
-                    Rainbow Engineering is the engineering faculty's LGBTQITakatāpui+ club (lesbian, gay, bisexual, transgender, queer, intersex, takatāpui, and more), set up by and for queer engineering students to provide support, advocacy, and opportunities to socialise and network within the faculty and industry.
+                    Rainbow Engineering is the engineering faculty&#39;s LGBTQITakatāpui+ club (lesbian, gay, bisexual, transgender, queer, intersex, takatāpui, and more), set up by and for queer engineering students to provide support, advocacy, and opportunities to socialise and network within the faculty and industry.
                     <br /><br />
                     Within the engineering faculty, Rainbow Engineering provides:
                   </p>
