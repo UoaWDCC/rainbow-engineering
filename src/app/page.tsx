@@ -197,7 +197,7 @@ export default function Home() {
 
             {/*================================SCROLLING GALLERY================================*/}
             <h2 className="mt-12 
-        text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-20">Scrolling Gallery</h2>
+        text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-20">Our Photos</h2>
             <div className="mb-20 w-[97%] ml-[2%] mr-[0%]">
               <ScrollingGallery images={images} />
             </div>
