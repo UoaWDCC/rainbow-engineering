@@ -6,17 +6,17 @@ export default function Initiatives() {
   return (
     <>
       <Banner />
-      <div id="content" className="bg-F1EAFB">
+      <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
         {/*================================HEADER================================*/}
-        <div id="banner" className="p-12 relative">
-          <h1 className="text-4xl text-purple-900 font-bold font-[Montserrat] z-10">
-            Community & Initiatives
-          </h1>
-        </div>
+        <h1 className="text-5xl font-bold text-purple-800 font-[Montserrat] mb-8 text-center">
+          Community & Initiatives
+        </h1>
+        
         <ImageCard
           title="Rainbow Room"
           content="A safe space to relax and study for queer students at UoA. It is located ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus lectus sit amet mi condimentum venenatis. Aliquam sed eros nec nibh euismod vestibulum. Maecenas eros purus, pellentesque a congue nec, aliquet in nibh. Nullam erat est, viverra sit amet lobortis sit amet, molestie elementum dolor. Nam scelerisque accumsan risus fringilla iaculis. Quisque vehicula facilisis ligula, non placerat purus ultricies ac. Morbi tempus metus vel ullamcorper tempor. Etiam vitae tincidunt sem. Etiam id odio sit amet nunc lacinia efficitur sit amet id leo. Curabitur condimentum lacus sed ipsum mollis dignissim. Cras vel malesuada elit. Nullam ut pulvinar elit. Quisque at rhoncus erat. Proin placerat imperdiet dictum. "
           imageSrc="/about_us_temp.png"
+          margin="my-2"
         />
         <ImageCard
           title="Sweat With Pride"
@@ -24,14 +24,18 @@ export default function Initiatives() {
           imageSrc="/sweatwithprideplaceholder.jpg"
           buttonText="Sign Up!"
           buttonHref="https://www.sweatwithpride.com/register/swp/start"
+          margin="my-2"
         />
         <ImageCard
           title="Sausage Sizzle"
           content="The sausages? Sizzling. The money? Going to a good cause. Come to location on ...
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus lectus sit amet mi condimentum venenatis. Aliquam sed eros nec nibh euismod vestibulum. Maecenas eros purus, pellentesque a congue nec, aliquet in nibh. Nullam erat est, viverra sit amet lobortis sit amet, molestie elementum dolor. Nam scelerisque accumsan risus fringilla iaculis. Quisque vehicula facilisis ligula, non placerat purus ultricies ac. Morbi tempus metus vel ullamcorper tempor. Etiam vitae tincidunt sem. Etiam id odio sit amet nunc lacinia efficitur sit amet id leo. Curabitur condimentum lacus sed ipsum mollis dignissim. Cras vel malesuada elit. Nullam ut pulvinar elit. Quisque at rhoncus erat. Proin placerat imperdiet dictum. "
+          margin="my-2"
         />
       </div>
-      {
+    </>
+  );
+}
         // {/*================================RAINBOW ROOM================================*/}
         // <div>
         //   {/*header for rainbow room safe space        */}
@@ -71,7 +75,3 @@ export default function Initiatives() {
         //     <p className="text-lg text-slate-700 p=7">information:</p>
         //   </div>
         // </div>
-      }{" "}
-    </>
-  );
-}

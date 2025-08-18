@@ -26,7 +26,7 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
   const showDescription = isGold || open;
 
   return (
-    <div className="bg-purple-200 border border-purple-300 rounded-xl p-4 my-5 text-purple-800">
+    <div className="bg-purple-200 border border-purple-300 rounded-xl p-4 my-5 text-slate-700 font-[Montserrat]">
       {/* Dropdown activation */}
       <button
         onClick={() => !isGold && setOpen(!open)}
@@ -38,7 +38,7 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
           <span className={`transition-colors duration-300 ${isGold? 'text-transparent' : open ? 'text-purple-400' : 'text-purple-800'}`}>
             {open ? '▼' : '►'}
           </span>
-          <span className="text-purple-800">{sponsorName}</span>
+          <span className="text-purple-800 font-[Montserrat]">{sponsorName}</span>
         </div>
         <div className="ml-auto pl-3 w-10 h-10 flex items-center justify-center">
           <Image
@@ -55,7 +55,7 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
       {/* BODY: Description and logo */}
       {showDescription && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <div className="flex-1 text-base md:text-lg">{description}</div>
+          <div className="flex-1 text-base md:text-lg pl-10 pr-8">{description}</div>
           <span>
             <div className='w-40 h-40 flex items-center justify-center'>
               <Image
