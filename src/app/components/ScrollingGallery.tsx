@@ -42,7 +42,7 @@ export function createSlides(
 ): React.ReactElement[] {
   const {
     showTitles = false,
-    imageClassName = "object-cover w-full h-full",
+    imageClassName = "object-cover w-full h-full rounded-lg",
     slideClassName = "relative w-full h-96",
     priority = true
   } = options;
@@ -102,7 +102,7 @@ const ImageCarousel: React.FC<CarouselProps> = ({
           disableOnInteraction: false,
         } : false}
         loop={true}
-        className="rounded-lg shadow-lg"
+        className="rounded-lg"
         breakpoints={{
           620: {
             slidesPerView: 1,
