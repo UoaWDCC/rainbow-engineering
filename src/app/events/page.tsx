@@ -7,10 +7,10 @@ export default function Events() {
     return (
         <>
             <Banner />
-            <div className="bg-purple-100 py-10 px-4 max-w-3xl mx-auto">
-            <h1 className="text-3xl font-bold text-left text-purple-800 mb-8">UPCOMING EVENTS</h1>
+            <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
+            <h1 className="text-5xl font-bold text-purple-800 font-[Montserrat] mb-8 text-center">UPCOMING EVENTS</h1>
             
-            <EventDropdown 
+            <EventDropdown
                 title="Safe Space" 
                 date="01/08/25" 
                 description="A welcoming and supportive environment for discussion and community building." 
