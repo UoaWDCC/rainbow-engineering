@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface EventDropdownProps {
   title: string
@@ -38,11 +39,15 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
         <div className="mt-4 flex flex-col md:flex-row gap-4">
           <div className="md:basis-3/5 text-sm text-slate-700 font-[Montserrat]">{description}</div>
           <div className="md:basis-2/5 flex flex-col gap-2">
-            <img
-              src={imageUrl}
-              alt={title}
-              className="w-full h-48 object-cover rounded-lg"
-            />
+            <div className="relative w-full h-48">
+              <Image
+                src={imageUrl}
+                alt={title}
+                fill
+                sizes="100vw"
+                className="object-cover rounded-lg"
+              />
+            </div>
             <a
               href={signupUrl}
               target="_blank"
