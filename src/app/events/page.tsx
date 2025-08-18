@@ -6,9 +6,8 @@ import EventDropdown from "../components/EventDropdown"
 export default function Events() {
     return (
         <>
-            <Banner />
+            <Banner title="UPCOMING EVENTS"/>
             <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
-            <h1 className="text-5xl font-bold text-purple-800 font-[Montserrat] mb-8 text-center">UPCOMING EVENTS</h1>
             
             <EventDropdown
                 title="Safe Space" 

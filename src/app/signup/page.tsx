@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function SignUp() {
     return (
         <div>
-          <Banner />
+          <Banner title="SIGN UP"/>
     <div className="font-['Montserrat'] text-[30px] text-[#8955d2] font-bold flex justify-center mb-5">FOLLOW OUR SOCIALS</div>
     
 <div className="grid grid-cols-2 gap-4 justify-items-center mx-auto max-w-50 lg:max-w-100  lg:mt-10 mb-20">
@@ -82,7 +82,6 @@ export default function SignUp() {
 
   
 </div>
-    <div className="font-['Montserrat'] text-[30px] text-[#8955d2] font-bold flex justify-center lg:mr-120 mr-30">SIGN   UP  HERE:</div>
 
           <div className="bg-fixed md:px-20 px-5 bg-cover bg-center bg-no-repeat"
           >
