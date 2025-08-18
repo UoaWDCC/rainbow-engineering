@@ -5,12 +5,9 @@ import Banner from "../components/Banner";
 export default function Initiatives() {
   return (
     <>
-      <Banner />
+      <Banner title="COMMUNITY & INITIATIVES"/>
       <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
         {/*================================HEADER================================*/}
-        <h1 className="text-5xl font-bold text-purple-800 font-[Montserrat] mb-8 text-center">
-          Community & Initiatives
-        </h1>
         
         <ImageCard
           title="Rainbow Room"
