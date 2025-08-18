@@ -20,7 +20,6 @@ export default function ExecCard({ name, role, imageSrc, description }: ExecCard
       />
       <p className="text-sm md:text-base font-semibold font-[Montserrat]">{name}</p>
       <p className="text-xs md:text-sm text-black-600 font-semibold font-[Montserrat] mb-1">{role}</p>
-      <br />
       <p className="text-xs md:text-sm text-slate-700 font-[Montserrat]">{description}</p>
     </div>
   );
