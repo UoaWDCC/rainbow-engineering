@@ -12,8 +12,8 @@ export default function HomePageBanner() {
 
                 {/* Logo - There is an issue with the logo stretching before the animation plays so it is made hidden until it finishes */}
                 <div className="-mt-15 absolute top-0 flex justify-center w-full">
-                    <div className="relative w-50 h-50 opacity-0 transition-opacity duration-600 ease-in-out" id="logo-container">
-                        <Image src="/rainbow_logo.png" alt="" fill style={{ objectFit: 'contain' }} />
+                    <div className="relative w-50 h-50 opacity-0" id="logo-container">
+                        <Image src="/rainbow_logo_bb.png" alt="" fill style={{ objectFit: 'contain' }} />
                     </div>
                 </div>
 
