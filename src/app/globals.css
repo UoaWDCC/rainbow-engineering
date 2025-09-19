@@ -12,6 +12,13 @@ body {
     
 }
 
+:root {
+  /* Cover all bases */
+  --swiper-theme-color: #5f249f;        /* fallback + active bullet */
+  --swiper-navigation-color: #5f249f;   /* arrows (default state) */
+  --swiper-pagination-color: #5f249f;   /* active bullet color in some builds */
+}
+
 header {
     margin-bottom: 55px;
 }
