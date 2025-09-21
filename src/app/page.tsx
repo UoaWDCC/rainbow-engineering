@@ -4,18 +4,8 @@ import Link from "next/link";
 import { images } from "./data";
 import ExecCard from "./components/ExecCard"
 import Image from 'next/image'
-import { getPayload } from 'payload'
-import { fileURLToPath } from 'url'
-import { headers as getHeaders } from 'next/headers.js'
-import config from '@/payload.config'
 
-export default async function Home() {
-  // const headers = await getHeaders()
-  // const payloadConfig = await config
-  // const payload = await getPayload({ config: payloadConfig })
-  // const { user } = await payload.auth({ headers })
-
-  const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
+export default function Home() {
   return (
     <div className="bg-light_purple min-h-screen">
     {/*light purple tailwind colour*/}
