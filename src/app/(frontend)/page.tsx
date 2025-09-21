@@ -1,11 +1,25 @@
+import { headers as getHeaders } from 'next/headers.js'
+import Image from 'next/image'
+import { getPayload } from 'payload'
+import React from 'react'
+import { fileURLToPath } from 'url'
+
 import HomePageBanner from "./components/HomePageBanner";
 import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
 import { images } from "./data";
 import ExecCard from "./components/ExecCard"
-import Image from 'next/image'
 
-export default function Home() {
+import config from '@/payload.config'
+
+export default async function HomePage() {
+  const headers = await getHeaders()
+  const payloadConfig = await config
+  const payload = await getPayload({ config: payloadConfig })
+  const { user } = await payload.auth({ headers })
+
+  const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
+
   return (
     <div className="bg-light_purple min-h-screen">
     {/*light purple tailwind colour*/}
@@ -20,7 +34,7 @@ export default function Home() {
 
           <Link
             href="/signup"
-            className="px-20 py-10 text-3xl hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#8955D2] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform glow"
+            className="px-20 py-10 text-3xl hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#5f249f] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform glow"
           >
 
               SIGN UP
@@ -115,7 +129,7 @@ export default function Home() {
 
             </div>
             {/* Text */}
-            <div className="hidden md:block text-[#8955D2] text-3xl font-bold font-[Montserrat]">
+            <div className="hidden md:block text-[#8a55d2] text-3xl font-bold font-[Montserrat]">
               Follow Our Socials
             </div>
           </div>
@@ -134,7 +148,7 @@ export default function Home() {
               {/* background coloured block */}
 
 
-              <h2 className="text-3xl sm:text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-4 sm:p-6">About us!</h2>
+              <h2 className="text-3xl sm:text-5xl text-[#5f249f] font-bold font-[Montserrat] mb-3 text-center p-4 sm:p-6">About us!</h2>
               <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mb-8">
 
                 {/* code for about us image */}
@@ -169,7 +183,7 @@ export default function Home() {
 
 
             {/*================================MEET THE EXECS================================*/}
-            <h2 className="mt-22 text-3xl md:text-5xl text-[#8955D2] font-bold font-[Montserrat] mb-3 text-center p-6">Meet the Exec Team!</h2>
+            <h2 className="mt-22 text-3xl md:text-5xl text-[#5f249f] font-bold font-[Montserrat] mb-3 text-center p-6">Meet the Exec Team!</h2>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-10"> {/* div for meet the execs */}
 
               <ExecCard
@@ -197,7 +211,7 @@ export default function Home() {
 
             {/*================================SCROLLING GALLERY================================*/}
             <div className="p-20 flex justify-center items-center">
-              <div className="w-32 h-[2px] bg-[#8955d2]" />
+              <div className="w-32 h-[2px] bg-[#5f249f]" />
             </div>
             
             <div className="mb-20 w-[97%] ml-[2%] mr-[0%]">
@@ -213,4 +227,3 @@ export default function Home() {
     </div>
   );
 }
-
