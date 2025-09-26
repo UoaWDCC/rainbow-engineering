@@ -1,24 +1,25 @@
-import { headers as getHeaders } from 'next/headers.js'
 import Image from 'next/image'
 import { getPayload } from 'payload'
 import React from 'react'
-import { fileURLToPath } from 'url'
 
 import HomePageBanner from "./components/HomePageBanner";
 import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
 import { images } from "./data";
 import ExecCard from "./components/ExecCard"
+import { Executives } from '@/collections/Executives'
 
 import config from '@/payload.config'
 
 export default async function HomePage() {
-  const headers = await getHeaders()
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
-  const { user } = await payload.auth({ headers })
 
-  const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
+  const execs = await payload.find({
+    collection: Executives.slug,
+    sort: 'name', // optional, alphabetically
+    depth: 1,     // populate upload relation so we get `image.url`
+  })
 
   return (
     <div className="bg-light_purple min-h-screen">
@@ -184,29 +185,20 @@ export default async function HomePage() {
 
             {/*================================MEET THE EXECS================================*/}
             <h2 className="mt-22 text-3xl md:text-5xl text-[#5f249f] font-bold font-[Montserrat] mb-3 text-center p-6">Meet the Exec Team!</h2>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-10"> {/* div for meet the execs */}
-
-              <ExecCard
-                name="Eros Knight"
-                role="President"
-                imageSrc="/homepage/execs/Eros.png"
-                description="Leads and oversees the club, driving long-term planning, organisation, and goals. Acts as the main liaison with other clubs, university staff, and faculty, while guiding meetings, delegating tasks, and supporting industry partnerships and funding efforts."
-              />
-
-              <ExecCard
-                name="Oscar Shaw"
-                role="Vice President"
-                imageSrc="/homepage/execs/Oscar.png"
-                description="Manages sponsorships and industry relations, serving as the primary contact for sponsors and securing funding. Represents the club at RSIG meetings and provides key support to the executive and admin teams."
-              />
-
-              <ExecCard
-                name="Rad Atienza"
-                role="Secretary-Treasurer"
-                imageSrc="/homepage/execs/Rad.png"
-                description="Oversees administration and finances, managing agendas, minutes, records, and correspondence while ensuring smooth operations. Handles budgeting, payments, invoices, and reimbursements, keeping accurate financial records. Requires prior executive experience within Rainbow Engineering."
-              />
-
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-10">
+              {execs.docs.map(exec => (
+                <ExecCard
+                  key={exec.id}
+                  name={exec.name}
+                  role={exec.role}
+                  description={exec.description}
+                  imageSrc={
+                    typeof exec.image === 'object' && exec.image.url
+                      ? exec.image.url
+                      : '/placeholder.jpg'
+                  }
+                />
+              ))}
             </div>
 
             {/*================================SCROLLING GALLERY================================*/}
