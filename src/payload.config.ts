@@ -7,14 +7,12 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
+import { AboutUs } from "./globals/AboutUs";
+
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Executives } from "./collections/Executives";
 import { Showcase } from "./collections/Showcase";
-import { AboutUs } from "./globals/AboutUs";
-import { Users } from "./collections/Users";
-import { Media } from "./collections/Media";
-import { Executives } from "./collections/Executives";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
