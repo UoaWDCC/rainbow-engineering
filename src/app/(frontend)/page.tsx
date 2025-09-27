@@ -16,7 +16,7 @@ export default async function HomePage() {
   const payload = await getPayload({ config: payloadConfig })
 
   const execs = await payload.find({
-    collection: Executives.slug,
+    collection: Executives.slug as any,
     sort: 'name', // optional, alphabetically
     depth: 1,     // populate upload relation so we get `image.url`
   })
