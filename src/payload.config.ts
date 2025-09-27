@@ -11,10 +11,10 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Executives } from "./collections/Executives";
 import { Showcase } from "./collections/Showcase";
-import { AboutUs } from './globals/AboutUs'
-import { Users } from './collections/Users'
-import { Media } from './collections/Media'
-import { Executives } from './collections/Executives'
+import { AboutUs } from "./globals/AboutUs";
+import { Users } from "./collections/Users";
+import { Media } from "./collections/Media";
+import { Executives } from "./collections/Executives";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -26,17 +26,8 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-<<<<<<< HEAD
+  globals: [AboutUs],
   collections: [Users, Media, Executives, Showcase],
-=======
-  globals: [
-    AboutUs,
-  ],
-  collections: [Users, 
-                Media,
-                Executives,
-               ],
->>>>>>> ff294d48e1df88acd2a4481e0606ca24cc179909
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
