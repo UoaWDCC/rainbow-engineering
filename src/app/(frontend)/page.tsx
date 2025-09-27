@@ -15,6 +15,11 @@ export default async function HomePage() {
   const payloadConfig = await config;
   const payload = await getPayload({ config: payloadConfig });
 
+  const aboutus = await payload.findGlobal({
+    slug: "about-us",
+    depth: 1,
+  });
+
   const execs = await payload.find({
     collection: Executives.slug as any,
     sort: "name", // optional, alphabetically
@@ -139,14 +144,14 @@ export default async function HomePage() {
               {/* background coloured block */}
 
               <h2 className="text-3xl sm:text-5xl text-[#5f249f] font-bold font-[Montserrat] mb-3 text-center p-4 sm:p-6">
-                About us!
+                {aboutus.Title}
               </h2>
               <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mb-8">
                 {/* code for about us image */}
                 <div className="relative flex flex-col items-center text-center w-full sm:w-[1200px] h-[400px] overflow-hidden rounded-xl">
                   <Image
-                    src="/homepage/about_us_photo.jpg"
-                    alt="About Us"
+                    src={aboutus.Image.url}
+                    alt={aboutus.Image?.alt}
                     fill
                     className="object-cover"
                   />
@@ -155,33 +160,23 @@ export default async function HomePage() {
                 {/* code for about us text */}
                 <div className="flex flex-col justify-center items-center text-center w-full sm:w-500 p-4 rounded">
                   <p className="text-base sm:text-lg font-[Montserrat] text-slate-700 px-2 sm:px-7">
-                    Rainbow Engineering is the engineering faculty&#39;s
-                    LGBTQITakatāpui+ club (lesbian, gay, bisexual, transgender,
-                    queer, intersex, takatāpui, and more), set up by and for
-                    queer engineering students to provide support, advocacy, and
-                    opportunities to socialise and network within the faculty
-                    and industry.
+                    {aboutus["About Us Description"]}
                     <br />
                     <br />
-                    Within the engineering faculty, Rainbow Engineering
-                    provides:
+                    {aboutus["Bullet Points Description"]}
                   </p>
                   <ul className="list-disc text-base sm:text-lg font-[Montserrat] text-slate-700 px-8 text-left mt-4">
-                    <li>
-                      Opportunities to meet and connect with fellow
-                      LGBTQITakatāpui+ students and staff, along with their
-                      friends
-                    </li>
-                    <li>Information about services, news and events</li>
-                    <li>
-                      Pathways to connect and network with engineering
-                      professionals, as well as advocate for LGBTQITakatāpui+
-                      representation in the engineering industry
-                    </li>
-                    <li>
-                      A voice for LGBTQITakatāpui+ students and staff in
-                      Engineering and Design
-                    </li>
+                    {
+                      aboutus["Bullet Points"]?.map(
+                      (
+                        item, index) => (
+                          <li key={index}>
+                            {item.Point}
+                          </li>
+                        )
+                      
+                      )
+                    }
                   </ul>
                 </div>
               </div>
