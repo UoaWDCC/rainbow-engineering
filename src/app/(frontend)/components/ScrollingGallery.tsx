@@ -9,7 +9,7 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { images } from '../data';
+// import { images } from '../data';
 
 interface CarouselProps {
   autoplay?: boolean;
@@ -21,6 +21,7 @@ interface CarouselProps {
 interface ImageSlideData {
   src: string;
   alt?: string;
+  sizes?: string;
   name?: string;
 }
 
@@ -71,6 +72,11 @@ export function createSlides(
         <Image
           src={slide.src}
           alt={slide.alt!}
+          // arbitrary af sizes rn
+          // TODO do the math and have the correct breakpoints
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          // TODO! add support for a blurred placeholder while loading
+          // placeholder="blur"
           fill
           className={imageClassName}
           priority={priority && index === 0} // Priority for first randomized image
@@ -86,6 +92,7 @@ export function createSlides(
 }
 
 const ImageCarousel: React.FC<CarouselProps> = ({
+  images,
   autoplay = true,
   delay = 1750,
 }) => {
