@@ -1,7 +1,7 @@
 import type {GlobalConfig} from 'payload'
 
-export const AboutMe: GlobalConfig = {
-     slug: 'about-me',
+export const AboutUs: GlobalConfig = {
+     slug: 'about-us',
      fields: [
           {
                name: "Title",

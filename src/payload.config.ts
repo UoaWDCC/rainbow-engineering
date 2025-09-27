@@ -7,6 +7,7 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
+import { AboutUs } from './globals/AboutUs'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Executives } from './collections/Executives'
@@ -21,6 +22,9 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+  globals: [
+    AboutUs,
+  ],
   collections: [Users, 
                 Media,
                 Executives,
