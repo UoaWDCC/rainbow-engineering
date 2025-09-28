@@ -1,28 +1,40 @@
-"use client";
+import { getPayload } from "payload";
+import config from "@/payload.config";
 import Banner from "../components/Banner";
-import EventDropdown from "../components/EventDropdown"
+import EventDropdown from "../components/EventDropdown";
+import { Events as EventsCollection } from "@/collections/Events";
+
+function formatDate(dateString: string) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = String(date.getFullYear()).slice(-2);
+    return `${day}/${month}/${year}`;
+  }
+
+export default async function Events() {
+    const payload = await getPayload({ config });
+    const events = await payload.find({
+        collection: EventsCollection.slug as any,
+        depth: 1,
+        sort: "date",
+    });
 
 
-export default function Events() {
     return (
         <>
             <Banner title="UPCOMING EVENTS"/>
             <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
-            
-            <EventDropdown
-                title="Safe Space" 
-                date="01/08/25" 
-                description="A welcoming and supportive environment for discussion and community building." 
-                imageUrl="/sweatwithprideplaceholder.jpg"
-                signupUrl=""
-            />
-            <EventDropdown 
-                title="Another Event" 
-                date="01/08/25" 
-                description="Description about another event, happening soon!" 
-                imageUrl="/sweatwithprideplaceholder.jpg"
-                signupUrl=""
-            />
+                {events.docs.map((event: any) => (
+                    <EventDropdown 
+                        key={event.id}
+                        title={event.title}
+                        date={formatDate(event.date)}
+                        description={event.description}
+                        imageUrl={event.image?.url || "sweatwithprideplaceholder.jpg"}
+                        signupUrl={event.signupUrl || ""}
+                    />
+                ))}
             </div>
         </>
     );
