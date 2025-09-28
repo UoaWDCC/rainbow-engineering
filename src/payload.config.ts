@@ -13,6 +13,8 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Executives } from "./collections/Executives";
 import { Showcase } from "./collections/Showcase";
+import { SponsorsSilver } from './collections/SponsorsSilver'
+import { SponsorsAmethyst } from './collections/SponsorsAmethyst';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -25,7 +27,7 @@ export default buildConfig({
     },
   },
   globals: [AboutUs],
-  collections: [Users, Media, Executives, Showcase],
+  collections: [Users, Media, Executives, Showcase, SponsorsSilver, SponsorsAmethyst],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
