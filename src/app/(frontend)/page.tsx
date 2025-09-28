@@ -11,6 +11,14 @@ import { Executives } from "@/collections/Executives";
 
 import config from "@/payload.config";
 
+type AboutUsType = {
+  Title: string;
+  Image: { url: string; alt?: string };
+  "About Us Description": string;
+  "Bullet Points Description": string;
+  "Bullet Points"?: { Point: string }[];
+};
+
 export default async function HomePage() {
   const payloadConfig = await config;
   const payload = await getPayload({ config: payloadConfig });
@@ -18,7 +26,7 @@ export default async function HomePage() {
   const aboutus = await payload.findGlobal({
     slug: "about-us",
     depth: 1,
-  });
+  }) as AboutUsType;
 
   const execs = await payload.find({
     collection: Executives.slug as any,
@@ -151,7 +159,7 @@ export default async function HomePage() {
                 <div className="relative flex flex-col items-center text-center w-full sm:w-[1200px] h-[400px] overflow-hidden rounded-xl">
                   <Image
                     src={aboutus.Image.url}
-                    alt={aboutus.Image?.alt}
+                    alt={aboutus.Image?.alt ?? "About Us Image"}
                     fill
                     className="object-cover"
                   />
