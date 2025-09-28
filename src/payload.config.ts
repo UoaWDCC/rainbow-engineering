@@ -13,7 +13,7 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Executives } from "./collections/Executives";
 import { Showcase } from "./collections/Showcase";
-import { Initiatives } from "./collections/Initiatives";
+import { PayloadInitiatives } from "./collections/Initiatives";
 import { SponsorsAmethyst } from "./collections/SponsorsAmethyst";
 import { SponsorsSilver } from "./collections/SponsorsSilver";
 
