@@ -1,17 +1,19 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import { withPayload } from "@payloadcms/next/withPayload";
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
+        protocol: 'https' as const,
         hostname: 'images.unsplash.com',
       },
       {
-        protocol: 'https',
+        protocol: 'https' as const,
         hostname: 'plus.unsplash.com',
       },
     ],
   },
 };
 
-export default nextConfig;
+export default withPayload(nextConfig);
