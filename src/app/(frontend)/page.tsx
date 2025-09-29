@@ -5,6 +5,7 @@ import type { Media } from '../../payload-types'; // adjust path to your generat
 
 import HomePageBanner from "./components/HomePageBanner";
 import ScrollingGallery from "./components/ScrollingGallery";
+import RainbowButton from "./components/RainbowButton";
 import Link from "next/link";
 // import { images } from "./data";
 import ExecCard from "./components/ExecCard";
@@ -57,16 +58,11 @@ export default async function HomePage() {
         <div className="flex flex-col items-center mt-10">
           {/* Call-to-action Sign Up Button */}
           <div className="max-w-md px-4">
-            <Link
-              href="/signup"
-              className="px-20 py-10 text-3xl hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#5f249f] font-bold font-[Montserrat] rounded-xl shadow-lg"
-            >
-              SIGN UP
-            </Link>
+            <RainbowButton>SIGN UP</RainbowButton>
           </div>
 
           {/* Socials Bar */}
-          <div className="relative z-10 mt-28 w-full bg-[#E2D6F6] py-16 px-12 flex justify-center items-center max-w-full md:space-x-12">
+          <div className="relative z-10 mt-22 w-full bg-[#E2D6F6] py-16 px-12 flex justify-center items-center max-w-full md:space-x-12">
             {/* Links */}
             <div className="flex space-x-5">
               {/* Instagram */}
