@@ -17,7 +17,7 @@ import { PayloadInitiatives } from "./collections/Initiatives";
 import { SponsorsGold } from "./collections/SponsorsGold";
 import { SponsorsSilver } from './collections/SponsorsSilver'
 import { SponsorsAmethyst } from './collections/SponsorsAmethyst';
-// import { Events } from "./collections/Events";
+import { Events } from "./collections/Events";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -30,7 +30,7 @@ export default buildConfig({
     },
   },
   globals: [AboutUs],
-  collections: [Users, Media, Executives, Showcase, SponsorsSilver, SponsorsAmethyst, SponsorsGold, PayloadInitiatives],
+  collections: [Users, Media, Executives, Showcase, SponsorsSilver, SponsorsAmethyst, SponsorsGold, PayloadInitiatives, Events],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
