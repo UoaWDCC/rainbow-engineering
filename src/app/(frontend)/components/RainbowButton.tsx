@@ -10,7 +10,10 @@ interface RainbowButtonProps {
 const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick }) => {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [dimensions, setDimensions] = useState<{ width: number; height: number }>({ width: 0, height: 0 })
+  const [animate, setAnimate] = useState(false)
   const radius = 24
+  const dashDuration = 2000 // dash animation duration in ms
+  const intervalTime = 6000 // time between animations
 
   useEffect(() => {
     const measure = () => {
@@ -19,10 +22,17 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick }) => {
         setDimensions({ width: rect.width, height: rect.height })
       }
     }
-
     measure()
-    window.addEventListener('resize', measure) // update on resize
+    window.addEventListener('resize', measure)
     return () => window.removeEventListener('resize', measure)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimate(true)
+      setTimeout(() => setAnimate(false), dashDuration)
+    }, intervalTime)
+    return () => clearInterval(interval)
   }, [])
 
   const { width, height } = dimensions
@@ -41,14 +51,13 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick }) => {
       {width > 0 && height > 0 && (
         <svg width={width} height={height} className="absolute top-0 left-0 pointer-events-none">
           <defs>
-            <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="red" />
-              <stop offset="16%" stopColor="orange" />
-              <stop offset="33%" stopColor="yellow" />
-              <stop offset="50%" stopColor="green" />
-              <stop offset="66%" stopColor="blue" />
-              <stop offset="83%" stopColor="indigo" />
-              <stop offset="100%" stopColor="violet" />
+            <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FFF677" />
+              <stop offset="20%" stopColor="#FFB050" />
+              <stop offset="40%" stopColor="#F45757" />
+              <stop offset="60%" stopColor="#68BC8E" />
+              <stop offset="80%" stopColor="#628BEC" />
+              <stop offset="100%" stopColor="#AF4FC0" />
             </linearGradient>
           </defs>
 
@@ -64,16 +73,36 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick }) => {
             fill="none"
             strokeDasharray={`${dashLength} ${gapLength}`}
             strokeDashoffset={0}
-            style={{ animation: `dash 2.5s linear infinite` }}
+            className={animate ? 'dash-animation' : ''}
           />
         </svg>
       )}
 
       <style>
         {`
+          rect {
+            opacity: 0; /* default invisible when not animating */
+          }
+
           @keyframes dash {
-            0% { stroke-dashoffset: 0; }
-            100% { stroke-dashoffset: ${perimeter}; }
+            0% {
+              stroke-dashoffset: 0;
+              opacity: 0;
+            }
+            30% {
+              opacity: 1; /* gradual fade in */
+            }
+            70% {
+              opacity: 1; /* stay fully visible */
+            }
+            100% {
+              stroke-dashoffset: ${perimeter};
+              opacity: 0; /* gradual fade out */
+            }
+          }
+
+          .dash-animation {
+            animation: dash ${dashDuration}ms ease-in-out forwards;
           }
         `}
       </style>
