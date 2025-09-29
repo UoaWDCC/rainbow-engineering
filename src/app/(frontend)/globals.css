@@ -71,18 +71,18 @@ header {
     height: 60px;
     width: 100%;
     background-color: #ccb8f0;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     padding: 0rem 0.5rem;
 }
 
 .nav-links-desktop a.active {
     background: #F1EAFB;
-    border-top-left-radius: 25px;
+    border-top-left-radius: 15px;
 
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .nav-links-desktop a.inactive:hover {
