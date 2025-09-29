@@ -13,7 +13,7 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Executives } from "./collections/Executives";
 import { Showcase } from "./collections/Showcase";
-import { PayloadInitiatives } from "./collections/Initiatives";
+import { Initiatives } from "./collections/Initiatives";
 import { SponsorsGold } from "./collections/SponsorsGold";
 import { SponsorsSilver } from './collections/SponsorsSilver'
 import { SponsorsAmethyst } from './collections/SponsorsAmethyst';
@@ -30,7 +30,7 @@ export default buildConfig({
     },
   },
   globals: [AboutUs],
-  collections: [Users, Media, Executives, Showcase, SponsorsSilver, SponsorsAmethyst, SponsorsGold, PayloadInitiatives, Events],
+  collections: [Users, Media, Executives, Showcase, SponsorsSilver, SponsorsAmethyst, SponsorsGold, Initiatives, Events],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
