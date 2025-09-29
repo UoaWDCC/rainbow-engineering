@@ -6,7 +6,6 @@ import type { Media } from '../../payload-types'; // adjust path to your generat
 import HomePageBanner from "./components/HomePageBanner";
 import ScrollingGallery from "./components/ScrollingGallery";
 import RainbowButton from "./components/RainbowButton";
-import Link from "next/link";
 // import { images } from "./data";
 import ExecCard from "./components/ExecCard";
 
