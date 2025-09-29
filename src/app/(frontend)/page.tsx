@@ -56,10 +56,10 @@ export default async function HomePage() {
         <HomePageBanner />
         <div className="flex flex-col items-center mt-10">
           {/* Call-to-action Sign Up Button */}
-          <div className="max-w-md px-4 zoom transition-transform duration-200 ease-in-out ">
+          <div className="max-w-md px-4">
             <Link
               href="/signup"
-              className="px-20 py-10 text-3xl hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#5f249f] font-bold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out transform glow"
+              className="px-20 py-10 text-3xl hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#5f249f] font-bold font-[Montserrat] rounded-xl shadow-lg"
             >
               SIGN UP
             </Link>
