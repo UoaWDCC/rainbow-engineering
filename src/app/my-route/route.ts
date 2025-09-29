@@ -6,6 +6,9 @@ export const GET = async (request: Request) => {
     config: configPromise,
   })
 
+  // This is cooked build error workaround
+  console.log(request, payload)
+
   return Response.json({
     message: 'This is an example of a custom route.',
   })

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { getPayload } from "payload";
 import React from "react";
+import type { Media } from '../../payload-types'; // adjust path to your generated types
 
 import HomePageBanner from "./components/HomePageBanner";
 import ScrollingGallery from "./components/ScrollingGallery";
 import Link from "next/link";
 // import { images } from "./data";
 import ExecCard from "./components/ExecCard";
-import { Executives } from "@/collections/Executives";
 
 import config from "@/payload.config";
 
@@ -29,22 +29,24 @@ export default async function HomePage() {
   }) as AboutUsType;
 
   const execs = await payload.find({
-    collection: Executives.slug as any,
+    collection: 'executives',
     sort: "name", // optional, alphabetically
-    depth: 1, // populate upload relation so we get `image.url`
   });
 
   // loading images from payload collection for scrolling gallery
-  const gallery = [];
+  interface GalleryItem {
+    src: string;
+    alt?: string;
+  }
+
   const images = await payload.find({
     collection: "showcase",
   });
-  images.docs.forEach((element, i) =>
-    gallery.push({
-      src: element.img.url,
-      alt: element.img.alt,
-    }),
-  );
+
+  const gallery: GalleryItem[] = images.docs.map((element) => ({
+    src: (element.img as Media).url ?? '',
+    alt: (element.img as Media).alt ?? '',
+  }));
 
   return (
     <div className="bg-light_purple min-h-screen">

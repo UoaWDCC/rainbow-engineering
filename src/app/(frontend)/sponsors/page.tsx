@@ -1,10 +1,7 @@
 import Banner from "../components/Banner";
 import SponsorInfoPanel from "../components/SponsorInfoPanel";
 import { getPayload } from "payload";
-import { SponsorsSilver } from "@/collections/SponsorsSilver";
-import { SponsorsAmethyst } from "@/collections/SponsorsAmethyst";
-import { SponsorsGold } from "@/collections/SponsorsGold";
-
+import type { SponsorsAmethyst, SponsorsSilver, SponsorsGold } from '../../../payload-types'; // adjust path to your generated types
 import config from "@/payload.config";
 
 export default async function Sponsors() {
@@ -13,19 +10,19 @@ export default async function Sponsors() {
     const payload = await getPayload({ config: payloadConfig});
 
     const gold = await payload.find({
-        collection: SponsorsGold.slug as any,
+        collection: 'sponsors-gold',
         depth: 1,
         sort: "name", 
     });
 
     const silver = await payload.find({
-        collection: SponsorsSilver.slug as any,
+        collection: 'sponsors-silver',
         depth: 1,
         sort: "name", 
   });
 
   const amethyst = await payload.find({
-        collection: SponsorsAmethyst.slug as any,
+        collection: 'sponsors-amethyst',
         depth: 1,
         sort: "name", 
   });
@@ -61,7 +58,7 @@ export default async function Sponsors() {
 
                 {/* GOLD */}
                 <h2 className="text-5xl font-bold font-[Montserrat] text-[#c2ac63]">GOLD</h2>
-                {gold.docs.map((sponsor: any) => (
+                {gold.docs.map((sponsor: SponsorsGold) => (
                     <SponsorInfoPanel
                         key={sponsor.id}
                         sponsorTier="gold"
@@ -78,7 +75,7 @@ export default async function Sponsors() {
 
                 {/* SILVER */}
                 <h2 className="mt-20 text-5xl font-bold font-[Montserrat] text-[#babac3]">SILVER</h2>
-                {silver.docs.map((sponsor: any) => (
+                {silver.docs.map((sponsor: SponsorsSilver) => (
                      <SponsorInfoPanel
                     key={sponsor.id}
                     sponsorTier="silver" // makes it collapsible in your component
@@ -95,7 +92,7 @@ export default async function Sponsors() {
 
                 {/* AMETHYST */}
                 <h2 className="mt-20 text-5xl font-bold font-[Montserrat] text-[#ae2bfa]">AMETHYST</h2>
-                {amethyst.docs.map((sponsor: any) => (
+                {amethyst.docs.map((sponsor: SponsorsAmethyst) => (
                      <SponsorInfoPanel
                     key={sponsor.id}
                     sponsorTier="amethyst" // makes it collapsible in your component

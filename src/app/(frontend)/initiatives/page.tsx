@@ -1,8 +1,8 @@
 import Banner from "../components/Banner";
 import ImageCard from "../components/ImageCard";
 import { getPayload } from "payload";
-import { Initiatives as payloadInitiatives } from "@/collections/Initiatives";
 import config from "@/payload.config";
+import type { Initiative } from '../../../payload-types'; // adjust path to your generated types
 
 export default async function Initiatives() {
   // initialize payload
@@ -10,7 +10,7 @@ export default async function Initiatives() {
 
   // fetch initiatives
   const initiatives = await payload.find({
-    collection: payloadInitiatives.slug as any,
+    collection: 'initiatives',
     depth: 1,
     sort: "name",
   });
@@ -19,7 +19,7 @@ export default async function Initiatives() {
     <>
       <Banner title="COMMUNITY & INITIATIVES" />
       <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
-        {initiatives.docs.map((initiative: any) => (
+        {initiatives.docs.map((initiative: Initiative) => (
           <ImageCard
             key={initiative.id}
             title={initiative.name}

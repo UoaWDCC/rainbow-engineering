@@ -2,7 +2,7 @@ import { getPayload } from "payload";
 import config from "@/payload.config";
 import Banner from "../components/Banner";
 import EventDropdown from "../components/EventDropdown";
-import { Events as EventsCollection } from "@/collections/Events";
+import type { Event, Media } from '../../../payload-types'; // adjust path to your generated types
 
 function formatDate(dateString: string) {
     const date = new Date(dateString);
@@ -15,7 +15,7 @@ function formatDate(dateString: string) {
 export default async function Events() {
     const payload = await getPayload({ config });
     const events = await payload.find({
-        collection: EventsCollection.slug as any,
+        collection: 'events',
         depth: 1,
         sort: "date",
     });
@@ -25,14 +25,14 @@ export default async function Events() {
         <>
             <Banner title="UPCOMING EVENTS"/>
             <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
-                {events.docs.map((event: any) => (
+                {events.docs.map((event: Event) => (
                     <EventDropdown 
                         key={event.id}
                         title={event.title}
                         date={formatDate(event.date)}
                         description={event.description}
-                        imageUrl={event.image?.url || "sweatwithprideplaceholder.jpg"}
-                        signupUrl={event.signupUrl || ""}
+                        imageUrl={(event.image as Media).url || ""}
+                        signupUrl={event.signupURL || ""}
                     />
                 ))}
             </div>
