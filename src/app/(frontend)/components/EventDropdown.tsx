@@ -52,7 +52,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
               href={signupUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center bg-purple-100 hover:bg-purple-300 text-purple-800 font-semibold px-4 py-2 rounded-lg text-sm transition-colors"
+              className="block w-full text-center bg-purple-100 hover:bg-purple-300 text-purple-800 font-semibold px-4 py-2 rounded-lg text-sm transition-colors mb-4"
             >
               Sign Up
             </a>
