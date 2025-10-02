@@ -37,10 +37,8 @@ export default function HomePageBannerAnimation() {
             start: "manual", // Don't start automatically
           },
           () => {
-            // Make logo appear after animation 
-            const logo = document.getElementById('logo-container');
 
-            if (logo) logo.style.opacity = '1';
+
             // Callback - force all paths to be fully visible mitigates resizing issues
             const svgElement = document.getElementById(svgId);
             if (svgElement) {
@@ -52,6 +50,15 @@ export default function HomePageBannerAnimation() {
             }
           },
         );
+        
+        // Make logo appear slowly during animation 
+        setTimeout(() => {
+          const logo = document.getElementById('logo-container');
+          if (logo) {
+            logo.style.transition = 'opacity 1s ease-in-out';
+            logo.style.opacity = '1';
+            }
+          }, 500);
 
         // Show the SVG and start the animation
         // Prevents flashing the banner before the animation
