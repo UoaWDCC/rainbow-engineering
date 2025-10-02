@@ -23,7 +23,7 @@ export default function HomePageBanner() {
             <div className="-mt-20 md:-mt-35 flex flex-col items-center space-y-4 md:space-y-6">
 
                 {/* Title */}
-                <h1 className="text-5xl sm:text-6xl text-[#5f249f] font-bold font-[Montserrat] text-center">
+                <h1 className="text-5xl sm:text-6xl text-[#5f249f] font-bold font-[Allura] text-center">
                     Rainbow Engineering
                 </h1>
                 <h2 className="text-2xl sm:text-3xl text-[#5f249f] font-bold font-[Montserrat] text-center">
