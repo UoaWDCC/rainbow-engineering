@@ -73,14 +73,14 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick }) => {
             fill="none"
             strokeDasharray={`${dashLength} ${gapLength}`}
             strokeDashoffset={0}
-            className={animate ? 'dash-animation' : ''}
+            className={`rainbow-border ${animate ? 'dash-animation' : ''}`}
           />
         </svg>
       )}
 
       <style>
         {`
-          rect {
+          rect.rainbow-border {
             opacity: 0; /* default invisible when not animating */
           }
 
