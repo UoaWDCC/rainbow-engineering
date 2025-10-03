@@ -58,7 +58,7 @@ export default function HomePageBannerAnimation() {
             logo.style.transition = 'opacity 1s ease-in-out';
             logo.style.opacity = '1';
             }
-          }, 500);
+          }, 1200);
 
         // Show the SVG and start the animation
         // Prevents flashing the banner before the animation
