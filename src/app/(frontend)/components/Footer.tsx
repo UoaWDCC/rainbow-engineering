@@ -116,7 +116,6 @@ export default function Footer() {
         href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
         target="_blank"
         rel="noopener noreferrer"
-        className="text-purple-600 hover:text-purple-800 underline"
       >
         <Image
           src="/instagram.png"
@@ -131,7 +130,6 @@ export default function Footer() {
         href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-purple-600 hover:text-purple-800 underline"
       >
         <Image
           src="/mail.png"
@@ -146,7 +144,6 @@ export default function Footer() {
         href="https://www.linkedin.com/company/rainbowengineeringuoa/?originalSubdomain=nz"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-purple-600 hover:text-purple-800 underline"
       >
         <Image
           src="/LinkedIn.png"
@@ -161,7 +158,6 @@ export default function Footer() {
         href="https://www.facebook.com/rainbowengineering.uoa"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-purple-600 hover:text-purple-800 underline"
       >
         <Image
           src="/facebook.png"
@@ -173,9 +169,26 @@ export default function Footer() {
       </a>
     </div>
 
-    <div className="mt-3 sm:mt-8 mr-5 text-right">
-      rainbowengineering.uoa@gmail.com
-    </div>
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+      <div className="mt-3 sm:mt-8 mr-5 flex justify-end">
+        <div 
+          className="text-left relative inline-block group"
+          style={{
+          paddingBottom: '1px'
+          }}
+          >
+        <div className="text-sm">Contact us:</div>
+        <div>rainbowengineering.uoa@gmail.com</div>
+        <span 
+          className="absolute bottom-0 left-0 h-0.5 bg-current transition-all duration-600 ease-out w-0 group-hover:w-full"
+        />
+        </div>
+      </div>
+      </a>
 
     <div className="mt-5"></div>
   </div>
