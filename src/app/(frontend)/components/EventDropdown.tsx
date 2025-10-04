@@ -27,8 +27,8 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
         className="w-full flex items-center justify-between text-left"
       >
         <div className="flex items-center gap-2">
-          <span className={`text-3xl transition-colors ${open ? 'text-purple-500' : ''}`}>
-            {open ? '▲' : '▼'}
+          <span className={`text-3xl transition-colors ${open ? 'text-purple-400' : ''}`}>
+            {open ? '▼' : '►'}
           </span>
           <h3 className="text-3xl font-semibold font-[Montserrat]">{title}</h3>
         </div>
@@ -48,7 +48,8 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
                 className="object-cover rounded-lg"
               />
             </div>
-            <a
+            {signupUrl && signupUrl.trim() !== '' && (
+              <a
               href={signupUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -56,6 +57,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
             >
               Sign Up
             </a>
+            )};
           </div>
         </div>
       )}
