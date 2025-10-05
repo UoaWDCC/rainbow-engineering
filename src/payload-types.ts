@@ -242,6 +242,10 @@ export interface Initiative {
   name: string;
   description: string;
   image?: (number | null) | Media;
+  /**
+   * Add a link for users to sign up for this initiative
+   */
+  signupUrl?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -446,6 +450,7 @@ export interface InitiativesSelect<T extends boolean = true> {
   name?: T;
   description?: T;
   image?: T;
+  signupUrl?: T;
   updatedAt?: T;
   createdAt?: T;
 }

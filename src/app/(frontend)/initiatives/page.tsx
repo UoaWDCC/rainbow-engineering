@@ -2,15 +2,15 @@ import Banner from "../components/Banner";
 import ImageCard from "../components/ImageCard";
 import { getPayload } from "payload";
 import config from "@/payload.config";
-import type { Initiative } from '../../../payload-types'; // adjust path to your generated types
+import type { Initiative } from "../../../payload-types"; // adjust if needed
 
 export default async function Initiatives() {
-  // initialize payload
+  // initialize Payload
   const payload = await getPayload({ config });
 
-  // fetch initiatives
+  // fetch initiatives from your Payload CMS
   const initiatives = await payload.find({
-    collection: 'initiatives',
+    collection: "initiatives",
     depth: 1,
     sort: "name",
   });
@@ -29,7 +29,17 @@ export default async function Initiatives() {
                 ? initiative.image.url
                 : "/about_us_temp.png"
             }
-            margin="my-2"
+            margin="my-4"
+            buttonText={
+              initiative.signupUrl && initiative.signupUrl.trim() !== ""
+                ? "Sign Up"
+                : undefined
+            }
+            buttonHref={
+              initiative.signupUrl && initiative.signupUrl.trim() !== ""
+                ? initiative.signupUrl
+                : undefined
+            }
           />
         ))}
       </div>
