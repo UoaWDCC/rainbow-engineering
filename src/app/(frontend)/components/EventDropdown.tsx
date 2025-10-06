@@ -57,7 +57,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
             >
               Sign Up
             </a>
-            )};
+            )}
           </div>
         </div>
       )}
