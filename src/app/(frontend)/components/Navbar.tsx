@@ -1,114 +1,115 @@
+
 "use client";
 
 import Link from "next/link";
+
+const navLinks = [
+  { href: "/", label: "Rainbow Engineering", isLogo: true },
+  { href: "/events", label: "Events" },
+  { href: "/initiatives", label: "Initiatives" },
+  { href: "/sponsors", label: "Sponsors" },
+  { href: "/signup", label: "Sign Up" },
+];
+
 import { usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [hidden, hideNavBar] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const lastScrollYRef = useRef(0);
-  const [open, openDropdown] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/events", label: "Events" },
-    { href: "/initiatives", label: "Community & Initiatives" },
-    { href: "/sponsors", label: "Sponsorships" },
-    { href: "/signup", label: "Sign Up" },
-  ];
-
-  // hides navbar when going down the page, shows navbar when going up the page
   useEffect(() => {
     function handleScroll() {
       const currentScrollY = window.scrollY;
-      const scrollDifference = Math.abs(currentScrollY - lastScrollYRef.current);
-      if (currentScrollY > lastScrollYRef.current && scrollDifference > 10) {
-        openDropdown(false);
-        hideNavBar(true);
-      } else if (currentScrollY <= lastScrollYRef.current) {
-        hideNavBar(false);
+      if (currentScrollY > lastScrollYRef.current) {
+        setHidden(true);
+      } else if (currentScrollY < lastScrollYRef.current) {
+        setHidden(false);
       }
       lastScrollYRef.current = currentScrollY;
     }
-    function handleArrowKeyMovement(e: KeyboardEvent) {
-      if (e.key === "ArrowDown") {
-        openDropdown(false);
-        hideNavBar(true);
-      } else if (e.key === "ArrowUp") {
-        hideNavBar(false);
-      }
-    }
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("keydown", handleArrowKeyMovement);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("keydown", handleArrowKeyMovement);
-    }
+    };
   }, []);
 
-  // closes dropdown menu when new page is loaded
-  useEffect(() => openDropdown(false), [pathname]);
-
-  // closes dropdown menu when action is undone
-  useEffect(() => {
-    function closeDropdownOnEscape(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        openDropdown(false);
-      }
-    }
-    function closeDropdownOnOutsideClick(e: MouseEvent) {
-      if (open && dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        openDropdown(false);
-      }
-    }
-    document.addEventListener("keydown", closeDropdownOnEscape);
-    document.addEventListener("click", closeDropdownOnOutsideClick);
-    return () => {
-      document.removeEventListener("keydown", closeDropdownOnEscape);
-      document.removeEventListener("click", closeDropdownOnOutsideClick);
-    };
-  }, [open]);
-
-    return (
-        <div>
-            <nav className={`navbar ${hidden ? 'hidden' : ''}`}>
-              {/* Tabs menu for desktop displays */}
-              <div className='nav-links-desktop'>
-                  {links.map(({ href, label }) => (
-                    <Link key={href} href={href} className={`nav-links font-[Montserrat] ${pathname === href ? 'active' : 'inactive'}`}>
-                      {label}
-                    </Link>
-                  ))}
-              </div>
-
-              {/* Hamburger button for dropdown menu */}
-              <button
-                className={`hamburger ${open ? "is-open": ""}`}
-                aria-expanded={open}
-                aria-controls='nav-mobile'
-                aria-label='Toggle menu'
-                onClick={() => openDropdown((s) => !s)}
+  return (
+    <>
+      <nav
+        style={{
+          width: "100%",
+          background: "#ccb8f0",
+          borderBottom: "1px solid #e5e7eb",
+          padding: "1rem 2rem",
+          position: "fixed",
+          top: hidden ? "-120px" : "0",
+          left: 0,
+          zIndex: 100,
+          height: "100px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+          transition: "top 0.3s",
+        }}
+      >
+  <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", justifyContent: "center", width: "100%" }}>
+          {navLinks.map(({ href, label, isLogo }) => {
+            const isSignUp = label === "Sign Up";
+            return (
+              <Link
+                key={href}
+                href={href}
+                style={{
+                  padding: "0.25rem 0.75rem",
+                  marginLeft: isSignUp ? "0.75rem" : undefined,
+                  marginRight: isSignUp ? "0.75rem" : undefined,
+                  borderRadius: isSignUp ? "12px" : "0px",
+                  textDecoration: "none",
+                  color: isSignUp ? "#f1eafb" : "#5f249f",
+                  fontWeight: "bold",
+                  fontFamily: "Montserrat, sans-serif",
+                  fontSize: "1.5rem",
+                  background: isSignUp ? "#5f249f" : "#ccb8f0",
+                  border: "none",
+                  boxShadow: isSignUp ? "0 2px 8px rgba(127,21,215,0.12)" : "none",
+                  transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
+                  display: "flex",
+                  alignItems: "center",
+                  height: "60px"
+                }}
               >
-                <span />
-                <span />
-                <span />
-              </button>
-
-              {/* Dropdown menu for mobile displays */}
-              <div id='nav-mobile' ref={dropdownRef} className={`mobile-menu ${open ? 'open' : ''}`}>
-                  <ul>
-                    {links.map(({ href, label }) => (
-                      <li key={href}>
-                        <Link href={href} onClick={() => openDropdown(false)} className={pathname === href ? 'active' : 'inactive'}>
-                          {label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-              </div>
-            </nav>
+                {isLogo ? (
+                  <>
+                    <img
+                      src="/rainbow_logo_bb.png"
+                      alt="Rainbow Logo"
+                      style={{ width: "80px", height: "80px", objectFit: "contain" }}
+                    />
+                    <span style={{
+                      marginLeft: "1rem",
+                      color: "#5f249f",
+                      fontWeight: "bold",
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "1.5rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      lineHeight: 1.1
+                    }}>
+                      <span>Rainbow</span>
+                      <span>Engineering</span>
+                    </span>
+                  </>
+                ) : label}
+              </Link>
+            );
+          })}
         </div>
+    </nav>
+    {/* Spacer to prevent navbar overlap */}
+    <div style={{ height: "60px" }} />
+  </>
   );
 }
