@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function HomePageBanner() {
 
     return (
-        <div className="mt-25 mb-22 w-full bg-[#F1EAFB] flex flex-col items-center">
+        <div className="mt-20 mb-22 w-full bg-[#F1EAFB] flex flex-col items-center">
             {/* Rainbow animation at the top */}
             <div className="w-full flex justify-center relative h-[200px] md:h-[250px]">
                 <HomePageBannerAnimation />

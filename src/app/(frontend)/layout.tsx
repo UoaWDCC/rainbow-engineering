@@ -18,16 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} antialiased bg-[#f1eafb]`}>
+        className={`${montserrat.variable} antialiased bg-[#f1eafb] min-h-screen flex flex-col`}>
         <header>
           <NavBar />
         </header>
-        {children}
-        <div className="flex flex-col">
-          <main className="flex-grow">
-          </main>
-          <Footer />
-        </div>
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

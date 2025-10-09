@@ -81,23 +81,7 @@ export default async function HomePage() {
                   />
                 </div>
               </a>
-              {/* Facebook */}
-              <a
-                href="https://www.facebook.com/rainbowengineering.uoa"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
-              >
-                <div className="relative w-10 h-10 sm:w-20 sm:h-20">
-                  <Image
-                    src="/facebook.png"
-                    alt="Facebook Logo"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </a>
+
 
               {/* Email */}
               <a
@@ -129,6 +113,23 @@ export default async function HomePage() {
                   <Image
                     src="/LinkedIn.png"
                     alt="LinkedIn Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </a>
+                            {/* Facebook */}
+              <a
+                href="https://www.facebook.com/rainbowengineering.uoa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
+              >
+                <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+                  <Image
+                    src="/facebook.png"
+                    alt="Facebook Logo"
                     fill
                     className="object-contain"
                   />
