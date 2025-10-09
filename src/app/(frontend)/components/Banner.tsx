@@ -7,8 +7,8 @@ interface BannerProps {
 export default function Banner({ title }: BannerProps) {
   return (
     <>
-      <div id="banner" className="mt-20 bg-[#F1EAFB] w-full px-4 py-10 relative -z-10">
-        <h1 className="text-8xl text-[#5f249f] font-bold font-[Montserrat] py-10 z-10">
+      <div id="banner" className="md:mt-20 bg-[#F1EAFB] w-full px-4 py-10 relative -z-10">
+        <h1 className="text-5xl md:text-6xl lg:text-8xl text-[#5f249f] font-bold font-[Montserrat] py-12 lg:py-10 z-10">
           {title}
         </h1>
       </div>
