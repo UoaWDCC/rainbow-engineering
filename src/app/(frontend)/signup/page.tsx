@@ -87,8 +87,8 @@ export default function SignUp() {
           >
                <div className="w-full pb-10 px-5">
                <div className=" justify-center flex px-5 ">
-               <iframe src="https://forms.gle/NtwS56BHigqcCr5cA" 
-               className="w-full max-w-200 h-[1200px] rounded-md">
+               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe4VS-tZICT267y9VBw0ca_rCQuV6aCJkgzKxBtLIiTrNAFiQ/viewform?embedded=true" 
+               className="w-full max-w-200 h-[2200px] rounded-md">
                </iframe>
                </div>
 
