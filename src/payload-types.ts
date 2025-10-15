@@ -207,6 +207,7 @@ export interface SponsorsSilver {
   name: string;
   description: string;
   image: number | Media;
+  website?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -219,6 +220,7 @@ export interface SponsorsAmethyst {
   name: string;
   description: string;
   image: number | Media;
+  website?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -231,6 +233,7 @@ export interface SponsorsGold {
   name: string;
   description: string;
   image: number | Media;
+  website?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -419,6 +422,7 @@ export interface SponsorsSilverSelect<T extends boolean = true> {
   name?: T;
   description?: T;
   image?: T;
+  website?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -430,6 +434,7 @@ export interface SponsorsAmethystSelect<T extends boolean = true> {
   name?: T;
   description?: T;
   image?: T;
+  website?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -441,6 +446,7 @@ export interface SponsorsGoldSelect<T extends boolean = true> {
   name?: T;
   description?: T;
   image?: T;
+  website?: T;
   updatedAt?: T;
   createdAt?: T;
 }
