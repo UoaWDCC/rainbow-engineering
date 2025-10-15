@@ -69,6 +69,7 @@ export default async function Sponsors() {
                                 : "/placeholder.jpg"
                         }
                         description={sponsor.description}
+                        websiteUrl={sponsor.website || undefined}
                     />
                 ))}
 
@@ -86,6 +87,7 @@ export default async function Sponsors() {
                         ? sponsor.image.url
                         : "/placeholder.jpg"
                     }
+                    websiteUrl={sponsor.website || undefined}
                 />
             ))}
 
@@ -103,6 +105,7 @@ export default async function Sponsors() {
                         ? sponsor.image.url
                         : "/placeholder.jpg"
                     }
+                    websiteUrl={sponsor.website || undefined}
                 />
             ))}
 

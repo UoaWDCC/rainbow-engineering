@@ -24,5 +24,11 @@ export const SponsorsAmethyst: CollectionConfig = {
     relationTo: 'media',
     required: true 
     }, 
+    { 
+    name: 'website', 
+    type: 'text', 
+    label: 'Website URL',
+    required: false
+    },
   ],
 };
