@@ -1,5 +1,4 @@
 import Banner from "../components/Banner";
-import ImageCard from "../components/ImageCard";
 import { getPayload } from "payload";
 import config from "@/payload.config";
 import type { Initiative } from "../../../payload-types"; // adjust if needed
