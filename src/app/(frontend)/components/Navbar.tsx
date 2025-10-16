@@ -80,14 +80,6 @@ export default function Navbar() {
         .navbar-desktop {
           display: flex;
           gap: 0.75rem;
-                    <Image
-                      src="/rainbow_logo_bb.png"
-                      alt="Rainbow Logo"
-                      width={110}
-                      height={110}
-                      style={{ objectFit: "contain" }}
-                      priority
-                    />
           align-items: center;
           justify-content: center;
           width: 100%;
@@ -95,7 +87,38 @@ export default function Navbar() {
         .navbar-mobile-row {
           display: none;
         }
-        @media (max-width: 640px) {
+        .rainbow-title {
+          margin-left: 1rem;
+          color: #5f249f;
+          font-weight: bold;
+          font-family: Montserrat, sans-serif;
+          font-size: 1.2rem;
+          display: flex;
+          flex-direction: column;
+          line-height: 1.1;
+        }
+
+    @media (min-width: 1601px){
+          .navbar-desktop {
+            padding: 0 15rem;
+          }
+        }
+
+    @media (min-width: 1200px) and (max-width: 1600px) {
+          .navbar-desktop {
+            padding: 0 10rem;
+          }
+        }
+
+        @media (min-width: 661px) and (max-width: 800px) {
+          .rainbow-title {
+            display: none;
+          }
+        }
+        @media (max-width: 660px) {
+        .rainbow-title {
+        font-size: 1rem;
+        }
           .navbar-desktop {
             display: none !important;
           }
@@ -107,7 +130,7 @@ export default function Navbar() {
             flex-direction: row;
             align-items: center;
             width: 100%;
-            justify-content: flex-start;
+            justify-content: space-between;
             gap: 0.5rem;
           }
         }
@@ -143,21 +166,21 @@ export default function Navbar() {
                 href={href}
                 style={{
                   padding: "0.25rem 0.75rem",
-                  marginLeft: isSignUp ? "0.75rem" : undefined,
-                  marginRight: isSignUp ? "0.75rem" : undefined,
+                  marginLeft: isSignUp ? "0.7rem" : undefined,
+                  marginRight: isSignUp ? "0.7rem" : (isLogo ? "auto" : undefined),
                   borderRadius: isSignUp ? "12px" : "0px",
                   textDecoration: "none",
                   color: isSignUp ? "#f1eafb" : "#5f249f",
                   fontWeight: "bold",
                   fontFamily: "Montserrat, sans-serif",
-                  fontSize: "1.5rem",
+                  fontSize: "1rem",
                   background: isSignUp ? "#5f249f" : "#ccb8f0",
                   border: "none",
                   boxShadow: isSignUp ? "0 2px 8px rgba(127,21,215,0.12)" : "none",
                   transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
                   display: "flex",
                   alignItems: "center",
-                  height: "60px"
+                  height: "40px"
                 }}
               >
                 {isLogo ? (
@@ -170,16 +193,7 @@ export default function Navbar() {
                       style={{ objectFit: "contain" }}
                       priority
                     />
-                    <span style={{
-                      marginLeft: "1rem",
-                      color: "#5f249f",
-                      fontWeight: "bold",
-                      fontFamily: "Montserrat, sans-serif",
-                      fontSize: "1.5rem",
-                      display: "flex",
-                      flexDirection: "column",
-                      lineHeight: 1.1
-                    }}>
+                    <span className="rainbow-title">
                       <span>Rainbow</span>
                       <span>Engineering</span>
                     </span>
@@ -192,6 +206,39 @@ export default function Navbar() {
         {/* Hamburger button for dropdown menu (mobile) */}
         {/* Mobile hamburger + logo row */}
         <div className="navbar-mobile-row">
+                    {/* Rainbow Engineering button (logo) on mobile */}
+          <Link
+            href="/"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              textDecoration: "none",
+              padding: "0.25rem 0.75rem",
+              borderRadius: "12px",
+              color: "#5f249f",
+              fontWeight: "bold",
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "1.2rem",
+              background: "#ccb8f0",
+              border: "none",
+              boxShadow: "none",
+              transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
+              height: "60px"
+            }}
+          >
+            <Image
+              src="/rainbow_logo_bb.png"
+              alt="Rainbow Logo"
+              width={100}
+              height={100}
+              style={{ objectFit: "contain" }}
+              priority
+            />
+            <span className="rainbow-title">
+              <span>Rainbow</span>
+              <span>Engineering</span>
+            </span>
+          </Link>
           <button
             className={`hamburger ${open ? "is-open" : ""} navbar-mobile`}
             aria-expanded={open}
@@ -204,48 +251,7 @@ export default function Navbar() {
             <span />
             <span />
           </button>
-          {/* Rainbow Engineering button (logo) on mobile */}
-          <Link
-            href="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              textDecoration: "none",
-              padding: "0.25rem 0.75rem",
-              borderRadius: "12px",
-              color: "#5f249f",
-              fontWeight: "bold",
-              fontFamily: "Montserrat, sans-serif",
-              fontSize: "1.5rem",
-              background: "#ccb8f0",
-              border: "none",
-              boxShadow: "none",
-              transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
-              height: "60px"
-            }}
-          >
-            <Image
-              src="/rainbow_logo_bb.png"
-              alt="Rainbow Logo"
-              width={110}
-              height={110}
-              style={{ objectFit: "contain" }}
-              priority
-            />
-            <span style={{
-              marginLeft: "1rem",
-              color: "#5f249f",
-              fontWeight: "bold",
-              fontFamily: "Montserrat, sans-serif",
-              fontSize: "1.5rem",
-              display: "flex",
-              flexDirection: "column",
-              lineHeight: 1.1
-            }}>
-              <span>Rainbow</span>
-              <span>Engineering</span>
-            </span>
-          </Link>
+
         </div>
         {/* Dropdown menu for mobile displays */}
         <div
@@ -272,12 +278,12 @@ export default function Navbar() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    padding: "1rem",
+                    padding: "1rem 1rem 1rem 3rem",
                     textDecoration: "none",
                     color: "#5f249f",
                     fontWeight: "bold",
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "1.5rem",
+                    fontSize: "1.1rem",
                   }}
                 >
                   {label}
