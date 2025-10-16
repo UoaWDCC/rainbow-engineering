@@ -39,7 +39,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
         <div className="mt-4 flex flex-col md:flex-row gap-4">
           <div className="md:basis-3/5 text-lg text-slate-700 font-[Montserrat]">{description}</div>
           <div className="md:basis-2/5 flex flex-col gap-2">
-            <div className="relative w-full h-48">
+            <div className="relative w-full min-h-48 h-full">
               <Image
                 src={imageUrl}
                 alt={title}
