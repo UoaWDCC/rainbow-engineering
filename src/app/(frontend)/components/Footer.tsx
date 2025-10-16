@@ -60,12 +60,31 @@ function createFooterSVG(
 
 export default function Footer() {
     const [screenWidth, setScreenWidth] = useState(500);
+    // Dark mode state - syncs with Navbar's dark mode preference from localStorage
+    const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const updateWidth = () => setScreenWidth(window.innerWidth);
     updateWidth();
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  // Load dark mode preference from localStorage on mount
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode === "true") {
+      setIsDark(true);
+    }
+
+    // Listen for dark mode changes from other components (like Navbar)
+    const handleStorageChange = () => {
+      const currentMode = localStorage.getItem("darkMode");
+      setIsDark(currentMode === "true");
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   const leftTailRatio = 0.14;
@@ -94,13 +113,14 @@ export default function Footer() {
       className="w-full h-[80px]"
       preserveAspectRatio="none"
     >
-          <rect y="35" width={leftTail + 9} height="15" fill="#d0b7f4" />
-          <rect y="49" width={leftTail + 13} height="12" fill="#d0b7f4" />
-          <rect y="60" width={leftTail + 16} height="20" fill="#d0b7f4" />
-          <rect y="75" width={leftTail + 20} height="11" fill="#d0b7f4" />
-          <rect y="85" width={leftTail + 25} height="8" fill="#d0b7f4" />
-          <rect y="90" width={leftTail + 35} height="15" fill="#d0b7f4" />
-          <rect y="101" width={screenWidth} height="20" fill="#d0b7f4" />
+          {/* Footer decorative rectangles - dark mode: #2A2342 (accent surface), light mode: #d0b7f4 (light purple) */}
+          <rect y="35" width={leftTail + 9} height="15" fill={isDark ? "#2A2342" : "#d0b7f4"} />
+          <rect y="49" width={leftTail + 13} height="12" fill={isDark ? "#2A2342" : "#d0b7f4"} />
+          <rect y="60" width={leftTail + 16} height="20" fill={isDark ? "#2A2342" : "#d0b7f4"} />
+          <rect y="75" width={leftTail + 20} height="11" fill={isDark ? "#2A2342" : "#d0b7f4"} />
+          <rect y="85" width={leftTail + 25} height="8" fill={isDark ? "#2A2342" : "#d0b7f4"} />
+          <rect y="90" width={leftTail + 35} height="15" fill={isDark ? "#2A2342" : "#d0b7f4"} />
+          <rect y="101" width={screenWidth} height="20" fill={isDark ? "#2A2342" : "#d0b7f4"} />
       
     </svg>
   </div>
@@ -108,7 +128,16 @@ export default function Footer() {
 
 
 
-<div className="bg-[#d0b7f4] text-[#8955d2] text-center relative z-0">
+<div
+  className="text-center relative z-0"
+  style={{
+    // Footer background: dark mode = #2A2342 (accent surface), light mode = #d0b7f4 (light purple)
+    backgroundColor: isDark ? "#2A2342" : "#d0b7f4",
+    // Footer text color: dark mode = #CFC6E9 (secondary text), light mode = #8955d2 (purple)
+    color: isDark ? "#CFC6E9" : "#8955d2",
+    transition: "background-color 0.2s, color 0.2s",
+  }}
+>
   <div className="grid font-['Montserrat'] font-bold text-[11px] sm:text-[12px] grid-cols-1 sm:grid-cols-2 sm:justify-items-center sm:gap-y-1 lg:gap-x-120 mx-auto">
     
     <div className="flex mt-3 ml-5 gap-x-2">
