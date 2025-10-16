@@ -116,6 +116,9 @@ export default function Navbar() {
           }
         }
         @media (max-width: 660px) {
+        .rainbow-title {
+        font-size: 1rem;
+        }
           .navbar-desktop {
             display: none !important;
           }
@@ -127,7 +130,7 @@ export default function Navbar() {
             flex-direction: row;
             align-items: center;
             width: 100%;
-            justify-content: flex-start;
+            justify-content: space-between;
             gap: 0.5rem;
           }
         }
@@ -203,19 +206,7 @@ export default function Navbar() {
         {/* Hamburger button for dropdown menu (mobile) */}
         {/* Mobile hamburger + logo row */}
         <div className="navbar-mobile-row">
-          <button
-            className={`hamburger ${open ? "is-open" : ""} navbar-mobile`}
-            aria-expanded={open}
-            aria-controls="nav-mobile"
-            aria-label="Toggle menu"
-            onClick={() => openDropdown((s) => !s)}
-            style={{ marginRight: "0.5rem" }}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-          {/* Rainbow Engineering button (logo) on mobile */}
+                    {/* Rainbow Engineering button (logo) on mobile */}
           <Link
             href="/"
             style={{
@@ -238,8 +229,8 @@ export default function Navbar() {
             <Image
               src="/rainbow_logo_bb.png"
               alt="Rainbow Logo"
-              width={110}
-              height={110}
+              width={100}
+              height={100}
               style={{ objectFit: "contain" }}
               priority
             />
@@ -248,6 +239,19 @@ export default function Navbar() {
               <span>Engineering</span>
             </span>
           </Link>
+          <button
+            className={`hamburger ${open ? "is-open" : ""} navbar-mobile`}
+            aria-expanded={open}
+            aria-controls="nav-mobile"
+            aria-label="Toggle menu"
+            onClick={() => openDropdown((s) => !s)}
+            style={{ marginRight: "0.5rem" }}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
         </div>
         {/* Dropdown menu for mobile displays */}
         <div
