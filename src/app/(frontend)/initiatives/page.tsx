@@ -24,6 +24,7 @@ export default async function Initiatives() {
                     <EventDropdown 
                         key={initiative.id}
                         title={initiative.name}
+                        date={""}
                         description={initiative.description}
                         imageUrl={typeof initiative.image === "object" && initiative.image?.url
                 ? initiative.image.url
