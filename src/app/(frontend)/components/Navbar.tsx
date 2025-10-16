@@ -188,6 +188,35 @@ export default function Navbar() {
               </Link>
             );
           })}
+          {/* Theme toggle button */}
+          <button
+            aria-label="Toggle theme"
+            style={{
+              padding: "0.5rem",
+              marginLeft: "0.5rem",
+              borderRadius: "12px",
+              background: "#5f249f",
+              border: "none",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "48px",
+              height: "48px",
+              boxShadow: "0 2px 8px rgba(127,21,215,0.12)",
+              transition: "transform 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f1eafb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
         {/* Hamburger button for dropdown menu (mobile) */}
         {/* Mobile hamburger + logo row */}
@@ -221,7 +250,8 @@ export default function Navbar() {
               border: "none",
               boxShadow: "none",
               transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
-              height: "60px"
+              height: "60px",
+              flex: 1
             }}
           >
             <Image
@@ -246,6 +276,30 @@ export default function Navbar() {
               <span>Engineering</span>
             </span>
           </Link>
+          {/* Theme toggle button (mobile) */}
+          <button
+            aria-label="Toggle theme"
+            className="navbar-mobile"
+            style={{
+              padding: "0.5rem",
+              marginLeft: "0.5rem",
+              borderRadius: "12px",
+              background: "#5f249f",
+              border: "none",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "48px",
+              height: "48px",
+              boxShadow: "0 2px 8px rgba(127,21,215,0.12)",
+              transition: "transform 0.2s",
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f1eafb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
         </div>
         {/* Dropdown menu for mobile displays */}
         <div
