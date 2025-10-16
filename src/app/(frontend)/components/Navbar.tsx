@@ -278,12 +278,12 @@ export default function Navbar() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    padding: "1rem",
+                    padding: "1rem 1rem 1rem 3rem",
                     textDecoration: "none",
                     color: "#5f249f",
                     fontWeight: "bold",
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "1.2rem",
+                    fontSize: "1.1rem",
                   }}
                 >
                   {label}
