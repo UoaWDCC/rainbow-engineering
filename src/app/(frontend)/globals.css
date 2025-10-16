@@ -130,7 +130,7 @@ header {
     max-height: 400px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 660px) {
     .nav-links-desktop { 
         display: none; 
     }
