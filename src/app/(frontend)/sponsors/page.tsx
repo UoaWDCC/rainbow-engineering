@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import SponsorInfoPanel from "../components/SponsorInfoPanel";
+import RainbowButton from "../components/RainbowButton";
 import { getPayload } from "payload";
 import type { SponsorsAmethyst, SponsorsSilver, SponsorsGold } from '../../../payload-types'; // adjust path to your generated types
 import config from "@/payload.config";
@@ -34,24 +35,18 @@ export default async function Sponsors() {
             <Banner title="OUR SPONSORS"/>
             {/* ===== page layout wrapper ===== */}
             <div className="max-w-7xl mx-auto px-4 text-purple-800">
-                {/* ===== get in touch button ===== */}
-                <div className="max-w-full mx-auto text-center">
-                    <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Email"
-                        className="block py-3 text-lg bg-purple-300 text-purple-700 hover:bg-purple-400 font-semibold font-[Montserrat] rounded-xl shadow-lg transition duration-300 ease-in-out"
-                    >
-                        GET IN TOUCH
-                    </a>
-                </div>
-
                 {/* ===== information about sponsors ===== */}
-                <div className="mt-6 mb-20 bg-purple-200 text-slate-700 font-[Montserrat] p-6 rounded-xl max-w-full mx-auto text-center">
+                <div className="bg-purple-200 text-slate-700 font-[Montserrat] p-6 rounded-xl max-w-full mx-auto text-center">
                     <p className="text-base md:text-lg font-medium">
                         Sponsors play a vital role in powering Rainbow Engineering’s innovative projects, competitions, and community outreach. In return, we offer meaningful collaboration, brand visibility, and access to passionate future engineers. Together, we build bold ideas into reality.
                     </p>
+                </div>
+
+                {/* ===== get in touch button ===== */}
+                <div className="mt-6 mb-16 max-w-full mx-auto text-center">
+                    <RainbowButton href="https://mail.google.com/mail/?view=cm&fs=1&to=rainbowengineering.uoa@gmail.com">
+                        GET IN TOUCH
+                    </RainbowButton>
                 </div>
 
                 {/* ===== main section ===== */}
