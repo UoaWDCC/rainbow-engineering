@@ -1,19 +1,22 @@
 'use client'
 
 import React, { useRef, useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 interface RainbowButtonProps {
-  children: string
+  children: React.ReactNode
   onClick?: () => void
+  href?: string
 }
 
-const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick }) => {
+const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick, href }) => {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [dimensions, setDimensions] = useState<{ width: number; height: number }>({ width: 0, height: 0 })
   const [animate, setAnimate] = useState(false)
   const radius = 24
   const dashDuration = 2000 // dash animation duration in ms
   const intervalTime = 6000 // time between animations
+  const router = useRouter()
 
   useEffect(() => {
     const measure = () => {
@@ -43,7 +46,15 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick }) => {
   return (
     <button
       ref={buttonRef}
-      onClick={onClick}
+      onClick={() => {
+        try {
+          if (onClick) onClick()
+        } catch (e) {
+          // swallow errors from user-provided handler so navigation still happens
+          console.error(e)
+        }
+        if (href) router.push(href)
+      }}
       className="drop-shadow-2xl relative rounded-3xl px-20 py-13 text-3xl font-bold font-[Montserrat] hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#5f249f] transition-colors overflow-hidden"
     >
       {children}

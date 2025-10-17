@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function HomePageBanner() {
 
     return (
-        <div className="mt-20 mb-22 w-full bg-[#F1EAFB] flex flex-col items-center">
+        <div className="mt-4 mb-20 w-full bg-[#F1EAFB] flex flex-col items-center">
             {/* Rainbow animation at the top */}
             <div className="w-full flex justify-center relative h-[200px] md:h-[250px]">
                 <HomePageBannerAnimation />
@@ -33,22 +33,14 @@ export default function HomePageBanner() {
                 <div className="w-32 h-[2px] bg-[#5f249f]" />
 
                 {/* Rainbow Engineering's Three Values */}
-                <div className="flex justify-between w-full max-w-md px-10">
-                    <h4 className="text-1xl text-[#5f249f] font-bold font-[Montserrat] text-center">
+                <div className="inline-flex items-center justify-center whitespace-nowrap gap-2 sm:gap-4 w-full max-w-md px-4">
+                    <span className="text-1xl text-[#5f249f] font-bold font-[Montserrat]">
                         Advocacy
-                    </h4>
-                    <h4 className="text-1xl text-[#5f249f] font-bold font-[Montserrat] text-center">
-                        •
-                    </h4>
-                    <h4 className="text-1xl text-[#5f249f] font-bold font-[Montserrat] text-center">
-                        Opportunity
-                    </h4>
-                    <h4 className="text-1xl text-[#5f249f] font-bold font-[Montserrat] text-center">
-                        •
-                    </h4>
-                    <h4 className="text-1xl text-[#5f249f] font-bold font-[Montserrat] text-center">
-                        Community
-                    </h4>
+                    </span>
+                    <span className="text-1xl text-[#5f249f] font-bold font-[Montserrat]">•</span>
+                    <span className="text-1xl text-[#5f249f] font-bold font-[Montserrat]">Opportunity</span>
+                    <span className="text-1xl text-[#5f249f] font-bold font-[Montserrat]">•</span>
+                    <span className="text-1xl text-[#5f249f] font-bold font-[Montserrat]">Community</span>
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@ export default async function Initiatives() {
   return (
     <>
       <Banner title="COMMUNITY & INITIATIVES" />
-            <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
+            <div className="bg-purple-100 pb-10 px-4 max-w-7xl mx-auto">
                 {initiatives.docs.map((initiative: Initiative) => (
                     <EventDropdown 
                         key={initiative.id}

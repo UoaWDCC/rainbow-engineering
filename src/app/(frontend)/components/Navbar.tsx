@@ -152,7 +152,7 @@ export default function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+          boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
           transition: "top 0.3s",
         }}
       >
@@ -266,7 +266,7 @@ export default function Navbar() {
             right: 0,
             background: "#ccb8f0",
             zIndex: 101,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+            boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
           }}
         >
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>

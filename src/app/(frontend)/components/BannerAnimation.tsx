@@ -125,8 +125,8 @@ function createBannerSVG(
       id={svgId}
       className="w-full"
       width="100%"
-      height="200"
-      viewBox={`0 0 ${screenWidth} 200`}
+      height="150"
+      viewBox={`0 0 ${screenWidth} 150`}
       xmlns="http://www.w3.org/2000/svg"
       style={{ opacity: hasAnimated ? 1 : 0 }}
     >
