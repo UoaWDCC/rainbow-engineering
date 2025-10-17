@@ -56,8 +56,8 @@ export default async function HomePage() {
         <HomePageBanner />
         <div className="flex flex-col items-center mt-10">
           {/* Call-to-action Sign Up Button */}
-          <div className="max-w-md px-4">
-            <RainbowButton>SIGN UP</RainbowButton>
+            <div className="max-w-md px-4">
+            <RainbowButton href="/signup">SIGN UP</RainbowButton>
           </div>
 
           {/* Socials Bar */}
