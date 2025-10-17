@@ -61,7 +61,7 @@ export default async function HomePage() {
           </div>
 
           {/* Socials Bar */}
-          <div className="relative z-10 mt-22 w-full bg-[#E2D6F6] py-16 px-12 flex justify-center items-center max-w-full md:space-x-12">
+          <div className="relative z-10 mt-22 w-full bg-[#E2D6F6] py-8 px-12 flex justify-center items-center max-w-full md:space-x-12">
             {/* Links */}
             <div className="flex space-x-5">
               {/* Instagram */}
@@ -135,10 +135,6 @@ export default async function HomePage() {
                   />
                 </div>
               </a>
-            </div>
-            {/* Text */}
-            <div className="hidden md:block text-[#8a55d2] text-3xl font-bold font-[Montserrat]">
-              Follow Our Socials
             </div>
           </div>
         </div>
