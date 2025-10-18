@@ -108,7 +108,7 @@ export default function Footer() {
 
 
 
-<div className="bg-[#d0b7f4] text-[#8955d2] text-center relative z-0">
+<div className="bg-[#d0b7f4] text-[#5f249f] text-center relative z-0">
   <div className="grid font-['Montserrat'] font-bold text-[11px] sm:text-[12px] grid-cols-1 sm:grid-cols-2 sm:justify-items-center sm:gap-y-1 lg:gap-x-120 mx-auto">
     
     <div className="flex mt-3 ml-5 gap-x-2">
