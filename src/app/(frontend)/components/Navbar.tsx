@@ -1,4 +1,7 @@
 
+
+
+
 "use client";
 
 import Link from "next/link";
@@ -30,9 +33,15 @@ export default function Navbar() {
     if (savedMode === "true") {
       setIsDark(true);
       // Apply dark mode to body
-      document.body.style.backgroundColor = "#121022";
+      document.body.style.backgroundColor = "45335C";
       document.body.style.color = "#F4EFFF";
     }
+    else {
+    document.body.style.backgroundColor = "#f1eafb";
+    document.body.style.color = "#171717";
+    }
+    //this is so other parts of the application can see if in dark or light mode
+    window.dispatchEvent(new CustomEvent("themechange", { detail: { isDark: savedMode === "true" } }));
   }, []);
 
   // Toggle dark mode function
@@ -43,12 +52,15 @@ export default function Navbar() {
     localStorage.setItem("darkMode", String(newMode));
     // Apply body colors
     if (newMode) {
-      document.body.style.backgroundColor = "#121022"; // Dark background
+      document.body.style.backgroundColor = "45335C"; // Dark background
       document.body.style.color = "#F4EFFF"; // Dark mode text
     } else {
+      //I added this so change would happen instantly, no need to
       document.body.style.backgroundColor = "#f1eafb"; // Light background
       document.body.style.color = "#171717"; // Light mode text
     }
+    //this is so other parts of the application can see if in dark or light mode
+    window.dispatchEvent(new CustomEvent("themechange", { detail: { isDark: newMode } }));
   };
 
   // hides navbar when going down the page, shows navbar when going up the page

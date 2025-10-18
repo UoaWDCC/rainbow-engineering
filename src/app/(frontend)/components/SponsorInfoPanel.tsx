@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image'
 
 // Adjustable sponsor info section design by sponsor tier:
@@ -24,8 +24,33 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
 }) => {
   const [open, setOpen] = useState(false);
 
+  //dark mode (same logic as event dropdown page)
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+  const saved = localStorage.getItem('darkMode') === 'true'
+  setIsDark(saved)
+
+  const onThemeChange = (e: Event) => {
+    const { isDark } = (e as CustomEvent).detail ?? {}
+    if (typeof isDark === 'boolean') setIsDark(isDark)
+    }
+  window.addEventListener('themechange', onThemeChange)
+    return () => {
+      window.removeEventListener('themechange', onThemeChange)
+    }
+  }, [])
+
+
+  
+
+
   const isGold = sponsorTier.toLowerCase() === 'gold';
   const showDescription = isGold || open;
+
+  //for dark mode colours
+  const bgColour = isDark ? '#796299' : '#E9D5FF' 
+  const text = isDark ? "#E9D5FF" : "#5f249f";
 
   const createLogoImage = (width: number, height: number, className?: string) => (
     <Image
@@ -56,7 +81,8 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
   };
 
   return (
-    <div className="bg-purple-200 border border-purple-300 rounded-xl p-4 my-5 text-slate-700 font-[Montserrat]">
+    <div className="rounded-xl p-4 my-5 font-[Montserrat]"
+    style={{ background: bgColour, color: text }}>
       {/* Dropdown activation */}
       <button
         onClick={() => !isGold && setOpen(!open)}
@@ -68,7 +94,7 @@ const SponsorInfoPanel: React.FC<SponsorInfo> = ({
           <span className={`transition-colors duration-300 ${isGold? 'text-transparent' : open ? 'text-purple-400' : 'text-purple-800'}`}>
             {open ? '▼' : '►'}
           </span>
-          <span className="text-purple-800 font-[Montserrat]">{sponsorName}</span>
+          <span className="font-[Montserrat]" style={{color : text}}>{sponsorName}</span>
         </div>
         <div className="ml-auto pl-3 w-10 h-10 flex items-center justify-center">
           {wrapWithLinkIfNeeded(

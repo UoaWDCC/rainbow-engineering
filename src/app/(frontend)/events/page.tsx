@@ -24,7 +24,7 @@ export default async function Events() {
     return (
         <>
             <Banner title="UPCOMING EVENTS"/>
-            <div className="bg-purple-100 py-10 px-4 max-w-7xl mx-auto">
+            <div className="py-10 px-4 max-w-7xl mx-auto">
                 {events.docs.map((event: Event) => (
                     <EventDropdown 
                         key={event.id}
