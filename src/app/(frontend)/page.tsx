@@ -140,7 +140,7 @@ export default async function HomePage() {
         </div>
 
         <div>
-          <div className="max-w-7xl mx-auto px-4 text-purple-700">
+          <div className="max-w-7xl mx-auto px-4">
             {/*================================ABOUT US SECTION================================*/}
             <div className="mt-22 w-full bg-[#E2D6F6] py-6 px-4 sm:px-16 rounded-2xl">
               {/* background coloured block */}

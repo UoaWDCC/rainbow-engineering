@@ -21,7 +21,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-purple-200 rounded-xl p-4 my-2 text-purple-800">
+    <div className="bg-[#E2D6F6] rounded-xl p-4 my-2 text-[#5f249f] font-[Montserrat]">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between text-left"
@@ -53,7 +53,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
               href={signupUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center bg-purple-100 hover:bg-purple-300 text-purple-800 font-semibold px-4 py-2 rounded-lg text-sm transition-colors mb-4"
+              className="block w-full text-center bg-purple-100 hover:bg-purple-300 font-semibold px-4 py-2 rounded-lg text-sm transition-colors mb-4"
             >
               Sign Up
             </a>

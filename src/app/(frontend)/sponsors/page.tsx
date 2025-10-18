@@ -34,9 +34,9 @@ export default async function Sponsors() {
         <div>
             <Banner title="OUR SPONSORS"/>
             {/* ===== page layout wrapper ===== */}
-            <div className="max-w-7xl mx-auto px-4 text-purple-800">
+            <div className="max-w-7xl mx-auto px-4 text-[#5f249f]">
                 {/* ===== information about sponsors ===== */}
-                <div className="bg-purple-200 text-slate-700 font-[Montserrat] p-6 rounded-xl max-w-full mx-auto text-center">
+                <div className="bg-[#E2D6F6] text-slate-700 font-[Montserrat] p-6 rounded-xl max-w-full mx-auto text-center">
                     <p className="text-base md:text-lg font-medium">
                         Sponsors play a vital role in powering Rainbow Engineering’s innovative projects, competitions, and community outreach. In return, we offer meaningful collaboration, brand visibility, and access to passionate future engineers. Together, we build bold ideas into reality.
                     </p>
