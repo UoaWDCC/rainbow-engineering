@@ -26,18 +26,21 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between text-left"
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-1">
           <span className={`text-3xl transition-colors ${open ? 'text-purple-400' : ''}`}>
             {open ? '▼' : '►'}
           </span>
           <h3 className="text-3xl font-semibold font-[Montserrat]">{title}</h3>
         </div>
-        <p className="text-3xl font-semibold font-[Montserrat]">{date}</p>
+        <p className="hidden md:block text-3xl font-semibold font-[Montserrat] whitespace-nowrap ml-4">{date}</p>
       </button>
 
       {open && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <div className="md:basis-3/5 text-lg text-slate-700 font-[Montserrat]">{description}</div>
+          <div className="md:basis-3/5">
+            <p className="md:hidden text-2xl font-semibold font-[Montserrat] text-purple-800 mb-3">{date}</p>
+            <div className="text-lg text-slate-700 font-[Montserrat]">{description}</div>
+          </div>
           <div className="md:basis-2/5 flex flex-col gap-2">
             <div className="relative w-full min-h-48 h-full">
               <Image
