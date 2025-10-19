@@ -5,7 +5,7 @@ export default function SignUp() {
   return (
     <div className="overflow-x-hidden">
       <Banner title="SIGN UP" />
-      <div className="font-['Montserrat'] text-[30px] text-[#8955d2] font-bold flex justify-center mb-5">FOLLOW OUR SOCIALS</div>
+      <div className="font-['Montserrat'] text-[30px] text-[#5f249f] font-bold flex justify-center mb-5">FOLLOW OUR SOCIALS</div>
       <div className="grid grid-cols-4 gap-4 justify-items-center mx-auto max-w-50 lg:max-w-100 lg:mt-4 mb-10 px-2 sm:px-0">
         <a
           href="https://www.instagram.com/rainbowengineering.uoa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="

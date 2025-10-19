@@ -1,13 +1,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-sans: var(--font-montserrat);
 }
 
 body {
     padding: 0;
     margin: 0;
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     
 }
@@ -65,7 +66,7 @@ header {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #7915d7;
+    color: #5f249f;
     font-weight: bold;
     margin-top: 35px;
     height: 60px;
@@ -102,7 +103,7 @@ header {
     width: 24px;
     height: 2px;
     margin: 4px 0;
-    background: #7915d7;
+    background: #5f249f;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -154,14 +155,14 @@ header {
         margin: 0;
     }
     .mobile-menu li {
-        border-bottom: 1px solid #7915d7;
+        border-bottom: 1px solid #5f249f;
     }
     .mobile-menu a {
         display: block;
         padding: 1rem;
         text-align: center;
         text-decoration: none;
-        color: #7915d7;
+        color: #5f249f;
     }
 }
 
