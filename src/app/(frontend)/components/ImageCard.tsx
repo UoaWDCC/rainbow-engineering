@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface CardProps {
@@ -51,9 +52,43 @@ const ImageCard: React.FC<CardProps> = ({
   onButtonClick,
   buttonClassName = "block w-full text-center bg-purple-300 hover:bg-purple-400 text-purple-800 hover:text-purple-800 font-semibold px-4 py-2 rounded-lg text-sm transition-colors mt-4 shadow-sm",
 }) => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("darkMode") === "true";
+    setIsDark(saved);
+
+    const onThemeChange = (e: Event) => {
+      const { isDark } = (e as CustomEvent).detail ?? {};
+      if (typeof isDark === "boolean") setIsDark(isDark);
+    };
+    window.addEventListener("themechange", onThemeChange);
+
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "darkMode" && e.newValue != null) {
+        setIsDark(e.newValue === "true");
+      }
+    };
+    window.addEventListener("storage", onStorage);
+
+    return () => {
+      window.removeEventListener("themechange", onThemeChange);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
+
+  // Dark mode colors
+  const cardBg = isDark ? "#2A2342" : backgroundColor;
+  const titleColor = isDark ? "#F4EFFF" : textColor;
+  const contentTextColor = isDark ? "#B8ADDA" : contentColor;
+  const buttonBg = isDark ? "#3D3355" : "bg-purple-300";
+  const buttonHoverBg = isDark ? "#4E4266" : "bg-purple-400";
+  const buttonTextColor = isDark ? "#F4EFFF" : "text-purple-800";
+
   return (
     <div
-      className={`flex flex-col ${textColor} ${textFont} ${margin} ${backgroundColor} ${height} ${padding} ${borderRadius} ${className}`}
+      className={`flex flex-col ${textFont} ${margin} ${height} ${padding} ${borderRadius} ${className} ${isDark ? '' : backgroundColor}`}
+      style={isDark ? { backgroundColor: cardBg, color: titleColor } : {}}
     >
       {/* ===== Title Section ===== */}
       {title && <h2 className={`${titleSize} font-semibold mb-4`}>{title}</h2>}
@@ -79,7 +114,7 @@ const ImageCard: React.FC<CardProps> = ({
         {/* Text Content */}
         <div className="flex-1 flex flex-col justify-start">
           {content && (
-            <p className={`text-lg ${contentColor} mb-3`}>{content}</p>
+            <p className={`text-lg mb-3 ${isDark ? '' : contentColor}`} style={isDark ? { color: contentTextColor } : {}}>{content}</p>
           )}
 
           {children && <div className="flex-grow">{children}</div>}
@@ -92,12 +127,21 @@ const ImageCard: React.FC<CardProps> = ({
                   href={buttonHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={buttonClassName}
+                  className={isDark ? "block w-full text-center font-semibold px-4 py-2 rounded-lg text-sm transition-colors mt-4 shadow-sm" : buttonClassName}
+                  style={isDark ? { backgroundColor: buttonBg, color: buttonTextColor } : {}}
+                  onMouseEnter={(e) => isDark && (e.currentTarget.style.backgroundColor = buttonHoverBg)}
+                  onMouseLeave={(e) => isDark && (e.currentTarget.style.backgroundColor = buttonBg)}
                 >
                   {buttonText}
                 </a>
               ) : (
-                <button onClick={onButtonClick} className={buttonClassName}>
+                <button
+                  onClick={onButtonClick}
+                  className={isDark ? "block w-full text-center font-semibold px-4 py-2 rounded-lg text-sm transition-colors mt-4 shadow-sm" : buttonClassName}
+                  style={isDark ? { backgroundColor: buttonBg, color: buttonTextColor } : {}}
+                  onMouseEnter={(e) => isDark && (e.currentTarget.style.backgroundColor = buttonHoverBg)}
+                  onMouseLeave={(e) => isDark && (e.currentTarget.style.backgroundColor = buttonBg)}
+                >
                   {buttonText}
                 </button>
               )}
