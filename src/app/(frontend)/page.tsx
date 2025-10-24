@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getPayload } from "payload";
 import React from "react";
 import type { Media } from '../../payload-types';
@@ -6,12 +5,10 @@ import type { Media } from '../../payload-types';
 import HomePageBanner from "./components/HomePageBanner";
 import ScrollingGallery from "./components/ScrollingGallery";
 import RainbowButton from "./components/RainbowButton";
-// import { images } from "./data";
 import ExecCard from "./components/ExecCard";
 import PageBackground from "./components/PageBackground";
 import SocialsBar from "./components/SocialsBar";
 import AboutUsSection from "./components/AboutUsSection";
-import SectionHeader from "./components/SectionHeader";
 import SectionDivider from "./components/SectionDivider";
 import ExecsHeader from "./components/ExecsHeader";
 

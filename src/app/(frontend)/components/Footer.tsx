@@ -72,28 +72,18 @@ export default function Footer() {
 
   // Load dark mode preference from localStorage on mount
   useEffect(() => {
-    const savedMode = localStorage.getItem("darkMode");
-    if (savedMode === "true") {
-      setIsDark(true);
-    }
+    const savedMode = localStorage.getItem("darkMode") === "true";
+    setIsDark(savedMode);
 
     // Listen for dark mode changes from other components (like Navbar)
-    const handleStorageChange = () => {
-      const currentMode = localStorage.getItem("darkMode");
-      setIsDark(currentMode === "true");
-    };
-
-    window.addEventListener("storage", handleStorageChange);
-    return () => window.removeEventListener("storage", handleStorageChange);
-  }, []);
-
-  // Listen for themechange events
-  useEffect(() => {
-    const handleThemeChange = (event: CustomEvent) => {
-      setIsDark(event.detail.isDark);
+    const handleThemeChange = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      setIsDark(customEvent.detail.isDark);
     };
 
     window.addEventListener("themechange", handleThemeChange);
+
+    // Cleanup event listener on unmount
     return () => {
       window.removeEventListener("themechange", handleThemeChange);
     };
