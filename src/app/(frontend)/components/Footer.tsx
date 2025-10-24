@@ -87,6 +87,18 @@ export default function Footer() {
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
+  // Listen for themechange events
+  useEffect(() => {
+    const handleThemeChange = (event: CustomEvent) => {
+      setIsDark(event.detail.isDark);
+    };
+
+    window.addEventListener("themechange", handleThemeChange);
+    return () => {
+      window.removeEventListener("themechange", handleThemeChange);
+    };
+  }, []);
+
   const leftTailRatio = 0.14;
   const leftTail = (screenWidth - 68) * leftTailRatio;
 
