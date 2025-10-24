@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 interface EventDropdownProps {
@@ -19,9 +19,32 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
   signupUrl
 }) => {
   const [open, setOpen] = useState(false)
+  const [isDark, setIsDark] = useState(false)
+
+
+
+
+  useEffect(() => {
+  const saved = localStorage.getItem('darkMode') === 'true'
+  setIsDark(saved)
+
+  const onThemeChange = (e: Event) => {
+    const { isDark } = (e as CustomEvent).detail ?? {}
+    if (typeof isDark === 'boolean') setIsDark(isDark)
+    }
+  window.addEventListener('themechange', onThemeChange)
+    return () => {
+      window.removeEventListener('themechange', onThemeChange)
+    }
+  }, [])
+
+  const bgColour = isDark ? '#796299' : '#E9D5FF' 
+  const text = isDark ? "#E9D5FF" : "#5f249f";
+  const desc = isDark ? "#E9D5FF" : "#334155";
 
   return (
-    <div className="bg-[#E2D6F6] rounded-xl p-4 my-2 text-[#5f249f] font-[Montserrat]">
+    <div className="rounded-xl p-4 my-2 font-[Montserrat]"
+        style = {{ background: bgColour, color: text}}>
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between text-left"
@@ -37,7 +60,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
 
       {open && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <div className="md:basis-3/5">
+          <div className="md:basis-3/5" style={{ color: desc}}>
             <p className="md:hidden text-2xl font-semibold font-[Montserrat] text-purple-800 mb-3">{date}</p>
             <div className="text-lg text-slate-700 font-[Montserrat]">{description}</div>
           </div>

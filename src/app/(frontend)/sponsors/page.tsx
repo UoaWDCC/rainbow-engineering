@@ -4,6 +4,7 @@ import RainbowButton from "../components/RainbowButton";
 import { getPayload } from "payload";
 import type { SponsorsAmethyst, SponsorsSilver, SponsorsGold } from '../../../payload-types'; // adjust path to your generated types
 import config from "@/payload.config";
+import DarkThemeBoxes from "../components/DarkThemeBoxes";
 
 export default async function Sponsors() {
 
@@ -36,11 +37,11 @@ export default async function Sponsors() {
             {/* ===== page layout wrapper ===== */}
             <div className="max-w-7xl mx-auto px-4 text-[#5f249f]">
                 {/* ===== information about sponsors ===== */}
-                <div className="bg-[#E2D6F6] text-slate-700 font-[Montserrat] p-6 rounded-xl max-w-full mx-auto text-center">
-                    <p className="text-base md:text-lg font-medium">
-                        Sponsors play a vital role in powering Rainbow Engineering’s innovative projects, competitions, and community outreach. In return, we offer meaningful collaboration, brand visibility, and access to passionate future engineers. Together, we build bold ideas into reality.
-                    </p>
-                </div>
+                <DarkThemeBoxes>
+                <p className="text-base md:text-lg font-medium">
+                    Sponsors play a vital role in powering Rainbow Engineering’s innovative projects, competitions, and community outreach. In return, we offer meaningful collaboration, brand visibility, and access to passionate future engineers. Together, we build bold ideas into reality.
+                </p>
+                </DarkThemeBoxes>
 
                 {/* ===== get in touch button ===== */}
                 <div className="mt-6 mb-16 max-w-full mx-auto text-center">

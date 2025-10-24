@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Remove-Item \"C:\\Users\\iaramako\\Documents\\GitHub\\rainbow-engineering\\src\\app\\(frontend)\\components\\HomePageSection.tsx\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

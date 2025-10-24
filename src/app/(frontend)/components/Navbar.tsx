@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -19,8 +18,46 @@ export default function Navbar() {
   const pathname = usePathname();
   const [hidden, hideNavBar] = useState(false);
   const [open, openDropdown] = useState(false);
+  // Dark mode state - true = dark mode, false = light mode
+  const [isDark, setIsDark] = useState(false);
   const lastScrollYRef = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Load dark mode preference from localStorage on mount
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode === "true") {
+      setIsDark(true);
+      // Apply dark mode to body
+      document.body.style.backgroundColor = "45335C";
+      document.body.style.color = "#F4EFFF";
+    }
+    else {
+    document.body.style.backgroundColor = "#f1eafb";
+    document.body.style.color = "#171717";
+    }
+    //this is so other parts of the application can see if in dark or light mode
+    window.dispatchEvent(new CustomEvent("themechange", { detail: { isDark: savedMode === "true" } }));
+  }, []);
+
+  // Toggle dark mode function
+  const toggleDarkMode = () => {
+    const newMode = !isDark;
+    setIsDark(newMode);
+    // Save preference to localStorage
+    localStorage.setItem("darkMode", String(newMode));
+    // Apply body colors
+    if (newMode) {
+      document.body.style.backgroundColor = "45335C"; // Dark background
+      document.body.style.color = "#F4EFFF"; // Dark mode text
+    } else {
+      //I added this so change would happen instantly, no need to
+      document.body.style.backgroundColor = "#f1eafb"; // Light background
+      document.body.style.color = "#171717"; // Light mode text
+    }
+    //this is so other parts of the application can see if in dark or light mode
+    window.dispatchEvent(new CustomEvent("themechange", { detail: { isDark: newMode } }));
+  };
 
   // hides navbar when going down the page, shows navbar when going up the page
   useEffect(() => {
@@ -141,8 +178,10 @@ export default function Navbar() {
       <nav
         style={{
           width: "100%",
-          background: "#ccb8f0",
-          borderBottom: "1px solid #5f249f",
+          // Dark mode: #1C1730 (panel background), Light mode: #ccb8f0 (light purple)
+          background: isDark ? "#1C1730" : "#ccb8f0",
+          // Dark mode: #3D3463 (border/divider), Light mode: #5f249f (purple)
+          borderBottom: isDark ? "1px solid #3D3463" : "1px solid #5f249f",
           padding: "1rem 2rem",
           position: "fixed",
           top: hidden ? "-120px" : "0",
@@ -153,7 +192,8 @@ export default function Navbar() {
           alignItems: "center",
           justifyContent: "center",
           boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
-          transition: "top 0.3s",
+          // Smooth transitions for position and color changes
+          transition: "top 0.3s, background 0.2s, border-color 0.2s",
         }}
       >
         {/* Desktop nav links */}
@@ -170,11 +210,12 @@ export default function Navbar() {
                   marginRight: isSignUp ? "0.7rem" : (isLogo ? "auto" : undefined),
                   borderRadius: isSignUp ? "12px" : "0px",
                   textDecoration: "none",
-                  color: isSignUp ? "#f1eafb" : "#5f249f",
+                  // Sign Up button text: always light, Regular links: dark mode = #F4EFFF (main text), light = #5f249f (purple)
+                  color: isSignUp ? "#f1eafb" : (isDark ? "#F4EFFF" : "#5f249f"),
                   fontWeight: "bold",
                   fontFamily: "Montserrat, sans-serif",
                   fontSize: "1rem",
-                  background: isSignUp ? "#5f249f" : "#ccb8f0",
+                  background: isSignUp ? (isDark ? "#7E57C2" : "#5f249f") : (isDark ? "#1C1730" : "#ccb8f0"),
                   border: "none",
                   boxShadow: isSignUp ? "0 2px 8px rgba(127,21,215,0.12)" : "none",
                   transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
@@ -193,7 +234,17 @@ export default function Navbar() {
                       style={{ objectFit: "contain" }}
                       priority
                     />
-                    <span className="rainbow-title">
+                    <span style={{
+                      marginLeft: "1rem",
+                      // Logo text color: dark mode = #F4EFFF (main text), light = #5f249f (purple)
+                      color: isDark ? "#F4EFFF" : "#5f249f",
+                      fontWeight: "bold",
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "1.5rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      lineHeight: 1.1
+                    }}>
                       <span>Rainbow</span>
                       <span>Engineering</span>
                     </span>
@@ -202,6 +253,56 @@ export default function Navbar() {
               </Link>
             );
           })}
+          {/* Theme toggle button - switches between light and dark mode */}
+          <button
+            onClick={toggleDarkMode}
+            aria-label="Toggle theme"
+            style={{
+              padding: "0.5rem",
+              marginLeft: "0.5rem",
+              marginTop: "7px",
+              borderRadius: "12px",
+              // Button background: dark mode = #7E57C2 (button), light = #5f249f (purple)
+              background: isDark ? "#7E57C2" : "#5f249f",
+              border: "none",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "48px",
+              height: "48px",
+              boxShadow: "0 2px 8px rgba(127,21,215,0.12)",
+              // Smooth transitions for hover and color changes
+              transition: "transform 0.2s, background 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            {/* Show sun icon in dark mode, moon icon in light mode */}
+            {isDark ? (
+              // Sun icon - indicates clicking will switch to light mode
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4EFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            ) : (
+              // Moon icon - indicates clicking will switch to dark mode
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f1eafb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            )}
+          </button>
         </div>
         {/* Hamburger button for dropdown menu (mobile) */}
         {/* Mobile hamburger + logo row */}
@@ -251,7 +352,93 @@ export default function Navbar() {
             <span />
             <span />
           </button>
-
+          {/* Rainbow Engineering button (logo) on mobile */}
+          <Link
+            href="/"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              textDecoration: "none",
+              padding: "0.25rem 0.75rem",
+              borderRadius: "12px",
+              // Mobile logo text: dark mode = #F4EFFF (main text), light = #5f249f (purple)
+              color: isDark ? "#F4EFFF" : "#5f249f",
+              fontWeight: "bold",
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "1.5rem",
+              // Mobile logo background matches navbar
+              background: isDark ? "#1C1730" : "#ccb8f0",
+              border: "none",
+              boxShadow: "none",
+              transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
+              height: "60px",
+              flex: 1
+            }}
+          >
+            <Image
+              src="/rainbow_logo_bb.png"
+              alt="Rainbow Logo"
+              width={110}
+              height={110}
+              style={{ objectFit: "contain" }}
+              priority
+            />
+            <span style={{
+              marginLeft: "1rem",
+              // Mobile logo span text: dark mode = #F4EFFF, light = #5f249f
+              color: isDark ? "#F4EFFF" : "#5f249f",
+              fontWeight: "bold",
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              lineHeight: 1.1
+            }}>
+              <span>Rainbow</span>
+              <span>Engineering</span>
+            </span>
+          </Link>
+          {/* Theme toggle button (mobile) - same functionality as desktop */}
+          <button
+            onClick={toggleDarkMode}
+            aria-label="Toggle theme"
+            className="navbar-mobile"
+            style={{
+              padding: "0.5rem",
+              marginLeft: "0.5rem",
+              borderRadius: "12px",
+              // Mobile button background: dark mode = #7E57C2, light = #5f249f
+              background: isDark ? "#7E57C2" : "#5f249f",
+              border: "none",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "48px",
+              height: "48px",
+              boxShadow: "0 2px 8px rgba(127,21,215,0.12)",
+              transition: "transform 0.2s, background 0.2s",
+            }}
+          >
+            {/* Show sun icon in dark mode, moon icon in light mode */}
+            {isDark ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4EFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f1eafb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            )}
+          </button>
         </div>
         {/* Dropdown menu for mobile displays */}
         <div
@@ -264,14 +451,20 @@ export default function Navbar() {
             top: "100px",
             left: 0,
             right: 0,
-            background: "#ccb8f0",
+            // Dropdown background matches navbar: dark mode = #1C1730, light = #ccb8f0
+            background: isDark ? "#1C1730" : "#ccb8f0",
             zIndex: 101,
             boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
+            transition: "background 0.2s",
           }}
         >
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {navLinks.filter(link => !link.isLogo).map(({ href, label }) => (
-              <li key={href} style={{ borderBottom: "1px solid #5f249f" }}>
+              // Each dropdown item with border
+              <li key={href} style={{
+                // Border color: dark mode = #3D3463 (border/divider), light = #5f249f
+                borderBottom: isDark ? "1px solid #3D3463" : "1px solid #5f249f"
+              }}>
                 <Link
                   href={href}
                   onClick={() => openDropdown(false)}
@@ -280,10 +473,12 @@ export default function Navbar() {
                     alignItems: "center",
                     padding: "1rem 1rem 1rem 3rem",
                     textDecoration: "none",
-                    color: "#5f249f",
+                    // Dropdown link text: dark mode = #F4EFFF (main text), light = #5f249f
+                    color: isDark ? "#F4EFFF" : "#5f249f",
                     fontWeight: "bold",
                     fontFamily: "Montserrat, sans-serif",
-                    fontSize: "1.1rem",
+                    fontSize: "1.5rem",
+                    transition: "color 0.2s",
                   }}
                 >
                   {label}
