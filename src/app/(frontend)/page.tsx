@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getPayload } from "payload";
 import React from "react";
-import type { Media } from '../../payload-types'; // adjust path to your generated types
+import type { Media } from '../../payload-types';
 
 import HomePageBanner from "./components/HomePageBanner";
 import ScrollingGallery from "./components/ScrollingGallery";
@@ -13,6 +13,7 @@ import SocialsBar from "./components/SocialsBar";
 import AboutUsSection from "./components/AboutUsSection";
 import SectionHeader from "./components/SectionHeader";
 import SectionDivider from "./components/SectionDivider";
+import ExecsHeader from "./components/ExecsHeader";
 
 import config from "@/payload.config";
 
@@ -73,9 +74,7 @@ export default async function HomePage() {
             <AboutUsSection aboutus={aboutus} />
 
             {/*================================MEET THE EXECS================================*/}
-            <h2 className="mt-22 text-3xl md:text-5xl text-[#5f249f] font-bold font-[Montserrat] mb-3 text-center p-6">
-              Meet the Exec Team!
-            </h2>
+            <ExecsHeader />
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-10">
               {execs.docs.map((exec) => (
                 <ExecCard
