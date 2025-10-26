@@ -1,3 +1,64 @@
+/* Navbar styles moved from Navbar.tsx */
+.navbar-desktop {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.navbar-mobile-row {
+  display: none;
+}
+.rainbow-title {
+  margin-left: 1rem;
+  color: #5f249f;
+  font-weight: bold;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+@media (min-width: 1601px){
+  .navbar-desktop {
+    padding: 0 15rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .navbar-desktop {
+    padding: 0 10rem;
+  }
+}
+
+@media (min-width: 661px) and (max-width: 800px) {
+  .rainbow-title {
+    display: none;
+  }
+}
+@media (max-width: 660px) {
+  .rainbow-title {
+    font-size: 1rem;
+  }
+  .navbar-desktop {
+    display: none !important;
+  }
+  .navbar-mobile {
+    display: inline-flex !important;
+  }
+  .navbar-mobile-row {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+}
+.navbar-mobile {
+  display: none;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;

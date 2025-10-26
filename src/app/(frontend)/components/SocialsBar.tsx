@@ -29,7 +29,6 @@ export default function SocialsBar() {
   }, []);
 
   const sectionBg = isDark ? "#2A2342" : "#E2D6F6";
-  const textColor = isDark ? "#F4EFFF" : "#8a55d2";
 
   return (
     <div
