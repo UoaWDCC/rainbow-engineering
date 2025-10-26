@@ -62,7 +62,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
         <div className="mt-4 flex flex-col md:flex-row gap-4">
           <div className="md:basis-3/5" style={{ color: desc}}>
             <p className="md:hidden text-2xl font-semibold font-[Montserrat] text-purple-800 mb-3">{date}</p>
-            <div className="text-lg text-slate-700 font-[Montserrat]">{description}</div>
+            <div className="text-lg font-[Montserrat]">{description}</div>
           </div>
           <div className="md:basis-2/5 flex flex-col gap-2">
             <div className="relative w-full min-h-48 h-full">
@@ -79,7 +79,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
               href={signupUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center bg-purple-100 hover:bg-purple-300 font-semibold px-4 py-2 rounded-lg text-sm transition-colors mb-4"
+              className="block w-full text-center text-slate-700 bg-purple-100 hover:bg-purple-300 font-semibold px-4 py-2 rounded-lg text-sm transition-colors mb-4"
             >
               Sign Up
             </a>
