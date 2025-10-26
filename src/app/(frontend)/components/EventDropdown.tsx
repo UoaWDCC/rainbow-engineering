@@ -61,7 +61,7 @@ const EventDropdown: React.FC<EventDropdownProps> = ({
       {open && (
         <div className="mt-4 flex flex-col md:flex-row gap-4">
           <div className="md:basis-3/5" style={{ color: desc}}>
-            <p className="md:hidden text-2xl font-semibold font-[Montserrat] text-purple-800 mb-3">{date}</p>
+            <p className="md:hidden text-2xl font-semibold font-[Montserrat] mb-3" style={{ color: desc }}>{date}</p>
             <div className="text-lg font-[Montserrat]">{description}</div>
           </div>
           <div className="md:basis-2/5 flex flex-col gap-2">

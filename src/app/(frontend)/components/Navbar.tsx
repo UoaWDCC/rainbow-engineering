@@ -316,7 +316,6 @@ export default function Navbar() {
         {/* Hamburger button for dropdown menu (mobile) */}
         {/* Mobile hamburger + logo row */}
         <div className="navbar-mobile-row">
-                    {/* Rainbow Engineering button (logo) on mobile */}
           <Link
             href="/"
             style={{
@@ -325,11 +324,11 @@ export default function Navbar() {
               textDecoration: "none",
               padding: "0.25rem 0.75rem",
               borderRadius: "12px",
-              color: "#5f249f",
+              color: isDark ? "#F4EFFF" : "#5f249f",
               fontWeight: "bold",
               fontFamily: "Montserrat, sans-serif",
-              fontSize: "1.2rem",
-              background: "#ccb8f0",
+              fontSize: "1.5rem",
+              background: isDark ? "#1C1730" : "#ccb8f0",
               border: "none",
               boxShadow: "none",
               transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
@@ -339,15 +338,12 @@ export default function Navbar() {
             <Image
               src="/rainbow_logo_bb.png"
               alt="Rainbow Logo"
-              width={100}
-              height={100}
+              width={110}
+              height={110}
               style={{ objectFit: "contain" }}
               priority
             />
-            <span className="rainbow-title">
-              <span>Rainbow</span>
-              <span>Engineering</span>
-            </span>
+              {/* Removed Rainbow Engineering text for mobile logo */}
           </Link>
           <button
             className={`hamburger ${open ? "is-open" : ""} navbar-mobile`}
@@ -360,93 +356,6 @@ export default function Navbar() {
             <span />
             <span />
             <span />
-          </button>
-          {/* Rainbow Engineering button (logo) on mobile */}
-          <Link
-            href="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              textDecoration: "none",
-              padding: "0.25rem 0.75rem",
-              borderRadius: "12px",
-              // Mobile logo text: dark mode = #F4EFFF (main text), light = #5f249f (purple)
-              color: isDark ? "#F4EFFF" : "#5f249f",
-              fontWeight: "bold",
-              fontFamily: "Montserrat, sans-serif",
-              fontSize: "1.5rem",
-              // Mobile logo background matches navbar
-              background: isDark ? "#1C1730" : "#ccb8f0",
-              border: "none",
-              boxShadow: "none",
-              transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
-              height: "60px",
-              flex: 1
-            }}
-          >
-            <Image
-              src="/rainbow_logo_bb.png"
-              alt="Rainbow Logo"
-              width={110}
-              height={110}
-              style={{ objectFit: "contain" }}
-              priority
-            />
-            <span style={{
-              marginLeft: "1rem",
-              // Mobile logo span text: dark mode = #F4EFFF, light = #5f249f
-              color: isDark ? "#F4EFFF" : "#5f249f",
-              fontWeight: "bold",
-              fontFamily: "Montserrat, sans-serif",
-              fontSize: "1.5rem",
-              display: "flex",
-              flexDirection: "column",
-              lineHeight: 1.1
-            }}>
-              <span>Rainbow</span>
-              <span>Engineering</span>
-            </span>
-          </Link>
-          {/* Theme toggle button (mobile) - same functionality as desktop */}
-          <button
-            onClick={toggleDarkMode}
-            aria-label="Toggle theme"
-            className="navbar-mobile"
-            style={{
-              padding: "0.5rem",
-              marginLeft: "0.5rem",
-              borderRadius: "12px",
-              // Mobile button background: dark mode = #7E57C2, light = #5f249f
-              background: isDark ? "#7E57C2" : "#5f249f",
-              border: "none",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "48px",
-              height: "48px",
-              boxShadow: "0 2px 8px rgba(127,21,215,0.12)",
-              transition: "transform 0.2s, background 0.2s",
-            }}
-          >
-            {/* Show sun icon in dark mode, moon icon in light mode */}
-            {isDark ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4EFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f1eafb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            )}
           </button>
         </div>
         {/* Dropdown menu for mobile displays */}
@@ -471,7 +380,6 @@ export default function Navbar() {
             {navLinks.filter(link => !link.isLogo).map(({ href, label }) => (
               // Each dropdown item with border
               <li key={href} style={{
-                // Border color: dark mode = #3D3463 (border/divider), light = #5f249f
                 borderBottom: isDark ? "1px solid #3D3463" : "1px solid #5f249f"
               }}>
                 <Link
@@ -482,7 +390,6 @@ export default function Navbar() {
                     alignItems: "center",
                     padding: "1rem 1rem 1rem 3rem",
                     textDecoration: "none",
-                    // Dropdown link text: dark mode = #F4EFFF (main text), light = #5f249f
                     color: isDark ? "#F4EFFF" : "#5f249f",
                     fontWeight: "bold",
                     fontFamily: "Montserrat, sans-serif",
@@ -494,11 +401,59 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            {/* Dark mode toggle button inside hamburger menu */}
+            <li style={{ borderBottom: isDark ? "1px solid #3D3463" : "1px solid #5f249f", textAlign: "left" }}>
+              <button
+                onClick={toggleDarkMode}
+                aria-label="Toggle theme"
+                style={{
+                  margin: "1rem 0 1rem 3rem",
+                  padding: "0.5rem 1.5rem",
+                  borderRadius: "12px",
+                  background: isDark ? "#7E57C2" : "#5f249f",
+                  color: isDark ? "#F4EFFF" : "#f1eafb",
+                  border: "none",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                  fontFamily: "Montserrat, sans-serif",
+                  fontSize: "1.2rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  boxShadow: "0 2px 8px rgba(127,21,215,0.12)",
+                  transition: "transform 0.2s, background 0.2s"
+                }}
+              >
+                {isDark ? (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F4EFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: "0.5rem" }}>
+                      <circle cx="12" cy="12" r="5"></circle>
+                      <line x1="12" y1="1" x2="12" y2="3"></line>
+                      <line x1="12" y1="21" x2="12" y2="23"></line>
+                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                      <line x1="1" y1="12" x2="3" y2="12"></line>
+                      <line x1="21" y1="12" x2="23" y2="12"></line>
+                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    Light Mode
+                  </>
+                ) : (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f1eafb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: "0.5rem" }}>
+                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    Dark Mode
+                  </>
+                )}
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
-    {/* Spacer to prevent navbar overlap */}
-    <div style={{ height: "60px" }} />
-  </>
+      {/* Spacer to prevent navbar overlap */}
+  <div style={{ height: "60px" }}></div>
+    </>
   );
 }
