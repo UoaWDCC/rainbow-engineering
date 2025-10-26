@@ -353,9 +353,9 @@ export default function Navbar() {
             onClick={() => openDropdown((s) => !s)}
             style={{ marginRight: "0.5rem" }}
           >
-            <span />
-            <span />
-            <span />
+            <span style={{ background: isDark ? "#F4EFFF" : "#5f249f" }} />
+            <span style={{ background: isDark ? "#F4EFFF" : "#5f249f" }} />
+            <span style={{ background: isDark ? "#F4EFFF" : "#5f249f" }} />
           </button>
         </div>
         {/* Dropdown menu for mobile displays */}
