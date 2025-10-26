@@ -198,61 +198,70 @@ export default function Navbar() {
       >
         {/* Desktop nav links */}
         <div className="navbar-desktop">
-          {navLinks.map(({ href, label, isLogo }) => {
-            const isSignUp = label === "Sign Up";
-            return (
-              <Link
-                key={href}
-                href={href}
-                style={{
-                  padding: "0.25rem 0.75rem",
-                  marginLeft: isSignUp ? "0.7rem" : undefined,
-                  marginRight: isSignUp ? "0.7rem" : (isLogo ? "auto" : undefined),
-                  borderRadius: isSignUp ? "12px" : "0px",
-                  textDecoration: "none",
-                  // Sign Up button text: always light, Regular links: dark mode = #F4EFFF (main text), light = #5f249f (purple)
-                  color: isSignUp ? "#f1eafb" : (isDark ? "#F4EFFF" : "#5f249f"),
-                  fontWeight: "bold",
-                  fontFamily: "Montserrat, sans-serif",
-                  fontSize: "1rem",
-                  background: isSignUp ? (isDark ? "#7E57C2" : "#5f249f") : (isDark ? "#1C1730" : "#ccb8f0"),
-                  border: "none",
-                  boxShadow: isSignUp ? "0 2px 8px rgba(127,21,215,0.12)" : "none",
-                  transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
-                  display: "flex",
-                  alignItems: "center",
-                  height: "40px"
-                }}
-              >
-                {isLogo ? (
-                  <>
-                    <Image
-                      src="/rainbow_logo_bb.png"
-                      alt="Rainbow Logo"
-                      width={110}
-                      height={110}
-                      style={{ objectFit: "contain" }}
-                      priority
-                    />
-                    <span style={{
-                      marginLeft: "1rem",
-                      // Logo text color: dark mode = #F4EFFF (main text), light = #5f249f (purple)
-                      color: isDark ? "#F4EFFF" : "#5f249f",
-                      fontWeight: "bold",
-                      fontFamily: "Montserrat, sans-serif",
-                      fontSize: "1.5rem",
-                      display: "flex",
-                      flexDirection: "column",
-                      lineHeight: 1.1
-                    }}>
-                      <span>Rainbow</span>
-                      <span>Engineering</span>
+            {navLinks.map(({ href, label, isLogo }) => {
+              const isSignUp = label === "Sign Up";
+              const underlineLinks = ["Events", "Initiatives", "Sponsors"];
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  style={{
+                    padding: "0.25rem 0.75rem",
+                    marginLeft: isSignUp ? "0.7rem" : undefined,
+                    marginRight: isSignUp ? "0.7rem" : (isLogo ? "auto" : undefined),
+                    borderRadius: isSignUp ? "12px" : "0px",
+                    textDecoration: "none",
+                    color: isSignUp ? "#f1eafb" : (isDark ? "#F4EFFF" : "#5f249f"),
+                    fontWeight: "bold",
+                    fontFamily: "Montserrat, sans-serif",
+                    fontSize: "1rem",
+                    background: isSignUp ? (isDark ? "#7E57C2" : "#5f249f") : (isDark ? "#1C1730" : "#ccb8f0"),
+                    border: "none",
+                    boxShadow: isSignUp ? "0 2px 8px rgba(127,21,215,0.12)" : "none",
+                    transition: "background 0.2s, color 0.2s, border-radius 0.2s, border 0.2s",
+                    display: "flex",
+                    alignItems: "center",
+                    height: "40px",
+                    position: "relative"
+                  }}
+                  className={underlineLinks.includes(label) ? "group" : undefined}
+                >
+                  {isLogo ? (
+                    <>
+                      <Image
+                        src="/rainbow_logo_bb.png"
+                        alt="Rainbow Logo"
+                        width={110}
+                        height={110}
+                        style={{ objectFit: "contain" }}
+                        priority
+                      />
+                      <span style={{
+                        marginLeft: "1rem",
+                        color: isDark ? "#F4EFFF" : "#5f249f",
+                        fontWeight: "bold",
+                        fontFamily: "Montserrat, sans-serif",
+                        fontSize: "1.5rem",
+                        display: "flex",
+                        flexDirection: "column",
+                        lineHeight: 1.1
+                      }}>
+                        <span>Rainbow</span>
+                        <span>Engineering</span>
+                      </span>
+                    </>
+                  ) : underlineLinks.includes(label) ? (
+                    <span className="relative inline-block group">
+                      {label}
+                      <span
+                        className="absolute bottom-0 left-0 h-0.5 bg-current transition-all duration-500 ease-out w-0 group-hover:w-full"
+                        style={{ backgroundColor: isDark ? "#F4EFFF" : "#5f249f" }}
+                      />
                     </span>
-                  </>
-                ) : label}
-              </Link>
-            );
-          })}
+                  ) : label}
+                </Link>
+              );
+            })}
           {/* Theme toggle button - switches between light and dark mode */}
           <button
             onClick={toggleDarkMode}

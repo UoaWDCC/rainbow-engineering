@@ -55,7 +55,7 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({ children, onClick, href }
         }
         if (href) router.push(href)
       }}
-      className="drop-shadow-2xl relative rounded-3xl px-20 py-13 text-3xl font-bold font-[Montserrat] hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#5f249f] transition-colors overflow-hidden"
+  className="drop-shadow-2xl relative rounded-3xl px-20 py-13 text-3xl font-bold font-[Montserrat] hover:bg-[#CAA9F8] bg-[#D0B7F4] text-[#5f249f] transition-colors overflow-hidden cursor-pointer"
     >
       {children}
 
