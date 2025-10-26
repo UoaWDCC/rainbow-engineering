@@ -46,7 +46,7 @@ export default function SocialsBar() {
           aria-label="Instagram"
           className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
         >
-          <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+          <div className="relative w-16 h-16 sm:w-20 sm:h-20">
             <Image
               src="/instagram.png"
               alt="Instagram Logo"
@@ -64,7 +64,7 @@ export default function SocialsBar() {
           aria-label="Email"
           className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
         >
-          <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20">
             <Image
               src="/mail.png"
               alt="Mail Logo"
@@ -82,7 +82,7 @@ export default function SocialsBar() {
           aria-label="LinkedIn"
           className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
         >
-          <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20">
             <Image
               src="/LinkedIn.png"
               alt="LinkedIn Logo"
@@ -100,7 +100,7 @@ export default function SocialsBar() {
           aria-label="Facebook"
           className="text-4xl transition-transform duration-300 ease-in-out transform hover:-translate-y-3"
         >
-          <div className="relative w-10 h-10 sm:w-20 sm:h-20">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20">
             <Image
               src="/facebook.png"
               alt="Facebook Logo"
