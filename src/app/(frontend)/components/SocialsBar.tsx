@@ -110,13 +110,6 @@ export default function SocialsBar() {
           </div>
         </a>
       </div>
-      {/* Text */}
-      <div
-        className="hidden md:block text-3xl font-bold font-[Montserrat]"
-        style={{ color: textColor }}
-      >
-        Follow Our Socials
-      </div>
     </div>
   );
 }
