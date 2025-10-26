@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import Banner from "../components/Banner"
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: "Sign Up | Rainbow Engineering",
+  description: "Sign up to join Rainbow Engineering and stay updated with our latest news and events.",
+};
 
 export default function SignUp() {
   return (

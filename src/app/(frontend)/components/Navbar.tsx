@@ -207,7 +207,7 @@ export default function Navbar() {
             style={{
               padding: "0.5rem",
               marginLeft: "0.5rem",
-              marginTop: "7px",
+              marginTop: "0px",
               borderRadius: "12px",
               // Button background: dark mode = #7E57C2 (button), light = #5f249f (purple)
               background: isDark ? "#7E57C2" : "#5f249f",

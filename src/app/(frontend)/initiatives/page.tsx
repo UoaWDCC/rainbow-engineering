@@ -3,6 +3,12 @@ import { getPayload } from "payload";
 import config from "@/payload.config";
 import type { Initiative } from "../../../payload-types"; // adjust if needed
 import EventDropdown from "../components/EventDropdown";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Community & Initiatives | Rainbow Engineering",
+  description: "Community & Initiatives at Rainbow Engineering - Explore our initiatives and get involved.",
+};
 
 export default async function Initiatives() {
   // initialize Payload

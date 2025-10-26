@@ -5,6 +5,12 @@ import { getPayload } from "payload";
 import type { SponsorsAmethyst, SponsorsSilver, SponsorsGold } from '../../../payload-types'; // adjust path to your generated types
 import config from "@/payload.config";
 import DarkThemeBoxes from "../components/DarkThemeBoxes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sponsors | Rainbow Engineering",
+  description: "Sponsors of Rainbow Engineering - Learn about our valued sponsors and partners.",
+};
 
 export default async function Sponsors() {
 

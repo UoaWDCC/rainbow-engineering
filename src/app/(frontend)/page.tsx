@@ -1,5 +1,6 @@
 import { getPayload } from "payload";
 import React from "react";
+import { Metadata } from "next";
 import type { Media } from '../../payload-types';
 
 import HomePageBanner from "./components/HomePageBanner";
@@ -13,6 +14,11 @@ import SectionDivider from "./components/SectionDivider";
 import ExecsHeader from "./components/ExecsHeader";
 
 import config from "@/payload.config";
+
+export const metadata: Metadata = {
+  title: "Home | Rainbow Engineering",
+  description: "Rainbow Engineering - Advocacy, Opportunity, Community.",
+};
 
 type AboutUsType = {
   Title: string;

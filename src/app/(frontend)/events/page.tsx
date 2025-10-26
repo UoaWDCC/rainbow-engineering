@@ -2,7 +2,13 @@ import { getPayload } from "payload";
 import config from "@/payload.config";
 import Banner from "../components/Banner";
 import EventDropdown from "../components/EventDropdown";
-import type { Event, Media } from '../../../payload-types'; // adjust path to your generated types
+import type { Event, Media } from '../../../payload-types';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Events | Rainbow Engineering",
+  description: "Events at Rainbow Engineering - Stay updated with our latest events and activities.",
+};
 
 function formatDate(dateString: string) {
     const date = new Date(dateString);
