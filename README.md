@@ -4,7 +4,7 @@ A platform led by the University of Auckland’s Rainbow Engineering club, dedic
 
 ## 🚀 Website
 
-Visit the project’s live site: [https://rainbow-engineering-prod.fly.dev/](https://rainbow-engineering-prod.fly.dev/)
+Visit the project’s live site: [https://rainbowengineering.wdcc.co.nz/](https://rainbowengineering.wdcc.co.nz/)
 
 ## 📖 Features
 - **Sign Up Form**
