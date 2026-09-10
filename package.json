@@ -31,6 +31,14 @@
     "typescript": "^5",
     "vivus": "^0.4.6"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "@tailwindcss/oxide",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.7",
