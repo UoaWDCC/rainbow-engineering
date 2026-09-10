@@ -27,6 +27,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "sharp": "^0.34.4",
     "swiper": "^11.2.10",
     "typescript": "^5",
     "vivus": "^0.4.6"
